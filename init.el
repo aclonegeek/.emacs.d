@@ -23,6 +23,7 @@
 (global-set-key (kbd "C-<") 'mc/unmark-previous-like-this)
 (global-set-key (kbd "C->") 'mc/unmark-next-like-this) ;; Unmark current selection
 
+(global-set-key (kbd "C-k") 'kill-whole-line)
 (global-set-key (kbd "C-c C-v") 'duplicate-line)
 ;; Copy the current line and paste it on a new line
 (defun duplicate-line ()
