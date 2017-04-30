@@ -40,6 +40,14 @@
   (yank)
   (previous-line))
 
+(global-set-key (kbd "C-d") 'select-word)
+(defun select-word ()
+  "Selects the current word."
+  (interactive)
+  (backward-word)
+  (set-mark (point))
+  (forward-word))
+
 ;; NEOTREE
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
