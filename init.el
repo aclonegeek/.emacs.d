@@ -1,3 +1,10 @@
+(run-with-idle-timer
+ 5 nil
+ (lambda ()
+   (setq gc-cons-threshold 1000000)
+   (message "gc-cons-threshold restored to %S"
+            gc-cons-threshold)))
+
 (require 'package)
 
 (add-to-list 'package-archives
