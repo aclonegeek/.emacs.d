@@ -62,6 +62,14 @@
 (require 'projectile)
 (projectile-global-mode)
 
+;; flx-ido
+(require 'flx-ido)
+(ido-mode 1)
+(ido-everywhere 1)
+(flx-ido-mode 1)
+(setq ido-enable-flex-matching t)
+(setq ido-use-faces nil)
+
 ;; MODE-LINE
 (line-number-mode -1)
 (defvar +modeline-height 29)
@@ -131,7 +139,7 @@
      ("melpa" . "http://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (rainbow-delimiters projectile all-the-icons-dired nlinum neotree multiple-cursors doom-themes org)))
+    (flx-ido rainbow-delimiters projectile all-the-icons-dired nlinum neotree multiple-cursors doom-themes org)))
  '(server-mode t)
  '(uniquify-buffer-name-style (quote post-forward) nil (uniquify)))
 (custom-set-faces
