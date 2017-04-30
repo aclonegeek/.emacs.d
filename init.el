@@ -32,8 +32,8 @@
 
 (global-set-key (kbd "C-k") 'kill-whole-line)
 (global-set-key (kbd "C-c C-v") 'duplicate-line)
-;; Copy the current line and paste it on a new line
 (defun duplicate-line ()
+  "Copy the current line and paste it on to a new line."
   (interactive)
   (kill-whole-line)
   (yank)
@@ -69,12 +69,12 @@
 (global-set-key (kbd "C-;") 'ff-find-other-file)
 (global-set-key (kbd "C-'") 'find-other-file-other-window)
 
-;; Find the corresponding file in another window
 (defun find-other-file-other-window ()
+  "Finds the corresponding file in another window."
   (interactive)
-  (if (one-window-p nil)
-      (split-window-right)
-    delete-other-windows)
+  (if (not (one-window-p))
+      (delete-other-windows))
+  (split-window-right)
   (other-window 1)
   (ff-find-other-file))
 
@@ -92,12 +92,13 @@
 (setq indent-tabs-mode nil)
 (setq-default c-basic-offset 4)
 
-;; Easy config management
 (defun reload-config()
+  "Reload emacs config."
   (interactive)
   (load-file "~/.emacs.d/init.el"))
 
 (defun edit-config()
+  "Edit emacs config."
   (interactive)
   (find-file "~/.emacs.d/init.el"))
 
