@@ -21,7 +21,29 @@
    (quote
     (use-package gruvbox-theme auto-complete flycheck pylint flx-ido rainbow-delimiters projectile all-the-icons-dired nlinum neotree multiple-cursors doom-themes org)))
  '(server-mode t)
- '(uniquify-buffer-name-style (quote post-forward) nil (uniquify)))
+ '(uniquify-buffer-name-style (quote post-forward) nil (uniquify))
+ '(vc-annotate-background "#000000")
+ '(vc-annotate-color-map
+   (quote
+    ((20 . "#B6E63E")
+     (40 . "#c4db4e")
+     (60 . "#d3d15f")
+     (80 . "#E2C770")
+     (100 . "#ebb755")
+     (120 . "#f3a73a")
+     (140 . "#FD971F")
+     (160 . "#fb713a")
+     (180 . "#fa4b56")
+     (200 . "#F92672")
+     (220 . "#f33260")
+     (240 . "#ed3f4e")
+     (260 . "#E74C3C")
+     (280 . "#dd6a60")
+     (300 . "#d38885")
+     (320 . "#c9a6aa")
+     (340 . "#C0C5CF")
+     (360 . "#C0C5CF"))))
+ '(vc-annotate-very-old-color nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

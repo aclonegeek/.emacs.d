@@ -10,9 +10,27 @@
              '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
 
+;; use-package
+(eval-when-compile
+  (require 'use-package))
+
+(setq use-package-always-ensure t)
+
+(use-package auto-complete)
+(use-package gruvbox-theme)
+(use-package multiple-cursors)
+(use-package neotree)
+(use-package nlinum)
+(use-package all-the-icons)
+(use-package projectile)
+(use-package flx-ido)
+(use-package rainbow-delimiters)
+
+;; ADSC
 (add-to-list 'load-path "~/.emacs.d/adsc")
 (require 'adsc)
 
+;; Load config
 (defvar cfg-dir
   (expand-file-name "cfg" user-emacs-directory))
 (add-to-list 'load-path cfg-dir)
@@ -29,17 +47,11 @@
   (insert "    \"\"\""))
  
 ;; Autocomplete
-(require 'auto-complete)
+;; (require 'auto-complete)
 (ac-config-default)
 
 ;; THEME
-(require 'gruvbox-theme)
 (load-theme 'gruvbox t)
-
-;;(require 'doom-themes)
-;;(setq doom-themes-enable-bold t
-;;      doom-themes-enable-italic t)
-;;(load-theme 'doom-molokai t)
 
 ;; Flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
@@ -51,9 +63,6 @@
                                      flycheck-checker-error-threshold 400
                                      flycheck-pylintrc "C:/Users/rtaylor/.pylintrc")))
 ;; (setq python-check-command "pylint")
-
-;; MULTPILE CURSORS
-(require 'multiple-cursors)
 
 (defun duplicate-line ()
   "Copy the current line and paste it on to a new line."
@@ -70,21 +79,13 @@
   (set-mark (point))
   (forward-word))
  
-;; NEOTREE
-(require 'neotree)
- 
 ;; NLINUM
-(require 'nlinum)
 (add-hook 'prog-mode-hook 'nlinum-mode)
  
-(require 'all-the-icons)
-
 ;; PROJECTILE
-(require 'projectile)
 (projectile-global-mode)
 
 ;; flx-ido
-(require 'flx-ido)
 (ido-mode 1)
 (ido-everywhere 1)
 (flx-ido-mode 1)
@@ -112,7 +113,6 @@
   (ff-find-other-file))
 
 ;; Enable rainbow-delimiters
-(require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 ;; Disable backup files
