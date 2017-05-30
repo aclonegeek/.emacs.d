@@ -17,6 +17,8 @@
 (setq use-package-always-ensure t)
 
 (use-package auto-complete)
+(use-package flycheck)
+(use-package pylint)
 (use-package gruvbox-theme)
 (use-package multiple-cursors)
 (use-package neotree)
@@ -62,7 +64,7 @@
                                (setq flycheck-checker 'python-pylint
                                      flycheck-checker-error-threshold 400
                                      flycheck-pylintrc "C:/Users/rtaylor/.pylintrc")))
-;; (setq python-check-command "pylint")
+(setq python-check-command "pylint")
 
 (defun duplicate-line ()
   "Copy the current line and paste it on to a new line."
