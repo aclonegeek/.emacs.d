@@ -1,10 +1,10 @@
 (run-with-idle-timer
-5 nil
-(lambda ()
+ 5 nil
+ (lambda ()
    (setq gc-cons-threshold 1000000)
    (message "gc-cons-threshold restored to %S"
             gc-cons-threshold)))
- 
+
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/"))
@@ -20,6 +20,7 @@
 (use-package flycheck)
 (use-package pylint)
 (use-package gruvbox-theme)
+(use-package alect-themes)
 (use-package multiple-cursors)
 (use-package neotree)
 (use-package nlinum)
@@ -28,15 +29,22 @@
 (use-package flx-ido)
 (use-package rainbow-delimiters)
 
+(defun iwb ()
+  "Indent whole buffer."
+  (interactive)
+  (delete-trailing-whitespace)
+  (indent-region (point-min) (point-max) nil)
+  (untabify (point-min) (point-max)))
+
 ;; ADSC
-(add-to-list 'load-path "~/.emacs.d/adsc")
-(require 'adsc)
+(add-to-list 'load-path "~/.emacs.d/adsc/")
+(load-library "adsc")
 
 ;; Load config
 (defvar cfg-dir
   (expand-file-name "cfg" user-emacs-directory))
 (add-to-list 'load-path cfg-dir)
-(require 'keybinds)
+(load-library "keybinds")
 
 (defun python-fn-docstring ()
   "Automatically insert a function docstring."
@@ -47,23 +55,32 @@
   (insert "    :return: type. what.\n")
   (insert "    :raises something.Error: what/why\n\n")
   (insert "    \"\"\""))
- 
+
+;; Tab auto-indent
+(setq tab-always-indent 'complete)
+
+;; Revert buffer
+(defun revert-buffer-no-comfirm ()
+  "Revert buffer without confirmation."
+  (interactive)
+  (revert-buffer :ignore-auto :noconfirm))
+
 ;; Autocomplete
 ;; (require 'auto-complete)
 (ac-config-default)
 
 ;; THEME
-(load-theme 'gruvbox t)
+(load-theme 'alect-dark t)
 
 ;; Flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
 (setq-default flycheck-disabled-checkers '(python-flake8))
 (add-hook 'python-mode-hook (lambda ()
-                               (flycheck-mode 1)
-                               (semantic-mode 1)
-                               (setq flycheck-checker 'python-pylint
-                                     flycheck-checker-error-threshold 400
-                                     flycheck-pylintrc "C:/Users/rtaylor/.pylintrc")))
+                              (flycheck-mode 1)
+                              (semantic-mode 1)
+                              (setq flycheck-checker 'python-pylint
+                                    flycheck-checker-error-threshold 400
+                                    flycheck-pylintrc "C:/Users/rtaylor/.pylintrc")))
 (setq python-check-command "pylint")
 
 (defun duplicate-line ()
@@ -73,17 +90,17 @@
   (yank)
   (yank)
   (forward-line -1))
- 
+
 (defun select-word ()
   "Select the current word."
   (interactive)
   (backward-word)
   (set-mark (point))
   (forward-word))
- 
+
 ;; NLINUM
 (add-hook 'prog-mode-hook 'nlinum-mode)
- 
+
 ;; PROJECTILE
 (projectile-global-mode)
 
@@ -93,7 +110,7 @@
 (flx-ido-mode 1)
 (setq ido-enable-flex-matching t)
 (setq ido-use-faces nil)
- 
+
 ;; MODE-LINE
 (line-number-mode -1)
 (defvar +modeline-height 29)
