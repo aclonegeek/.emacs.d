@@ -6,10 +6,10 @@
  '(ansi-color-names-vector
    ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(blink-cursor-mode nil)
- '(custom-enabled-themes (quote (alect-dark)))
+ '(custom-enabled-themes (quote (solarized-dark)))
  '(custom-safe-themes
    (quote
-    ("d29231b2550e0d30b7d0d7fc54a7fb2aa7f47d1b110ee625c1a56b30fea3be0f" "227e2c160b0df776257e1411de60a9a181f890cfdf9c1f45535fc83c9b34406b" default)))
+    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "c48551a5fb7b9fc019bf3f61ebf14cf7c9cdca79bcb2a4219195371c02268f11" "72a81c54c97b9e5efcc3ea214382615649ebb539cb4f2fe3a46cd12af72c7607" "e0d42a58c84161a0744ceab595370cbe290949968ab62273aed6212df0ea94b4" "d29231b2550e0d30b7d0d7fc54a7fb2aa7f47d1b110ee625c1a56b30fea3be0f" "227e2c160b0df776257e1411de60a9a181f890cfdf9c1f45535fc83c9b34406b" default)))
  '(ido-enable-flex-matching nil)
  '(ido-mode (quote both) nil (ido))
  '(inhibit-startup-screen t)
@@ -19,7 +19,7 @@
      ("melpa" . "http://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (alect-themes dumb-jump use-package gruvbox-theme auto-complete flycheck pylint flx-ido rainbow-delimiters projectile all-the-icons-dired nlinum neotree multiple-cursors doom-themes org)))
+    (solarized-theme dumb-jump use-package auto-complete flycheck pylint flx-ido rainbow-delimiters projectile all-the-icons-dired nlinum neotree multiple-cursors doom-themes org)))
  '(server-mode t)
  '(uniquify-buffer-name-style (quote post-forward) nil (uniquify))
  '(vc-annotate-background "#000000")

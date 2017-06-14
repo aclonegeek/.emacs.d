@@ -19,12 +19,10 @@
 (use-package auto-complete)
 (use-package flycheck)
 (use-package pylint)
-(use-package gruvbox-theme)
-(use-package alect-themes)
+(use-package solarized-themes)
 (use-package multiple-cursors)
 (use-package neotree)
 (use-package nlinum)
-(use-package all-the-icons)
 (use-package projectile)
 (use-package flx-ido)
 (use-package rainbow-delimiters)
@@ -70,7 +68,7 @@
 (ac-config-default)
 
 ;; THEME
-(load-theme 'alect-dark t)
+(load-theme 'solarized-dark t)
 
 ;; Flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
@@ -102,7 +100,7 @@
 (add-hook 'prog-mode-hook 'nlinum-mode)
 
 ;; PROJECTILE
-(projectile-global-mode)
+(add-hook 'python-mode-hook 'projectile-mode)
 
 ;; flx-ido
 (ido-mode 1)
