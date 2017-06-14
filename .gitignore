@@ -1,8 +1,10 @@
+/adsc
 /auto-save-list
 /elpa
 /server
 .mc-lists.el
-*.last
 *.cache
+*.dat
 *.eld
+*.last
 *.*~
