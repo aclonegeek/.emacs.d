@@ -19,7 +19,7 @@
 (use-package auto-complete)
 (use-package flycheck)
 (use-package pylint)
-(use-package solarized-themes)
+(use-package solarized-theme)
 (use-package multiple-cursors)
 (use-package neotree)
 (use-package nlinum)
