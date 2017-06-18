@@ -5,6 +5,8 @@
    (message "gc-cons-threshold restored to %S"
             gc-cons-threshold)))
 
+(fset 'yes-or-no-p 'y-or-n-p)
+
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/"))
