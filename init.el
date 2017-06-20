@@ -21,7 +21,7 @@
 (use-package auto-complete)
 (use-package flycheck)
 (use-package pylint)
-(use-package solarized-theme)
+(use-package spacemacs-theme)
 (use-package multiple-cursors)
 (use-package neotree)
 (use-package nlinum)
@@ -41,10 +41,11 @@
 (load-library "adsc")
 
 ;; Load config
-(defvar cfg-dir
-  (expand-file-name "cfg" user-emacs-directory))
-(add-to-list 'load-path cfg-dir)
+(add-to-list 'load-path "~/.emacs.d/cfg/")
 (load-library "keybinds")
+
+;; Load themes
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
 (defun python-fn-docstring ()
   "Automatically insert a function docstring."
@@ -70,7 +71,7 @@
 (ac-config-default)
 
 ;; THEME
-(load-theme 'solarized-dark t)
+(load-theme 'spacemacs-dark t)
 
 ;; Flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
