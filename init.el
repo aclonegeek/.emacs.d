@@ -21,7 +21,7 @@
 (use-package auto-complete)
 (use-package flycheck)
 (use-package pylint)
-(use-package spacemacs-theme)
+(use-package dracula-theme)
 (use-package multiple-cursors)
 (use-package neotree)
 (use-package nlinum)
@@ -71,7 +71,7 @@
 (ac-config-default)
 
 ;; THEME
-(load-theme 'spacemacs-dark t)
+(load-theme 'dracula t)
 
 ;; Flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)

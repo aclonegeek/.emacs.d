@@ -23,6 +23,7 @@
 (global-set-key [f5] 'adsc-todo)
 (global-set-key [f6] 'adsc-python-script)
 (global-set-key [f7] 'adsc-python-module)
+(global-set-key [f9] 'adsc-file-created)
 (global-set-key [C-f9] 'adsc-last-update)
 (global-set-key [C-S-f9] 'adsc-update-history)
 
