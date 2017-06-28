@@ -18,6 +18,10 @@
 
 (global-set-key (kbd "C-c r") 'revert-buffer-no-comfirm)
 
+;; PYTHON
+;; pylint
+(global-set-key [f12] 'pylint-insert-ignore-comment)
+
 ;; CUSTOM PACKAGES
 ;; Keybinds for ADSC file templates
 (global-set-key [f5] 'adsc-todo)
