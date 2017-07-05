@@ -21,13 +21,16 @@
 (use-package auto-complete)
 (use-package flycheck)
 (use-package pylint)
-(use-package dracula-theme)
+(use-package darktooth-theme)
 (use-package multiple-cursors)
 (use-package neotree)
 (use-package nlinum)
 (use-package projectile)
 (use-package flx-ido)
 (use-package rainbow-delimiters)
+(use-package smart-mode-line)
+
+(sml/setup)
 
 (defun iwb ()
   "Indent whole buffer."
@@ -71,7 +74,8 @@
 (ac-config-default)
 
 ;; THEME
-(load-theme 'dracula t)
+(load-theme 'darktooth t)
+(darktooth-modeline)
 
 ;; Flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
@@ -98,6 +102,21 @@
   (backward-word)
   (set-mark (point))
   (forward-word))
+
+(defun rename-file-and-buffer ()
+  "Rename the current buffer and file it is visiting."
+  (interactive)
+  (let ((filename (buffer-file-name)))
+    (if (not (and filename (file-exists-p filename)))
+        (message "Buffer is not visiting a file!")
+      (let ((new-name (read-file-name "New name: " filename)))
+        (cond
+         ((vc-backend filename) (vc-rename-file filename new-name))
+         (t
+          (rename-file filename new-name t)
+          (set-visited-file-name new-name t t)))))))
+
+(global-set-key (kbd "C-c n")  'rename-file-and-buffer)
 
 ;; NLINUM
 (add-hook 'prog-mode-hook 'nlinum-mode)
