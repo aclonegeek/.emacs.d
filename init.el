@@ -60,6 +60,10 @@
   (insert "    :raises something.Error: what/why\n\n")
   (insert "    \"\"\""))
 
+;; Highlight current line
+(global-hl-line-mode 1)
+;; (set-face-background 'hl-line "")
+
 ;; Tab auto-indent
 (setq tab-always-indent 'complete)
 
@@ -75,7 +79,7 @@
 
 ;; THEME
 (load-theme 'darktooth t)
-(darktooth-modeline)
+(darktooth-modeline-three)
 
 ;; Flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
