@@ -12,25 +12,54 @@
              '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
 
+;; Ensure use-package is installed
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
 ;; use-package
 (eval-when-compile
   (require 'use-package))
 
 (setq use-package-always-ensure t)
 
-(use-package auto-complete)
-(use-package flycheck)
-(use-package pylint)
-(use-package darktooth-theme)
-(use-package multiple-cursors)
-(use-package neotree)
-(use-package nlinum)
-(use-package projectile)
-(use-package flx-ido)
-(use-package rainbow-delimiters)
-(use-package smart-mode-line)
+(use-package adsc :defer t :load-path "~/.emacs.d/adsc/")
 
-(sml/setup)
+(use-package ui :defer t :load-path "~/.emacs.d/ui/")
+
+(use-package keybinds :load-path "~/.emacs.d/")
+
+(use-package python :load-path "~/.emacs.d/python/")
+
+(use-package auto-complete
+  :config (ac-config-default))
+
+(use-package flycheck
+  :config (add-hook 'after-init-hook 'global-flycheck-mode))
+
+(use-package pylint)
+
+(use-package darktooth-theme
+  :init (darktooth-modeline-three))
+
+(use-package multiple-cursors)
+
+(use-package neotree)
+
+(use-package nlinum)
+
+(use-package projectile)
+
+(use-package flx-ido)
+
+(use-package rainbow-delimiters)
+
+(use-package smart-mode-line
+  :config
+  (setq sml/no-confirm-load-theme t)
+  (sml/setup))
+
+(global-hl-line-mode t)
 
 (defun iwb ()
   "Indent whole buffer."
@@ -38,31 +67,6 @@
   (delete-trailing-whitespace)
   (indent-region (point-min) (point-max) nil)
   (untabify (point-min) (point-max)))
-
-;; ADSC
-(add-to-list 'load-path "~/.emacs.d/adsc/")
-(load-library "adsc")
-
-;; Load config
-(add-to-list 'load-path "~/.emacs.d/cfg/")
-(load-library "keybinds")
-
-;; Load themes
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-
-(defun python-fn-docstring ()
-  "Automatically insert a function docstring."
-  (interactive)
-  (insert "    \"\"\"Summary goes here.\n\n")
-  (insert "    :Parameters:\n")
-  (insert "      - `parameter`: type. what.\n\n")
-  (insert "    :return: type. what.\n")
-  (insert "    :raises something.Error: what/why\n\n")
-  (insert "    \"\"\""))
-
-;; Highlight current line
-(global-hl-line-mode 1)
-;; (set-face-background 'hl-line "")
 
 ;; Tab auto-indent
 (setq tab-always-indent 'complete)
@@ -72,25 +76,6 @@
   "Revert buffer without confirmation."
   (interactive)
   (revert-buffer :ignore-auto :noconfirm))
-
-;; Autocomplete
-;; (require 'auto-complete)
-(ac-config-default)
-
-;; THEME
-(load-theme 'darktooth t)
-(darktooth-modeline-three)
-
-;; Flycheck
-(add-hook 'after-init-hook #'global-flycheck-mode)
-(setq-default flycheck-disabled-checkers '(python-flake8))
-(add-hook 'python-mode-hook (lambda ()
-                              (flycheck-mode 1)
-                              (semantic-mode 1)
-                              (setq flycheck-checker 'python-pylint
-                                    flycheck-checker-error-threshold 400
-                                    flycheck-pylintrc "C:/Users/rtaylor/.pylintrc")))
-(setq python-check-command "pylint")
 
 (defun duplicate-line ()
   "Copy the current line and paste it on to a new line."
@@ -120,11 +105,6 @@
           (rename-file filename new-name t)
           (set-visited-file-name new-name t t)))))))
 
-(global-set-key (kbd "C-c n")  'rename-file-and-buffer)
-
-;; NLINUM
-(add-hook 'prog-mode-hook 'nlinum-mode)
-
 ;; PROJECTILE
 (add-hook 'python-mode-hook 'projectile-mode)
 
@@ -136,7 +116,7 @@
 (setq ido-use-faces nil)
 
 ;; MODE-LINE
-(line-number-mode -1)
+(line-number-mode 1)
 (defvar +modeline-height 29)
 (defvar +modeline-bar-width 3)
 
