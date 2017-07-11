@@ -19,7 +19,7 @@
      ("melpa" . "http://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (keybinds ui adsc smart-mode-line darktooth-theme dumb-jump use-package auto-complete flycheck pylint flx-ido rainbow-delimiters projectile all-the-icons-dired nlinum neotree multiple-cursors org)))
+    (rust keybinds ui adsc smart-mode-line darktooth-theme dumb-jump use-package auto-complete flycheck pylint flx-ido rainbow-delimiters projectile all-the-icons-dired nlinum neotree multiple-cursors org)))
  '(server-mode t)
  '(uniquify-buffer-name-style (quote post-forward) nil (uniquify))
  '(vc-annotate-background "#000000")

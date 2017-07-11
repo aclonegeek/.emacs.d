@@ -16,3 +16,5 @@
                                     flycheck-checker-error-threshold 400
                                     flycheck-pylintrc "C:/Users/rtaylor/.pylintrc")))
 (setq python-check-command "pylint")
+
+(provide 'python)

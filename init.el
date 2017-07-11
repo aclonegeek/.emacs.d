@@ -23,30 +23,43 @@
 
 (setq use-package-always-ensure t)
 
-(use-package adsc :defer t :load-path "~/.emacs.d/adsc/")
+(use-package adsc :load-path "adsc/"
+  :bind ("<f5>" . adsc-todo)
+  :bind ("<f6>" . adsc-python-script)
+  :bind ("<f7>" . adsc-python-module)
+  :bind ("<f9>" . adsc-file-created)
+  :bind ("C-<f9>" . adsc-last-update)
+  :bind ("C-S-<f9>" . adsc-update-history))
 
-(use-package ui :defer t :load-path "~/.emacs.d/ui/")
+(use-package keybinds :load-path "cfg/")
 
-(use-package keybinds :load-path "~/.emacs.d/")
+(use-package ui :load-path "ui/")
 
-(use-package python :load-path "~/.emacs.d/python/")
+(use-package python :load-path "lang/python/")
 
 (use-package auto-complete
   :config (ac-config-default))
 
 (use-package flycheck
-  :config (add-hook 'after-init-hook 'global-flycheck-mode))
+  :bind ("C-\\" . flycheck-list-errors)
+  :init (add-hook 'after-init-hook 'global-flycheck-mode))
 
-(use-package pylint)
+(use-package pylint
+  :bind ("<f12>" . pylint-insert-ignore-comment))
 
 (use-package darktooth-theme
   :init (darktooth-modeline-three))
 
-(use-package multiple-cursors)
+(use-package multiple-cursors
+  :bind ("C-?" . mc/edit-lines)
+  :bind ("C-," . mc/mark-previous-like-this)
+  :bind ("C-." . mc/mark-next-like-this)
+  :bind ("C-c C-." . mc/mark-all-like-this)
+  :bind ("C-<" . mc/unmark-previous-like-this)
+  :bind ("C->" . mc/unmark-next-like-this))
 
-(use-package neotree)
-
-(use-package nlinum)
+(use-package neotree
+  :bind ("<f8>" . neotree-toggle))
 
 (use-package projectile)
 

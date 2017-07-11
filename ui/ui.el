@@ -1,3 +1,4 @@
-;; THEME
 (load-theme 'darktooth t)
-(darktooth-modeline)
+(darktooth-modeline-three)
+
+(provide 'ui)
