@@ -7,6 +7,8 @@
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
+(prefer-coding-system 'utf-8)
+
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/"))
@@ -42,7 +44,10 @@
 
 (use-package flycheck
   :bind ("C-\\" . flycheck-list-errors)
-  :init (add-hook 'after-init-hook 'global-flycheck-mode))
+  :init
+  (add-hook 'after-init-hook 'global-flycheck-mode)
+  (setq flycheck-disabled-checkers '(emacs-lisp-checkdoc
+				     python-flake8)))
 
 (use-package pylint
   :bind ("<f12>" . pylint-insert-ignore-comment))
@@ -61,18 +66,18 @@
 (use-package neotree
   :bind ("<f8>" . neotree-toggle))
 
-(use-package projectile)
+(use-package projectile
+  :init (add-hook 'python-mode-hook 'projectile-mode))
 
 (use-package flx-ido)
 
-(use-package rainbow-delimiters)
+(use-package rainbow-delimiters
+  :config (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
 (use-package smart-mode-line
   :config
   (setq sml/no-confirm-load-theme t)
   (sml/setup))
-
-(global-hl-line-mode t)
 
 (defun iwb ()
   "Indent whole buffer."
@@ -118,26 +123,12 @@
           (rename-file filename new-name t)
           (set-visited-file-name new-name t t)))))))
 
-;; PROJECTILE
-(add-hook 'python-mode-hook 'projectile-mode)
-
 ;; flx-ido
 (ido-mode 1)
 (ido-everywhere 1)
 (flx-ido-mode 1)
 (setq ido-enable-flex-matching t)
 (setq ido-use-faces nil)
-
-;; MODE-LINE
-(line-number-mode 1)
-(defvar +modeline-height 29)
-(defvar +modeline-bar-width 3)
-
-;; Disable GUI stuff
-(menu-bar-mode -1)
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
-(horizontal-scroll-bar-mode -1)
 
 (defun find-other-file-other-window ()
   "Find the corresponding file in another window."
@@ -147,9 +138,6 @@
   (split-window-right)
   (other-window 1)
   (ff-find-other-file))
-
-;; Enable rainbow-delimiters
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 ;; Disable backup files
 (setq make-backup-files nil)
