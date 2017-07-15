@@ -37,7 +37,21 @@
 
 (use-package ui :load-path "ui/")
 
-(use-package python :load-path "lang/python/")
+;; (use-package config :load-path "lang/python/")
+
+(use-package python-mode
+  :mode "\\.py\\'"
+  :interpreter ("python" . python-mode)
+  :init
+  (add-hook 'python-mode-hook (lambda ()
+                                (flycheck-mode 1)
+                                (semantic-mode 1)
+                                (setq flycheck-checker 'python-pylint
+                                      flycheck-checker-error-threshold 400
+                                      flycheck-pylintrc "C:/Users/Randy/.pylintrc")))
+  :config
+  (setq-default flycheck-disabled-checkers '(python-flake8))
+  (defvar python-check-command "pylint"))
 
 (use-package auto-complete
   :config (ac-config-default))
@@ -53,7 +67,8 @@
   :bind ("<f12>" . pylint-insert-ignore-comment))
 
 (use-package darktooth-theme
-  :init (darktooth-modeline-three))
+  :config
+  (load-theme 'darktooth t))
 
 (use-package multiple-cursors
   :bind ("C-?" . mc/edit-lines)
