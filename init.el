@@ -10,6 +10,7 @@
 (prefer-coding-system 'utf-8)
 
 (require 'package)
+(setq package-enable-at-startup nil)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
@@ -22,8 +23,6 @@
 ;; use-package
 (eval-when-compile
   (require 'use-package))
-
-(setq use-package-always-ensure t)
 
 (use-package adsc :load-path "adsc/"
   :bind ("<f5>"     . adsc-todo)
@@ -40,6 +39,7 @@
 (use-package ui :load-path "ui/")
 
 (use-package python-mode
+  :ensure t
   :mode "\\.py\\'"
   :interpreter ("python")
   :init
@@ -49,31 +49,40 @@
                                 (setq flycheck-checker 'python-pylint
                                       flycheck-checker-error-threshold 400
                                       flycheck-pylintrc "C:/Users/Randy/.pylintrc")))
-  :config
-  (setq-default flycheck-disabled-checkers '(python-flake8
-					     emacs-lisp-checkdoc))
   (defvar python-check-command "pylint"))
 
+(use-package rust-mode
+  :ensure t
+  :mode "\\.rs\\'"
+  :init
+  (autoload 'rust-mode "rust-mode" nil t))
+
 (use-package auto-complete
+  :ensure t
   :config (ac-config-default))
 
 (use-package flycheck
+  :ensure t
   :bind ("C-\\" . flycheck-list-errors)
   :init
   (add-hook 'after-init-hook 'global-flycheck-mode)
   (setq flycheck-disabled-checkers '(emacs-lisp-checkdoc
-				     python-flake8)))
+                                     python-flake8)))
 
 (use-package pylint
+  :ensure t
   :bind ("<f12>" . pylint-insert-ignore-comment))
 
 (use-package darktooth-theme
-  :init
-  (add-hook 'after-init-hook #'darktooth-modeline-three)
-  :config
-  (load-theme 'darktooth t))
+  :ensure t
+  :init (add-hook 'after-init-hook #'darktooth-modeline-three))
+
+(use-package doom-themes
+  :ensure t
+  :config (load-theme 'doom-one t))
 
 (use-package multiple-cursors
+  :ensure t
   :bind ("C-?" . mc/edit-lines)
   :bind ("C-," . mc/mark-previous-like-this)
   :bind ("C-." . mc/mark-next-like-this)
@@ -82,12 +91,15 @@
   :bind ("C->" . mc/unmark-next-like-this))
 
 (use-package neotree
+  :ensure t
   :bind ("<f8>" . neotree-toggle))
 
 (use-package projectile
+  :ensure t
   :config (add-hook 'python-mode-hook 'projectile-mode))
 
 (use-package flx-ido
+  :ensure t
   :init
   (ido-mode 1)
   (ido-everywhere 1)
@@ -97,9 +109,11 @@
   (setq ido-use-faces nil))
 
 (use-package rainbow-delimiters
+  :ensure t
   :config (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
 (use-package smart-mode-line
+  :ensure t
   :config
   (setq sml/no-confirm-load-theme t)
   (sml/setup))
