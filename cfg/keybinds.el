@@ -11,8 +11,9 @@
 (global-set-key [C-tab] 'goto-line)
 
 (global-set-key (kbd "C-k") 'kill-whole-line)
+(global-set-key (kbd "M-k") 'kill-line)
 (global-set-key (kbd "C-z") 'duplicate-line)
-(global-set-key (kbd "C-d") 'select-word)
+(global-set-key (kbd "C-q") 'select-word)
 
 (global-set-key (kbd "C-c r") 'revert-buffer-no-comfirm)
 (global-set-key (kbd "C-c n") 'rename-file-and-buffer)
