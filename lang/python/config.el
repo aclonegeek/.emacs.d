@@ -8,6 +8,4 @@
   (insert "    :raises something.Error: what/why\n\n")
   (insert "    \"\"\""))
 
-
-
 (provide 'config)

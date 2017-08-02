@@ -5,10 +5,6 @@
    (message "gc-cons-threshold restored to %S"
             gc-cons-threshold)))
 
-(fset 'yes-or-no-p 'y-or-n-p)
-
-(prefer-coding-system 'utf-8)
-
 (require 'package)
 (setq package-enable-at-startup nil)
 (add-to-list 'package-archives
@@ -34,6 +30,8 @@
 
 (use-package keybinds :load-path "cfg/")
 
+(use-package settings :load-path "cfg/")
+
 (use-package util :load-path "cfg/")
 
 (use-package ui :load-path "ui/")
@@ -46,9 +44,9 @@
   (add-hook 'python-mode-hook (lambda ()
                                 (flycheck-mode 1)
                                 (semantic-mode 1)
-                                (setq flycheck-checker 'python-pylint
-                                      flycheck-checker-error-threshold 400
-                                      flycheck-pylintrc "C:/Users/Randy/.pylintrc")))
+                                (setq-default flycheck-checker 'python-pylint
+                                              flycheck-checker-error-threshold 400
+                                              flycheck-pylintrc "C:/Users/Randy/.pylintrc")))
   (defvar python-check-command "pylint"))
 
 (use-package rust-mode
@@ -73,6 +71,7 @@
   :ensure t
   :bind ("<f12>" . pylint-insert-ignore-comment))
 
+(declare-function darktooth-modeline-three "darktooth-theme" nil)
 (use-package darktooth-theme
   :ensure t
   :init (add-hook 'after-init-hook #'darktooth-modeline-three))
@@ -98,6 +97,7 @@
   :ensure t
   :config (add-hook 'python-mode-hook 'projectile-mode))
 
+(declare-function ido-everywhere "flx-ido" 1)
 (use-package flx-ido
   :ensure t
   :init
@@ -117,16 +117,6 @@
   :config
   (setq sml/no-confirm-load-theme t)
   (sml/setup))
-
-;; Tab auto-indent
-(setq tab-always-indent 'complete)
-
-;; Disable backup files
-(setq make-backup-files nil)
-
-;; 4 spaces instead of tabs
-(setq indent-tabs-mode nil)
-(setq-default c-basic-offset 4)
 
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
