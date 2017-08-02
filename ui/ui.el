@@ -4,6 +4,9 @@
 (scroll-bar-mode -1)
 (horizontal-scroll-bar-mode -1)
 
+;; Disable blinking cursor
+(blink-cursor-mode 0)
+
 ;; Font
 (set-face-attribute 'default nil
 		    :family "Droid Sans Mono"
