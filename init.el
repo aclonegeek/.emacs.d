@@ -62,6 +62,8 @@
 (use-package flycheck
   :ensure t
   :bind ("C-\\" . flycheck-list-errors)
+  :bind ("C-x n e" . flycheck-next-error)
+  :bind ("C-x p e" . flycheck-previous-error)
   :init
   (add-hook 'after-init-hook 'global-flycheck-mode)
   (setq flycheck-disabled-checkers '(emacs-lisp-checkdoc
