@@ -78,9 +78,9 @@
   :ensure t
   :init (add-hook 'after-init-hook #'darktooth-modeline-three))
 
-(use-package doom-themes
+(use-package sourcerer-theme
   :ensure t
-  :config (load-theme 'doom-one t))
+  :config (load-theme 'sourcerer t))
 
 (use-package multiple-cursors
   :ensure t
