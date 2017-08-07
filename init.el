@@ -36,6 +36,7 @@
 
 (use-package ui :load-path "ui/")
 
+(defvar flycheck-checker)
 (use-package python-mode
   :ensure t
   :mode "\\.py\\'"
@@ -44,10 +45,8 @@
   (add-hook 'python-mode-hook (lambda ()
                                 (flycheck-mode 1)
                                 (semantic-mode 1)
-                                (setq-default flycheck-checker 'python-pylint
-                                              flycheck-checker-error-threshold 400
-                                              flycheck-pylintrc "C:/Users/Randy/.pylintrc")))
-  (defvar python-check-command "pylint"))
+                                (setq flycheck-checker 'python-pylint)
+  (defvar python-check-command "pylint"))))
 
 (use-package rust-mode
   :ensure t
@@ -66,6 +65,8 @@
   :bind ("C-x p e" . flycheck-previous-error)
   :init
   (add-hook 'after-init-hook 'global-flycheck-mode)
+  (setq-default flycheck-checker-error-threshold 400
+                flycheck-pylintrc "C:/Users/Randy/.pylintrc")
   (setq flycheck-disabled-checkers '(emacs-lisp-checkdoc
                                      python-flake8)))
 
