@@ -79,9 +79,7 @@
   :ensure t
   :init (add-hook 'after-init-hook #'darktooth-modeline-three))
 
-(use-package sourcerer-theme
-  :ensure t
-  :config (load-theme 'sourcerer t))
+(load-theme 'solarized-light t)
 
 (use-package multiple-cursors
   :ensure t

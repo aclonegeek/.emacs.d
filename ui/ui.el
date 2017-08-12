@@ -1,3 +1,5 @@
+(add-to-list 'custom-theme-load-path "~/.emacs.d/ui/themes")
+
 ;; Disable GUI elements
 (menu-bar-mode -1)
 (tool-bar-mode -1)
