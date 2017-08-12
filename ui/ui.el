@@ -17,6 +17,9 @@
 ;; Highlight current line
 (global-hl-line-mode t)
 
+;; Show matching parentheses
+(show-paren-mode)
+
 ;; MODE-LINE
 (line-number-mode 1)
 

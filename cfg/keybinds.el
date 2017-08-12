@@ -3,6 +3,7 @@
 
 ;; Auto align
 (global-set-key (kbd "C-c C-a") 'align)
+(global-set-key (kbd "C-c a") 'align-regexp)
 
 ;; Mirror most popular text editor's C-backspace functionality (for the most part)
 (global-set-key [C-backspace] 'backward-kill-word)
