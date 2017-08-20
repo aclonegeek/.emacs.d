@@ -20,6 +20,7 @@
 (eval-when-compile
   (require 'use-package))
 
+;; My packages
 (use-package adsc :load-path "adsc/"
   :bind ("<f5>"     . adsc-todo)
   :bind ("<f6>"     . adsc-python-script)
@@ -29,15 +30,12 @@
   :bind ("C-S-<f9>" . adsc-update-history))
 
 (use-package keybinds :load-path "cfg/")
-
 (use-package settings :load-path "cfg/")
-
 (use-package util :load-path "cfg/")
-
 (use-package ui :load-path "ui/")
 
 (defvar flycheck-checker)
-(use-package python-mode
+(use-package python-mode 
   :ensure t
   :mode "\\.py\\'"
   :interpreter ("python")
@@ -74,12 +72,9 @@
   :ensure t
   :bind ("<f12>" . pylint-insert-ignore-comment))
 
-(declare-function darktooth-modeline-three "darktooth-theme" nil)
-(use-package darktooth-theme
+(use-package solarized-theme
   :ensure t
-  :init (add-hook 'after-init-hook #'darktooth-modeline-three))
-
-(load-theme 'solarized-light t)
+  :init (load-theme 'solarized-dark t))
 
 (use-package multiple-cursors
   :ensure t
