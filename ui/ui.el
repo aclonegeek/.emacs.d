@@ -17,6 +17,15 @@
 ;; Highlight current line
 (global-hl-line-mode t)
 
+;; Colour text if it passes the max column length
+(defvar whitespace-line-column)
+(defvar whitespace-style)
+(use-package whitespace
+  :init
+  (setq whitespace-line-column 100)
+  (setq whitespace-style '(face lines-tail))
+  (add-hook 'prog-mode-hook 'whitespace-mode))
+
 ;; Show matching parentheses
 (show-paren-mode)
 
