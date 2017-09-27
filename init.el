@@ -21,21 +21,14 @@
   (require 'use-package))
 
 ;; My packages
-(use-package adsc :load-path "adsc/"
-  :bind ("<f5>"     . adsc-todo)
-  :bind ("<f6>"     . adsc-python-script)
-  :bind ("<f7>"     . adsc-python-module)
-  :bind ("<f9>"     . adsc-file-created)
-  :bind ("C-<f9>"   . adsc-last-update)
-  :bind ("C-S-<f9>" . adsc-update-history))
-
 (use-package keybinds :load-path "cfg/")
 (use-package settings :load-path "cfg/")
 (use-package util :load-path "cfg/")
 (use-package ui :load-path "ui/")
 
+;; MELPA packages
 (defvar flycheck-checker)
-(use-package python-mode 
+(use-package python-mode
   :ensure t
   :mode "\\.py\\'"
   :interpreter ("python")
@@ -46,11 +39,16 @@
                                 (setq flycheck-checker 'python-pylint)
   (defvar python-check-command "pylint"))))
 
+(use-package flycheck-rust
+  :ensure t)
+
 (use-package rust-mode
   :ensure t
   :mode "\\.rs\\'"
   :init
-  (autoload 'rust-mode "rust-mode" nil t))
+  (autoload 'rust-mode "rust-mode" nil t)
+  :config
+  (setq rust-format-on-save t))
 
 (use-package auto-complete
   :ensure t
@@ -63,10 +61,11 @@
   :bind ("C-x p e" . flycheck-previous-error)
   :init
   (add-hook 'after-init-hook 'global-flycheck-mode)
+  (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
   (setq-default flycheck-checker-error-threshold 400
-                flycheck-pylintrc "C:/Users/Randy/.pylintrc")
-  (setq flycheck-disabled-checkers '(emacs-lisp-checkdoc
-                                     python-flake8)))
+                flycheck-pylintrc "C:/Users/Randy/.pylintrc"
+                flycheck-disabled-checkers '(emacs-lisp-checkdoc
+                                             python-flake8)))
 
 (use-package pylint
   :ensure t
