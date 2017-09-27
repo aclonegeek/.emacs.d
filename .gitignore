@@ -1,12 +1,6 @@
 # Elisp byte code
 *.elc
 
-# Automatically generated
-/custom.el
-
-# Work
-/adsc
-
 # Package related
 /auto-save-list
 /elpa
