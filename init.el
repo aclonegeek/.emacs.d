@@ -71,9 +71,9 @@
   :ensure t
   :bind ("<f12>" . pylint-insert-ignore-comment))
 
-(use-package solarized-theme
+(use-package base16-theme
   :ensure t
-  :init (load-theme 'solarized-dark t))
+  :init (load-theme 'base16-irblack t))
 
 (use-package multiple-cursors
   :ensure t
