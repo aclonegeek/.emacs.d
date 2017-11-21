@@ -25,6 +25,20 @@
   (set-mark (point))
   (forward-word))
 
+(defun delete-word (arg)
+  "Delete characters forward until encountering the end of a word."
+  (interactive "p")
+  (delete-region
+   (point)
+   (progn
+     (forward-word arg)
+     (point))))
+
+(defun backward-delete-word (arg)
+  "Delete characters backward until encountering the beginning of a word."
+  (interactive "p")
+  (delete-word (- arg)))
+
 (defun rename-file-and-buffer ()
   "Rename the current buffer and file it is visiting."
   (interactive)

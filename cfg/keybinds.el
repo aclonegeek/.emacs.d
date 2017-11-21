@@ -11,6 +11,8 @@
 ;; goto-line
 (global-set-key [C-tab] 'goto-line)
 
+(global-set-key (kbd "<C-backspace>") 'backward-delete-word)
+(global-set-key (kbd "M-d") 'delete-word)
 (global-set-key (kbd "C-k") 'kill-whole-line)
 (global-set-key (kbd "M-k") 'kill-line)
 (global-set-key (kbd "C-z") 'duplicate-line)
