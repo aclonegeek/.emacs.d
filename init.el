@@ -1,4 +1,4 @@
-(run-with-idle-timer
+ (run-with-idle-timer
  5 nil
  (lambda ()
    (setq gc-cons-threshold 1000000)
@@ -71,9 +71,9 @@
   :ensure t
   :bind ("<f12>" . pylint-insert-ignore-comment))
 
-(use-package base16-theme
+(use-package molokai-theme
   :ensure t
-  :init (load-theme 'base16-irblack t))
+  :init (load-theme 'molokai t))
 
 (use-package multiple-cursors
   :ensure t
