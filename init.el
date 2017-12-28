@@ -20,13 +20,22 @@
 (eval-when-compile
   (require 'use-package))
 
-;; My packages
 (use-package keybinds :load-path "cfg/")
 (use-package settings :load-path "cfg/")
-(use-package util :load-path "cfg/")
+(use-package util     :load-path "cfg/")
+
+;; Theme
+(use-package molokai-theme
+  :ensure t
+  :init (load-theme 'molokai t))
+
+;; UI/Theme customizations
+(use-package modeline :load-path "ui/"
+  :config
+  (setq line-number-mode 1)
+  (setq column-number-mode 1))
 (use-package ui :load-path "ui/")
 
-;; MELPA packages
 (defvar flycheck-checker)
 (use-package python-mode
   :ensure t
@@ -37,7 +46,7 @@
                                 (flycheck-mode 1)
                                 (semantic-mode 1)
                                 (setq flycheck-checker 'python-pylint)
-  (defvar python-check-command "pylint"))))
+                                (defvar python-check-command "pylint"))))
 
 (use-package flycheck-rust
   :ensure t)
@@ -50,13 +59,16 @@
   :config
   (setq rust-format-on-save t))
 
-(use-package auto-complete
+;; todo: configure this
+(use-package company
   :ensure t
-  :config (ac-config-default))
+  :init
+  (global-company-mode t)
+  (setq company-idle-delay nil))
 
 (use-package flycheck
   :ensure t
-  :bind ("C-\\" . flycheck-list-errors)
+  :bind ("C-\\"    . flycheck-list-errors)
   :bind ("C-x n e" . flycheck-next-error)
   :bind ("C-x p e" . flycheck-previous-error)
   :init
@@ -71,18 +83,14 @@
   :ensure t
   :bind ("<f12>" . pylint-insert-ignore-comment))
 
-(use-package molokai-theme
-  :ensure t
-  :init (load-theme 'molokai t))
-
 (use-package multiple-cursors
   :ensure t
-  :bind ("C-?" . mc/edit-lines)
-  :bind ("C-," . mc/mark-previous-like-this)
-  :bind ("C-." . mc/mark-next-like-this)
-  :bind ("C-c C-." . mc/mark-all-like-this)
-  :bind ("C-<" . mc/unmark-previous-like-this)
-  :bind ("C->" . mc/unmark-next-like-this))
+  :bind ("C-?"      . mc/edit-lines)
+  :bind ("C-,"      . mc/mark-previous-like-this)
+  :bind ("C-."      . mc/mark-next-like-this)
+  :bind ("C-c C-."  . mc/mark-all-like-this)
+  :bind ("C-<"      . mc/unmark-previous-like-this)
+  :bind ("C->"      . mc/unmark-next-like-this))
 
 (use-package neotree
   :ensure t
@@ -106,11 +114,5 @@
 (use-package rainbow-delimiters
   :ensure t
   :config (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
-
-(use-package smart-mode-line
-  :ensure t
-  :config
-  (setq sml/no-confirm-load-theme t)
-  (sml/setup))
 
 (setq custom-file "~/.emacs.d/custom.el")

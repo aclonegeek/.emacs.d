@@ -29,7 +29,4 @@
 ;; Show matching parentheses
 (show-paren-mode)
 
-;; MODE-LINE
-(line-number-mode 1)
-
 (provide 'ui)
