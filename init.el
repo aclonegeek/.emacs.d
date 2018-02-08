@@ -1,9 +1,9 @@
- (run-with-idle-timer
- 5 nil
- (lambda ()
-   (setq gc-cons-threshold 1000000)
-   (message "gc-cons-threshold restored to %S"
-            gc-cons-threshold)))
+(run-with-idle-timer
+5 nil
+(lambda ()
+  (setq gc-cons-threshold 1000000)
+  (message "gc-cons-threshold restored to %S"
+           gc-cons-threshold)))
 
 (require 'package)
 (setq package-enable-at-startup nil)
@@ -108,10 +108,6 @@
   :bind ("C-<"      . mc/unmark-previous-like-this)
   :bind ("C->"      . mc/unmark-next-like-this))
 
-(use-package neotree
-  :ensure t
-  :bind ("<f8>" . neotree-toggle))
-
 (use-package projectile
   :ensure t
   :config
@@ -128,9 +124,5 @@
   :config
   (setq ido-enable-flex-matching t)
   (setq ido-use-faces nil))
-
-(use-package rainbow-delimiters
-  :ensure t
-  :config (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
 (setq custom-file "~/.emacs.d/custom.el")
