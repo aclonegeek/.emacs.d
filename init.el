@@ -48,23 +48,39 @@
                                 (setq flycheck-checker 'python-pylint)
                                 (defvar python-check-command "pylint"))))
 
-(use-package flycheck-rust
-  :ensure t)
+;;(use-package flycheck-rust
+;;  :ensure t)
 
-(use-package rust-mode
-  :ensure t
-  :mode "\\.rs\\'"
-  :init
-  (autoload 'rust-mode "rust-mode" nil t)
-  :config
-  (setq rust-format-on-save t))
+;;(use-package rust-mode
+;;  :ensure t
+;;  :mode "\\.rs\\'"
+;;  :init
+;;  (autoload 'rust-mode "rust-mode" nil t)
+;;  :config
+;;  (setq rust-format-on-save t))
 
-;; todo: configure this
+;;(use-package cargo
+;;  :ensure t
+;;  :config
+;;  (add-hook 'rust-mode-hook 'cargo-minor-mode))
+
+;;(use-package racer
+;;  :ensure t
+;;  :init
+;;  (add-hook 'rust-mode-hook #'racer-mode)
+;;  (add-hook 'racer-mode-hook #'eldoc-mode)
+;;  (add-hook 'racer-mode-hook #'company-mode)
+;;  :config
+;;  (setq racer-cmd "C:/Users/Randy/.cargo/bin/racer")
+;;  (setq racer-rust-src-path "C:/Users/Randy/Programming/Code/rust/src"))
+
+;; TODO(randy): Configure this
 (use-package company
   :ensure t
   :init
   (global-company-mode t)
-  (setq company-idle-delay nil))
+  (setq company-idle-delay nil)
+  (setq company-minimum-prefix-length 1))
 
 (use-package flycheck
   :ensure t
@@ -73,7 +89,7 @@
   :bind ("C-x p e" . flycheck-previous-error)
   :init
   (add-hook 'after-init-hook 'global-flycheck-mode)
-  (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
+;  (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
   (setq-default flycheck-checker-error-threshold 400
                 flycheck-pylintrc "C:/Users/Randy/.pylintrc"
                 flycheck-disabled-checkers '(emacs-lisp-checkdoc
@@ -98,7 +114,9 @@
 
 (use-package projectile
   :ensure t
-  :config (add-hook 'python-mode-hook 'projectile-mode))
+  :config
+;  (add-hook 'rust-mode-hook 'projectile-mode)
+  (add-hook 'python-mode-hook 'projectile-mode))
 
 (declare-function ido-everywhere "flx-ido" 1)
 (use-package flx-ido
