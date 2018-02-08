@@ -11,3 +11,7 @@
 *.eld
 *.last
 *.*~
+
+# Files
+custom.el
+recentf
