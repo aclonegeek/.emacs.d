@@ -4,15 +4,14 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
-(horizontal-scroll-bar-mode -1)
 
 ;; Disable blinking cursor
 (blink-cursor-mode 0)
 
 ;; Font
 (set-face-attribute 'default nil
-		    :family "Droid Sans Mono"
-		    :height 95)
+		    :family "Noto Sans Mono"
+		    :height 105)
 
 ;; Highlight current line
 (global-hl-line-mode t)
@@ -28,5 +27,16 @@
 
 ;; Show matching parentheses
 (show-paren-mode)
+
+;; Theme
+(use-package base16-theme
+  :ensure t
+  :init (load-theme 'base16-atelier-dune t))
+
+;; Modeline
+(use-package modeline :load-path "ui/"
+  :config
+  (setq line-number-mode 1)
+  (setq column-number-mode 1))
 
 (provide 'ui)

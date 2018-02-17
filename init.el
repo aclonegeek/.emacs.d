@@ -23,18 +23,7 @@
 (use-package keybinds :load-path "cfg/")
 (use-package settings :load-path "cfg/")
 (use-package util     :load-path "cfg/")
-
-;; Theme
-(use-package molokai-theme
-  :ensure t
-  :init (load-theme 'molokai t))
-
-;; UI/Theme customizations
-(use-package modeline :load-path "ui/"
-  :config
-  (setq line-number-mode 1)
-  (setq column-number-mode 1))
-(use-package ui :load-path "ui/")
+(use-package ui       :load-path "ui/")
 
 (defvar flycheck-checker)
 (use-package python-mode
