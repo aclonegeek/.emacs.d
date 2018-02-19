@@ -1,6 +1,3 @@
-;; TODO(randy): Enable this and fix the right-alignment of the mode-line
-;; (set-face-attribute 'mode-line nil :height 1.25)
-
 ;; https://emacs.stackexchange.com/a/7542
 (defun simple-mode-line-render (left right)
   "Return a string of `window-width' length containing LEFT and RIGHT aligned respectively."
@@ -29,10 +26,12 @@
         " "
         "%p"))
 
+; Set a darker background for the mode-line
+(set-face-attribute 'mode-line nil :background "#2D2B28")
+
 (defvar mode-line-directory
   '(:propertize
-    (:eval (if (buffer-file-name) (concat " " (shorten-directory default-directory 20)) " "))
-                face mode-line-directory)
+    (:eval (if (buffer-file-name) (concat " " (shorten-directory default-directory 20)) " ")))
   "Formats the current directory.")
 (put 'mode-line-directory 'risky-local-variable t)
 
