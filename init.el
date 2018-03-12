@@ -20,22 +20,12 @@
 (eval-when-compile
   (require 'use-package))
 
-(use-package keybinds :load-path "cfg/")
-(use-package settings :load-path "cfg/")
-(use-package util     :load-path "cfg/")
-(use-package ui       :load-path "ui/")
-
-(defvar flycheck-checker)
-(use-package python-mode
-  :ensure t
-  :mode "\\.py\\'"
-  :interpreter ("python")
-  :init
-  (add-hook 'python-mode-hook (lambda ()
-                                (flycheck-mode 1)
-                                (semantic-mode 1)
-                                (setq flycheck-checker 'python-pylint)
-                                (defvar python-check-command "pylint"))))
+(load "~/.emacs.d/cfg/keybinds.el")
+(load "~/.emacs.d/cfg/settings.el")
+(load "~/.emacs.d/cfg/util.el")
+(load "~/.emacs.d/ui/ui.el")
+;; Load lang configs
+(load "~/.emacs.d/lang/python/config.el")
 
 ;;(use-package flycheck-rust
 ;;  :ensure t)
@@ -84,10 +74,6 @@
                 flycheck-disabled-checkers '(emacs-lisp-checkdoc
                                              python-flake8)))
 
-(use-package pylint
-  :ensure t
-  :bind ("<f12>" . pylint-insert-ignore-comment))
-
 (use-package multiple-cursors
   :ensure t
   :bind ("C-?"      . mc/edit-lines)
@@ -103,10 +89,10 @@
 ;  (add-hook 'rust-mode-hook 'projectile-mode)
   (add-hook 'python-mode-hook 'projectile-mode))
 
-(declare-function ido-everywhere "flx-ido" 1)
 (use-package flx-ido
   :ensure t
   :init
+  (declare-function ido-everywhere "flx-ido" 1)
   (ido-mode 1)
   (ido-everywhere 1)
   (flx-ido-mode 1)

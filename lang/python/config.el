@@ -1,3 +1,9 @@
+(use-package elpy
+  :ensure t
+  :defer 2
+  :config
+  (elpy-enable))
+
 (defun python-fn-docstring ()
   "Automatically insert a function docstring."
   (interactive)
