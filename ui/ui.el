@@ -1,5 +1,3 @@
-(add-to-list 'custom-theme-load-path "~/.emacs.d/ui/themes")
-
 ;; Disable GUI elements
 (menu-bar-mode -1)
 (tool-bar-mode -1)
@@ -16,6 +14,9 @@
 ;; Highlight current line
 (global-hl-line-mode t)
 
+;; Show matching parentheses
+(show-paren-mode)
+
 ;; Colour text if it passes the max column length
 (defvar whitespace-line-column)
 (defvar whitespace-style)
@@ -24,9 +25,6 @@
   (setq whitespace-line-column 100)
   (setq whitespace-style '(face lines-tail))
   (add-hook 'prog-mode-hook 'whitespace-mode))
-
-;; Show matching parentheses
-(show-paren-mode)
 
 ;; Theme
 (use-package base16-theme
