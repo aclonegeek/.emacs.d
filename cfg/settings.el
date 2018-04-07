@@ -11,8 +11,11 @@
 (setq make-backup-files nil)
 
 ;; 4 spaces instead of tabs
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
-(setq-default tab-stop-list (number-sequence 4 200 4))
+(setq-default
+    indent-tabs-mode nil
+    tab-width 4
+    tab-stop-list (quote (4 8))
+    )
+(setq-default c-basic-offset 4)
 
 (provide 'settings)
