@@ -1,9 +1,9 @@
 (run-with-idle-timer
-5 nil
-(lambda ()
-  (setq gc-cons-threshold 1000000)
-  (message "gc-cons-threshold restored to %S"
-           gc-cons-threshold)))
+ 5 nil
+ (lambda ()
+   (setq gc-cons-threshold 1000000)
+   (message "gc-cons-threshold restored to %S"
+            gc-cons-threshold)))
 
 (require 'package)
 (setq package-enable-at-startup nil)
@@ -26,7 +26,9 @@
 (load "~/.emacs.d/ui/ui.el")
 ;; Load lang configs
 (load "~/.emacs.d/lang/python/config.el")
+(load "~/.emacs.d/lang/latex/config.el")
 ;;(load "~/.emacs.d/lang/rust/config.el")
+(add-to-list 'auto-mode-alist '("\\.pl\\'" . prolog-mode))
 
 ;; TODO(randy): Configure this
 (use-package company
