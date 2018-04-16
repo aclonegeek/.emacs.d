@@ -1,9 +1,10 @@
-(run-with-idle-timer
- 5 nil
- (lambda ()
-   (setq gc-cons-threshold 1000000)
-   (message "gc-cons-threshold restored to %S"
-            gc-cons-threshold)))
+;; Garbage collection things
+(setq gc-cons-threshold 402653184
+      gc-cons-percentage 0.6)
+(add-hook 'after-init-hook (lambda()
+                             (setq gc-cons-threshold 800000
+                                   gc-cons-percentage 0.1)))
+(add-hook 'focus-out-hook 'garbage-collect)
 
 (require 'package)
 (setq package-enable-at-startup nil)
