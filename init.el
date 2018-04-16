@@ -52,13 +52,13 @@
   :bind ("C-\\"    . flycheck-list-errors)
   :bind ("C-x n e" . flycheck-next-error)
   :bind ("C-x p e" . flycheck-previous-error)
+  :commands flycheck-mode
   :init
-  (add-hook 'after-init-hook 'global-flycheck-mode)
-;  (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
   (setq-default flycheck-checker-error-threshold 400
+                ;; TODO(randy): Make this cross-platform.
                 flycheck-pylintrc "C:/Users/Randy/.pylintrc"
-                flycheck-disabled-checkers '(emacs-lisp-checkdoc
-                                             python-flake8)))
+                flycheck-disabled-checkers '(emacs-lisp-checkdoc))
+  :config (global-flycheck-mode))
 
 (use-package multiple-cursors
   :ensure t
