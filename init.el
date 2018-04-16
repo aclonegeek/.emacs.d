@@ -1,21 +1,19 @@
 ;; -*- lexical-binding: t; -*-
+
 ;;; Speedier Startup ;;;
-;; Garbage collection stuff
-(setq gc-cons-threshold 402653184
-      gc-cons-percentage 0.6)
-(add-hook 'after-init-hook (lambda()
-                             (setq gc-cons-threshold 800000
+(defvar file-name-handler-alist-old file-name-handler-alist)
+(setq package-enable-at-startup nil
+      file-name-handler-alist   nil
+      gc-cons-threshold         402653184
+      gc-cons-percentage        0.6)
+
+(add-hook 'after-init-hook (lambda ()
+                             (setq file-name-handler-alist file-name-handler-alist-old
+                                   gc-cons-threshold 800000
                                    gc-cons-percentage 0.1)))
 (add-hook 'focus-out-hook 'garbage-collect)
 
-;; file-name-handler-alist
-(defvar temp--file-name-handler-alist file-name-handler-alist)
-(setq file-name-handler-alist nil)
-(add-hook 'after-init-hook (lambda()
-                             (setq file-name-handler-alist temp--file-name-handler-alist)))
-
 (require 'package)
-(setq package-enable-at-startup nil)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
