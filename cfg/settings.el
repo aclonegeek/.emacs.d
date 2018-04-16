@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (setq inhibit-startup-screen t)
 
 (fset 'yes-or-no-p 'y-or-n-p)

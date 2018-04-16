@@ -1,17 +1,11 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package elpy
   :ensure t
   :defer 2
   :config
-  (elpy-enable))
-
-(defun python-fn-docstring ()
-  "Automatically insert a function docstring."
-  (interactive)
-  (insert "    \"\"\"Summary goes here.\n\n")
-  (insert "    :Parameters:\n")
-  (insert "      - `parameter`: type. what.\n\n")
-  (insert "    :return: type. what.\n")
-  (insert "    :raises something.Error: what/why\n\n")
-  (insert "    \"\"\""))
+  (elpy-enable)
+  (setq elpy-rpc-backend "jedi"))
+;  (setq elpy-rpc-python-command "python3"))
 
 (provide 'config)

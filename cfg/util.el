@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (defun iwb ()
   "Indent whole buffer."
   (interactive)

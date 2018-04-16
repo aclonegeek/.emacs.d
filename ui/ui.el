@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 ;; Disable GUI elements
 (menu-bar-mode -1)
 (tool-bar-mode -1)
@@ -9,7 +11,7 @@
 ;; Font
 (set-face-attribute 'default nil
 		    :family "Noto Sans Mono"
-		    :height 105)
+		    :height 110)
 
 ;; Highlight current line
 (global-hl-line-mode t)

@@ -1,4 +1,6 @@
-; auctex
+;; -*- lexical-binding: t; -*-
+
+;; auctex
 (use-package tex
   :ensure auctex
   :mode ("\\.tex\\'" . TeX-latex-mode))

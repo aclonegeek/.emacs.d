@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; Speedier Startup ;;;
 ;; Garbage collection stuff
 (setq gc-cons-threshold 402653184
