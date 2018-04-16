@@ -13,6 +13,19 @@
                                    gc-cons-percentage 0.1)))
 (add-hook 'focus-out-hook 'garbage-collect)
 
+;; Backups
+(setq backup-directory-alist `(("." . "~/.emacs.d/backups")))
+(setq make-backup-file t
+      backup-by-copying t
+      version-control t
+      delete-old-versions t
+      delete-by-moving-to-trash t
+      kept-old-versions 6
+      kept-new-versions 9
+      auto-save-default t
+      auto-save-timeout 30
+      auto-save-interval 500)
+
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/"))
