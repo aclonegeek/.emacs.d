@@ -14,8 +14,8 @@
 (add-hook 'focus-out-hook 'garbage-collect)
 
 ;; Backups
-(setq backup-directory-alist `(("." . "~/.emacs.d/backups")))
-(setq make-backup-file t
+(setq backup-directory-alist `(("." . "~/.emacs.d/backups"))
+      make-backup-files t
       backup-by-copying t
       version-control t
       delete-old-versions t
