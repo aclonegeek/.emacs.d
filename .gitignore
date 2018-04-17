@@ -12,6 +12,10 @@
 *.last
 *.*~
 
+# Folders
+backups/
+
 # Files
+bookmarks
 custom.el
 recentf
