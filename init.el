@@ -45,6 +45,7 @@
 (load "~/.emacs.d/cfg/util.el")
 (load "~/.emacs.d/ui/ui.el")
 ;; Load lang configs
+(load "~/.emacs.d/lang/org/config.el")
 (load "~/.emacs.d/lang/python/config.el")
 (load "~/.emacs.d/lang/latex/config.el")
 ;;(load "~/.emacs.d/lang/rust/config.el")
