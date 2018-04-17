@@ -48,6 +48,13 @@
 (load "~/.emacs.d/lang/python/config.el")
 (load "~/.emacs.d/lang/latex/config.el")
 ;;(load "~/.emacs.d/lang/rust/config.el")
+(use-package markdown-mode
+  :ensure t
+  :commands (markdown-mode gfm-mode)
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
+  :init (setq markdown-command "multimarkdown"))
 (add-to-list 'auto-mode-alist '("\\.pl\\'" . prolog-mode))
 
 (use-package company
