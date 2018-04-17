@@ -50,13 +50,13 @@
 ;;(load "~/.emacs.d/lang/rust/config.el")
 (add-to-list 'auto-mode-alist '("\\.pl\\'" . prolog-mode))
 
-;; TODO(randy): Configure this
 (use-package company
   :ensure t
-  :init
-  (global-company-mode t)
+  :commands company-mode
+  :config
   (setq company-idle-delay nil)
-  (setq company-minimum-prefix-length 1))
+  (setq company-minimum-prefix-length 1)
+  (global-company-mode 1))
 
 (use-package flycheck
   :ensure t
