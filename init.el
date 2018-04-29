@@ -94,15 +94,28 @@
 ;  (add-hook 'rust-mode-hook 'projectile-mode)
   (add-hook 'python-mode-hook 'projectile-mode))
 
-(use-package flx-ido
+(use-package flx
   :ensure t
-  :init
-  (declare-function ido-everywhere "flx-ido" 1)
-  (ido-mode 1)
-  (ido-everywhere 1)
-  (flx-ido-mode 1)
+  :defer t)
+
+(use-package ivy
+  :ensure t
   :config
-  (setq ido-enable-flex-matching t)
-  (setq ido-use-faces nil))
+  (ivy-mode t)
+  (setq ivy-use-virtual-buffers t)
+  (setq ivy-count-format "(%d/%d) ")
+  (setq ivy-re-builders-alist
+        '((swiper . ivy--regex-plus)
+          (t      . ivy--regex-fuzzy))))
+
+(use-package counsel
+  :ensure t
+  :after ivy
+  :bind ("M-x" . counsel-M-x))
+
+(use-package swiper
+  :ensure t
+  :after ivy
+  :bind ("C-s" . swiper))
 
 (setq custom-file "~/.emacs.d/custom.el")
