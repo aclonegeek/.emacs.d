@@ -49,7 +49,7 @@
 (load "~/.emacs.d/lang/org/config.el")
 (load "~/.emacs.d/lang/python/config.el")
 (load "~/.emacs.d/lang/latex/config.el")
-;;(load "~/.emacs.d/lang/rust/config.el")
+(load "~/.emacs.d/lang/rust/config.el")
 (use-package markdown-mode
   :ensure t
   :commands (markdown-mode gfm-mode)
@@ -91,7 +91,7 @@
 (use-package projectile
   :ensure t
   :config
-;  (add-hook 'rust-mode-hook 'projectile-mode)
+  (add-hook 'rust-mode-hook 'projectile-mode)
   (add-hook 'python-mode-hook 'projectile-mode))
 
 (use-package flx
