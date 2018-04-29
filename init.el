@@ -14,7 +14,8 @@
 (add-hook 'focus-out-hook 'garbage-collect)
 
 ;; Backups
-(setq backup-directory-alist `(("." . "~/.emacs.d/backups"))
+(setq backup-directory-alist `(("." . "~/.emacs.d/backups/"))
+      auto-save-file-name-transforms `(("." "~/.emacs.d/backups/" t))
       make-backup-files t
       backup-by-copying t
       version-control t
@@ -56,7 +57,6 @@
          ("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "multimarkdown"))
-(add-to-list 'auto-mode-alist '("\\.pl\\'" . prolog-mode))
 
 (use-package company
   :ensure t
