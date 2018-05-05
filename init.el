@@ -1,6 +1,6 @@
 ;; -*- lexical-binding: t; -*-
 
-;;; Speedier Startup ;;;
+;; Speedier Startup
 (defvar file-name-handler-alist-old file-name-handler-alist)
 (setq package-enable-at-startup nil
       file-name-handler-alist   nil
@@ -12,20 +12,6 @@
                                    gc-cons-threshold 800000
                                    gc-cons-percentage 0.1)))
 (add-hook 'focus-out-hook 'garbage-collect)
-
-;; Backups
-(setq backup-directory-alist `(("." . "~/.emacs.d/backups/"))
-      auto-save-file-name-transforms `(("." "~/.emacs.d/backups/" t))
-      make-backup-files t
-      backup-by-copying t
-      version-control t
-      delete-old-versions t
-      delete-by-moving-to-trash t
-      kept-old-versions 6
-      kept-new-versions 9
-      auto-save-default t
-      auto-save-timeout 30
-      auto-save-interval 500)
 
 (require 'package)
 (add-to-list 'package-archives
@@ -41,22 +27,21 @@
 (eval-when-compile
   (require 'use-package))
 
-(load "~/.emacs.d/cfg/keybinds.el")
-(load "~/.emacs.d/cfg/settings.el")
-(load "~/.emacs.d/cfg/util.el")
-(load "~/.emacs.d/ui/ui.el")
-;; Load lang configs
-(load "~/.emacs.d/lang/org/config.el")
-(load "~/.emacs.d/lang/python/config.el")
-(load "~/.emacs.d/lang/latex/config.el")
-(load "~/.emacs.d/lang/rust/config.el")
-(use-package markdown-mode
-  :ensure t
-  :commands (markdown-mode gfm-mode)
-  :mode (("README\\.md\\'" . gfm-mode)
-         ("\\.md\\'" . markdown-mode)
-         ("\\.markdown\\'" . markdown-mode))
-  :init (setq markdown-command "multimarkdown"))
+;; Core
+(add-to-list 'load-path "~/.emacs.d/core/")
+(use-package core-keybinds)
+(use-package core-settings)
+(use-package core-util)
+(use-package core-ui)
+
+;; Languages
+(add-to-list 'load-path "~/.emacs.d/lang/")
+(use-package lang-c)
+(use-package lang-org)
+(use-package lang-python)
+(use-package lang-latex)
+(use-package lang-markdown)
+(use-package lang-rust)
 
 (use-package company
   :ensure t

@@ -73,4 +73,4 @@
   (interactive)
   (find-file "~/.emacs.d/init.el"))
 
-(provide 'util)
+(provide 'core-util)

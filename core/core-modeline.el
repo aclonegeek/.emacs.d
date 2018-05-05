@@ -48,4 +48,4 @@
          (setq output (concat ".../" output)))
        output))
 
-(provide 'modeline)
+(provide 'core-modeline)

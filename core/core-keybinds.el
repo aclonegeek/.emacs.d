@@ -27,4 +27,4 @@
 (global-set-key (kbd "C-;") 'ff-find-other-file)
 (global-set-key (kbd "C-'") 'find-other-file-other-window)
 
-(provide 'keybinds)
+(provide 'core-keybinds)

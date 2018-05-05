@@ -18,4 +18,4 @@
   :config
   (add-to-list 'company-backends 'company-math-symbols-latex))
 
-(provide 'config)
+(provide 'lang-latex)

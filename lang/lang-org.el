@@ -12,4 +12,4 @@
   :ensure t
   :bind ("C-c o p" . org-preview-html-mode))
 
-(provide 'config)
+(provide 'lang-org)

@@ -28,3 +28,5 @@
   :after racer
   :config
   (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
+
+(provide 'lang-rust)
