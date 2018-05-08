@@ -1,7 +1,8 @@
 ;; -*- lexical-binding: t; -*-
 
 (setq-default python-indent-offset 4
-              python-indent-guess-indent-offset nil)
+              python-indent-guess-indent-offset nil
+              flycheck-flake8rc "C:/Users/Randy/.flake8")
 
 (use-package elpy
   :ensure t
