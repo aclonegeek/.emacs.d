@@ -5,12 +5,11 @@
   :bind (("C-\\"    . flycheck-list-errors)
          ("C-x n e" . flycheck-next-error)
          ("C-x p e" . flycheck-previous-error))
-  :commands flycheck-mode
-  :init
+  :hook ((emacs-lisp-mode . flycheck-mode)
+         (python-mode     . flycheck-mode))
+  :config
   (setq-default flycheck-checker-error-threshold 400
-                ;; TODO(randy): Make this cross-platform.
-                flycheck-pylintrc "C:/Users/Randy/.pylintrc"
-                flycheck-disabled-checkers '(emacs-lisp-checkdoc))
-  :config (global-flycheck-mode))
+                flycheck-disabled-checkers '(emacs-lisp-checkdoc)
+                flycheck-check-syntax-automatically '(save mode-enabled)))
 
 (provide 'vega-flycheck)
