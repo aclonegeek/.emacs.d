@@ -12,17 +12,17 @@
 
 ;; Font
 (set-face-attribute 'default nil
-		    :family "Noto Sans Mono"
-		    :height 110)
+                    :family "Noto Mono"
+                    :height 110)
 
-;; Colour text if it passes the max column length
-(defvar whitespace-line-column)
-(defvar whitespace-style)
 (use-package whitespace
-  :init
-  (setq whitespace-line-column 100
-        whitespace-style '(face lines-tail))
-  (add-hook 'prog-mode-hook 'whitespace-mode))
+  :ensure t
+  :hook ((prog-mode . whitespace-mode)
+         (text-mode . whitespace-mode))
+  :config
+  (setq-default whitespace-line-column 100
+                ;; Colour text if it passes the max column length.
+                whitespace-style '(face lines-tail)))
 
 ;; Theme
 (use-package base16-theme
