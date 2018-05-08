@@ -4,6 +4,7 @@
 # Package related
 /auto-save-list
 /elpa
+/eshell
 /server
 .mc-lists.el
 *.cache
