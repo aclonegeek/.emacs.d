@@ -2,9 +2,14 @@
 
 (use-package projectile
   :ensure t
+  :defer 1
+  :hook ((python-mode . projectile-mode)
+         (rust-mode   . projectile-mode))
   :config
-  (add-hook 'rust-mode-hook 'projectile-mode)
-  (add-hook 'python-mode-hook 'projectile-mode))
+  (setq projectile-enable-caching t
+        ;; External indexing for Windows.
+        projectile-indexing-method 'alien
+        projectile-completion-system 'ivy))
 
 (use-package counsel-projectile
   :ensure t
