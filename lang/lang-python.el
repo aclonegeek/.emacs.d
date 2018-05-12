@@ -10,6 +10,7 @@
   :config
   (elpy-enable)
   (setq elpy-rpc-backend "jedi")
-  (remove-hook 'elpy-modules 'elpy-module-flymake))
+  (remove-hook 'elpy-modules 'elpy-module-flymake)
+  (remove-hook 'elpy-modules 'elpy-module-highlight-indentation))
 
 (provide 'lang-python)
