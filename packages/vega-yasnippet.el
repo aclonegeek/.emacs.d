@@ -2,7 +2,10 @@
 
 (use-package yasnippet
   :ensure t
+  :defer t
+  :commands yas-minor-mode
+  :hook (prog-mode . yas-minor-mode)
   :config
-  (yas-global-mode))
+  (yas-reload-all))
 
 (provide 'vega-yasnippet)
