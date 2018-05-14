@@ -2,6 +2,7 @@
 
 (use-package flycheck
   :ensure t
+  :defer t
   :bind (("C-\\"    . flycheck-list-errors)
          ("C-x n e" . flycheck-next-error)
          ("C-x p e" . flycheck-previous-error))
