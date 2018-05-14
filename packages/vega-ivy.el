@@ -14,7 +14,9 @@
 (use-package counsel
   :ensure t
   :after ivy
-  :bind ("M-x" . counsel-M-x))
+  :bind ("M-x" . counsel-M-x)
+  :config
+  (setq counsel-find-file-ignore-regexp "^\\.\\|~$\\|^#\\|\\.elc\\|\\.pyc\\|__pycache__"))
 
 (use-package swiper
   :ensure t
