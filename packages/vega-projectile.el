@@ -2,9 +2,10 @@
 
 (use-package projectile
   :ensure t
-  :defer 1
-  :hook ((python-mode . projectile-mode)
-         (rust-mode   . projectile-mode))
+  :defer t
+  :hook ((emacs-lisp-mode . projectile-mode)
+         (python-mode     . projectile-mode)
+         (rust-mode       . projectile-mode))
   :config
   (setq projectile-enable-caching t
         ;; External indexing for Windows.

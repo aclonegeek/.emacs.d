@@ -2,6 +2,7 @@
 
 (use-package rust-mode
   :ensure t
+  :defer t
   :commands rust-mode
   :mode "\\.rs\\'"
   :config
