@@ -21,11 +21,12 @@
 
 ;; Font
 (set-face-attribute 'default nil
-                    :family "Noto Mono"
-                    :height 110)
+                    :family "Iosevka"
+                    :height 120)
 
 (use-package whitespace
   :ensure t
+  :defer t
   :hook ((prog-mode . whitespace-mode)
          (text-mode . whitespace-mode))
   :config
