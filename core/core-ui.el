@@ -37,7 +37,7 @@
 ;; Theme
 (use-package base16-theme
   :ensure t
-  :init (load-theme 'base16-atelier-dune t))
+  :config (load-theme 'base16-atelier-dune t))
 
 ;; Modeline
 (use-package core-modeline
