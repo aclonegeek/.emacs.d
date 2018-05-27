@@ -1,9 +1,8 @@
 ;; -*- lexical-binding: t; -*-
 
-;; Speedier Startup
+;; Speedier startup.
 (defvar file-name-handler-alist-old file-name-handler-alist)
-(setq package-enable-at-startup nil
-      file-name-handler-alist   nil
+(setq file-name-handler-alist   nil
       gc-cons-threshold         402653184
       gc-cons-percentage        0.6)
 
@@ -13,19 +12,38 @@
                                    gc-cons-percentage 0.1)))
 (add-hook 'focus-out-hook 'garbage-collect)
 
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/"))
-(package-initialize)
+;; Avoid calling package.el.
+(eval-and-compile
+  (setq load-prefer-newer t
+        package-user-dir "~/.emacs.d/elpa"
+        package--init-file-ensured t
+        package-enable-at-startup nil)
 
-;; Ensure use-package is installed
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
+  (unless (file-directory-p package-user-dir)
+    (make-directory package-user-dir t)))
 
-;; use-package
+;; Manually set load path.
+(eval-and-compile
+  (setq load-path (append load-path (directory-files package-user-dir t "^[^.]" t))))
+
 (eval-when-compile
+  (require 'package)
+
+  (unless (assoc-default "melpa" package-archives)
+    (add-to-list 'package-archives
+                 '("melpa" . "http://melpa.org/packages/") t))
+
+  (package-initialize)
+  ;; Ensure use-package is installed.
+  (unless (package-installed-p 'use-package)
+    (package-refresh-contents)
+    (package-install 'use-package))
   (require 'use-package))
+
+(use-package benchmark-init
+  :ensure t
+  :config
+  (add-hook 'after-init-hook 'benchmark-init/deactivate))
 
 (use-package core
   :load-path "~/.emacs.d/core/")
