@@ -1,3 +1,0 @@
-#+TITLE: Emacs Todo
-#+AUTHOR: Randy Taylor
-
