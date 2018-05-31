@@ -2,8 +2,8 @@
 
 (use-package ivy
   :ensure t
+  :hook (after-init . ivy-mode)
   :config
-  (ivy-mode t)
   (setq ivy-use-virtual-buffers t
         ivy-count-format "(%d/%d) "
         ivy-re-builders-alist
@@ -14,7 +14,9 @@
 (use-package counsel
   :ensure t
   :after ivy
-  :bind ("M-x" . counsel-M-x)
+  :bind (("M-x"     . counsel-M-x)
+         ("C-x C-f" . counsel-find-file)
+         ("C-x C-r" . counsel-recentf))
   :config
   (setq counsel-find-file-ignore-regexp "^\\.\\|~$\\|^#\\|\\.elc\\|\\.pyc\\|__pycache__"))
 
