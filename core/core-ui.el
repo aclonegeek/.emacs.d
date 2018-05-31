@@ -24,16 +24,6 @@
                     :family "Iosevka"
                     :height 120)
 
-(use-package whitespace
-  :ensure t
-  :defer t
-  :hook ((prog-mode . whitespace-mode)
-         (text-mode . whitespace-mode))
-  :config
-  (setq-default whitespace-line-column 100
-                ;; Colour text if it passes the max column length.
-                whitespace-style '(face lines-tail)))
-
 ;; Theme
 (use-package base16-theme
   :ensure t
