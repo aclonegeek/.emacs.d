@@ -6,7 +6,8 @@
   :commands company-mode
   :config
   (setq company-idle-delay 0.1
-        company-minimum-prefix-length 1)
+        company-minimum-prefix-length 1
+        company-tooltip-limit 20)
   (global-company-mode 1))
 
 (provide 'vega-company)
