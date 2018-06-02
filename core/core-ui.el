@@ -25,9 +25,9 @@
                     :height 120)
 
 ;; Theme
-(use-package base16-theme
+(use-package challenger-deep-theme
   :ensure t
-  :config (load-theme 'base16-atelier-dune t))
+  :config (load-theme 'challenger-deep t))
 
 ;; Modeline
 (use-package core-modeline
