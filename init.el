@@ -47,11 +47,28 @@
   :config
   (add-hook 'after-init-hook 'benchmark-init/deactivate))
 
-(use-package core
-  :load-path "~/.emacs.d/core/")
-(use-package lang
-  :load-path "~/.emacs.d/lang/")
-(use-package packages
-  :load-path "~/.emacs.d/packages/")
+(add-to-list 'load-path "~/.emacs.d/lisp")
+
+;; Core.
+(require 'core-keybinds)
+(require 'core-settings)
+(require 'core-ui)
+
+;; Lang.
+(require 'lang-c)
+(require 'lang-latex)
+(require 'lang-markdown)
+(require 'lang-org)
+(require 'lang-python)
+(require 'lang-rust)
+
+;; Packages.
+(require 'vega-company)
+(require 'vega-flx)
+(require 'vega-flycheck)
+(require 'vega-ivy)
+(require 'vega-multiple-cursors)
+(require 'vega-projectile)
+(require 'vega-yasnippet)
 
 (setq custom-file "~/.emacs.d/custom.el")

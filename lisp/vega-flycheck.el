@@ -2,10 +2,9 @@
 
 (use-package flycheck
   :ensure t
-  :defer t
-  :bind (("C-\\"    . flycheck-list-errors)
-         ("C-x n e" . flycheck-next-error)
-         ("C-x p e" . flycheck-previous-error))
+  :bind (("C-\\" . flycheck-list-errors)
+         ("M-["  . flycheck-previous-error)
+         ("M-]"  . flycheck-next-error))
   :hook ((emacs-lisp-mode . flycheck-mode)
          (python-mode     . flycheck-mode)
          (rust-mode       . flycheck-mode))

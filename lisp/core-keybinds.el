@@ -1,5 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
+(require 'core-util)
+
 (global-set-key [f1] 'shell)
 (global-set-key [f2] 'shell-command)
 
