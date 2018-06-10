@@ -25,9 +25,9 @@
                     :height 120)
 
 ;; Theme
-(use-package challenger-deep-theme
+(use-package solarized-theme
   :ensure t
-  :config (load-theme 'challenger-deep t))
+  :config (load-theme 'solarized-dark t))
 
 ;; Modeline
 (use-package core-modeline
