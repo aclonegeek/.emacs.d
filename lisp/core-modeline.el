@@ -26,9 +26,6 @@
         " "
         "%p"))
 
-; Set a darker background for the mode-line
-(set-face-attribute 'mode-line nil :background "#2D2B28")
-
 (defvar mode-line-directory
   '(:propertize
     (:eval (if (buffer-file-name) (concat " " (shorten-directory default-directory 20)) " ")))
