@@ -25,9 +25,9 @@
                     :height 120)
 
 ;; Theme
-(use-package solarized-theme
+(use-package doom-themes
   :ensure t
-  :config (load-theme 'solarized-dark t))
+  :config (load-theme 'doom-peacock t))
 
 ;; Modeline
 (use-package core-modeline
