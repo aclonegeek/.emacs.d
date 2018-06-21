@@ -25,9 +25,9 @@
                     :height 120)
 
 ;; Theme
-(use-package doom-themes
+(use-package tao-theme
   :ensure t
-  :config (load-theme 'doom-peacock t))
+  :config (load-theme 'tao-yin t))
 
 ;; Modeline
 (use-package core-modeline
