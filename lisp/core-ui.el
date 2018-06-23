@@ -25,9 +25,12 @@
                     :height 120)
 
 ;; Theme
-(use-package tao-theme
+(use-package klere-theme
   :ensure t
-  :config (load-theme 'tao-yin t))
+  :config
+  (load-theme 'klere t)
+  ;; Set cursor colour to white.
+  (set-cursor-color "#ffffff"))
 
 ;; Modeline
 (use-package core-modeline
