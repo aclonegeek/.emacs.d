@@ -25,12 +25,10 @@
                     :height 120)
 
 ;; Theme
-(use-package klere-theme
+(use-package srcery-theme
   :ensure t
   :config
-  (load-theme 'klere t)
-  ;; Set cursor colour to white.
-  (set-cursor-color "#ffffff"))
+  (load-theme 'srcery t))
 
 ;; Modeline
 (use-package core-modeline
