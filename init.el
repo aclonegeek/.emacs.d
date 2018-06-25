@@ -2,9 +2,9 @@
 
 ;; Speedier startup.
 (defvar file-name-handler-alist-old file-name-handler-alist)
-(setq file-name-handler-alist   nil
-      gc-cons-threshold         402653184
-      gc-cons-percentage        0.6)
+(setq file-name-handler-alist nil
+      gc-cons-threshold       402653184
+      gc-cons-percentage      0.6)
 
 (add-hook 'after-init-hook (lambda ()
                              (setq file-name-handler-alist file-name-handler-alist-old
@@ -55,6 +55,7 @@
 (require 'core-ui)
 
 ;; Lang.
+(require 'lang-lsp)
 (require 'lang-c)
 (require 'lang-latex)
 (require 'lang-markdown)
