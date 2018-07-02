@@ -1,9 +1,10 @@
 ;; -*- lexical-binding: t; -*-
 
 ;; Disable GUI elements
-(menu-bar-mode -1)
-(tool-bar-mode -1)
+(menu-bar-mode   -1)
 (scroll-bar-mode -1)
+(tool-bar-mode   -1)
+(tooltip-mode    -1)
 
 (blink-cursor-mode 0)            ;; Disable blinking
 (set-default 'cursor-type 'box)  ;; Fat cursor
@@ -25,10 +26,10 @@
                     :height 120)
 
 ;; Theme
-(use-package srcery-theme
+(use-package madhat2r-theme
   :ensure t
   :config
-  (load-theme 'srcery t))
+  (load-theme 'madhat2r t))
 
 ;; Modeline
 (use-package core-modeline
