@@ -26,10 +26,11 @@
                     :height 120)
 
 ;; Theme
-(use-package madhat2r-theme
+(use-package base16-theme
   :ensure t
   :config
-  (load-theme 'madhat2r t))
+  (load-theme 'base16-atelier-dune t)
+  (set-face-attribute 'mode-line nil :background "#2D2B28"))
 
 ;; Modeline
 (use-package core-modeline
