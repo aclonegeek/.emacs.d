@@ -23,7 +23,10 @@
  indent-tabs-mode nil
  tab-width 4
  tab-stop-list (quote (4 8))
- tab-always-indent 'complete)
+ tab-always-indent 'complete
+ ;; Split windows vertically by default.
+ split-width-threshold 0
+ split-height-threshold nil)
 
 ;; http://bling.github.io/blog/2016/01/18/why-are-you-changing-gc-cons-threshold/
 (defun my-minibuffer-setup-hook ()

@@ -3,9 +3,11 @@
 (use-package ivy
   :ensure t
   :hook (after-init . ivy-mode)
+  :bind ("C-x 4 b" . ivy-switch-buffer-other-window)
   :config
   (setq ivy-use-virtual-buffers t
         ivy-count-format "(%d/%d) "
+        ivy-display-style 'fancy
         ivy-re-builders-alist
         '((swiper . ivy--regex-plus)
           (t      . ivy--regex-fuzzy))
@@ -23,6 +25,7 @@
 (use-package swiper
   :ensure t
   :after ivy
-  :bind ("C-s" . swiper))
+  :bind (("C-s" . swiper)
+         ("C-r" . swiper)))
 
 (provide 'vega-ivy)
