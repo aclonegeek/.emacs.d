@@ -6,6 +6,8 @@
   :hook ((emacs-lisp-mode . projectile-mode)
          (python-mode     . projectile-mode)
          (rust-mode       . projectile-mode))
+  :init
+  (setq projectile-keymap-prefix (kbd "C-c p"))
   :config
   (setq projectile-enable-caching t
         ;; External indexing for Windows.
