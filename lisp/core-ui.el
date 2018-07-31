@@ -29,7 +29,7 @@
 (use-package base16-theme
   :ensure t
   :config
-  (load-theme 'base16-atelier-dune t)
+  (load-theme 'base16-spacemacs t)
   (set-face-attribute 'mode-line nil :background "#2D2B28"))
 
 ;; Modeline
