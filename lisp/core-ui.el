@@ -31,23 +31,33 @@
   :config
   (load-theme 'doom-one t))
 
-;; https://gist.github.com/huytd/6b785bdaeb595401d69adc7797e5c22c
-(custom-set-faces
- '(default ((t (:inherit nil :stipple nil :background "#212121" :foreground "#eeffff" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "nil" :family "Iosevka"))))
- '(font-lock-constant-face ((t (:foreground "#C792EA"))))
- '(font-lock-keyword-face ((t (:foreground "#2BA3FF" :slant italic))))
- '(font-lock-preprocessor-face ((t (:inherit bold :foreground "#2BA3FF" :slant italic :weight normal))))
- '(font-lock-string-face ((t (:foreground "#C3E88D"))))
- '(font-lock-type-face ((t (:foreground "#FFCB6B"))))
- '(font-lock-variable-name-face ((t (:foreground "#FF5370"))))
- '(mode-line ((t (:background "#191919" :box nil))))
- '(mode-line-inactive ((t (:background "#282828" :foreground "#5B6268" :box nil))))
- '(term ((t (:foreground "#fafafa")))))
-
 ;; Modeline
 (use-package core-modeline
   :config
   (setq line-number-mode 1
         column-number-mode 1))
+
+;; https://gist.github.com/huytd/6b785bdaeb595401d69adc7797e5c22c
+(custom-set-faces
+ '(default ((t (:inherit nil :stipple nil :background "#212121" :foreground "#eeffff" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "nil" :family "Iosevka"))))
+
+ ;; font-lock.
+ '(font-lock-constant-face      ((t (:foreground "#C792EA"))))
+ '(font-lock-keyword-face       ((t (:foreground "#2BA3FF" :slant italic))))
+ '(font-lock-preprocessor-face  ((t (:inherit bold :foreground "#2BA3FF" :slant italic :weight normal))))
+ '(font-lock-string-face        ((t (:foreground "#8EEF00"))))
+ '(font-lock-type-face          ((t (:foreground "#FFCB6B"))))
+ '(font-lock-variable-name-face ((t (:foreground "#FF5370"))))
+
+ ;; mode-line.
+ '(mode-line          ((t (:background "#191919" :box nil))))
+ '(mode-line-inactive ((t (:background "#282828" :foreground "#5B6268" :box nil))))
+
+ ;; ivy-mode.
+ '(ivy-current-match           ((t (:foreground "#FFFFFF" :background "#2BA3FF"))))
+ '(ivy-minibuffer-match-face-2 ((t (:foreground "#6B9FFF"))))
+ '(ivy-minibuffer-match-face-3 ((t (:foreground "#FF5370"))))
+ '(ivy-minibuffer-match-face-4 ((t (:foreground "#8EEF00"))))
+ )
 
 (provide 'core-ui)
