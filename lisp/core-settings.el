@@ -2,7 +2,7 @@
 
 ;; Set default-directory on Windows.
 (if (eq system-type 'windows-nt)
-    (setq default-directory (getenv "UserProfile")))
+    (setq default-directory (expand-file-name (getenv "UserProfile"))))
 
 (setq inhibit-startup-screen t
       initial-scratch-message "")
