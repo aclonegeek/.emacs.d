@@ -6,14 +6,8 @@
               ;; TODO: Make this crossplatform.
               flycheck-flake8rc "C:/Users/Randy/.flake8")
 
-(use-package elpy
+(use-package lsp-python
   :ensure t
-  :defer 2
-  :config
-  (elpy-enable)
-  (setq elpy-rpc-python-command "python3")
-  (setq elpy-rpc-backend "jedi")
-  (remove-hook 'elpy-modules 'elpy-module-flymake)
-  (remove-hook 'elpy-modules 'elpy-module-highlight-indentation))
+  :hook (python-mode . lsp-python-enable))
 
 (provide 'lang-python)
