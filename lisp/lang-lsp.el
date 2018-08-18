@@ -5,12 +5,10 @@
   :defer t)
 
 (use-package lsp-imenu
-  :after lsp-mode
   :hook (lsp-after-open . lsp-enable-imenu))
 
 (use-package lsp-ui
   :ensure t
-  :after lsp-mode
   :hook (lsp-mode . lsp-ui-mode))
 
 (use-package company-lsp
