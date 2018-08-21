@@ -28,6 +28,8 @@
  split-width-threshold 0
  split-height-threshold nil)
 
+(electric-pair-mode 1)
+
 ;; http://bling.github.io/blog/2016/01/18/why-are-you-changing-gc-cons-threshold/
 (defun my-minibuffer-setup-hook ()
   (setq gc-cons-threshold most-positive-fixnum))
