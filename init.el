@@ -42,11 +42,6 @@
     (package-install 'use-package))
   (require 'use-package))
 
-(use-package benchmark-init
-  :ensure t
-  :config
-  (add-hook 'after-init-hook 'benchmark-init/deactivate))
-
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
 ;; Core.
@@ -57,6 +52,7 @@
 ;; Lang.
 (require 'lang-lsp)
 (require 'lang-c)
+(require 'lang-java)
 (require 'lang-latex)
 (require 'lang-markdown)
 (require 'lang-org)

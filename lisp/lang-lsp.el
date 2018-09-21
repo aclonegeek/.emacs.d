@@ -15,6 +15,9 @@
   :ensure t
   :after (company lsp-mode)
   :config
-  (push 'company-lsp company-backends))
+  (push 'company-lsp company-backends)
+
+  (setq company-lsp-cache-candidates t
+        company-lsp-enable-snippet   t))
 
 (provide 'lang-lsp)
