@@ -64,6 +64,7 @@
 (require 'vega-flx)
 (require 'vega-flycheck)
 (require 'vega-ivy)
+(require 'vega-magit)
 (require 'vega-multiple-cursors)
 (require 'vega-projectile)
 (require 'vega-yasnippet)

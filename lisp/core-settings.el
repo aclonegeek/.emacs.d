@@ -25,8 +25,9 @@
  tab-stop-list (quote (4 8))
  tab-always-indent 'complete
  ;; Split windows vertically by default.
- split-width-threshold 0
- split-height-threshold nil)
+ ;; split-width-threshold 0
+ ;; split-height-threshold nil
+ )
 
 (electric-pair-mode 1)
 
