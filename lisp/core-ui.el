@@ -54,7 +54,7 @@
  '(mode-line-inactive ((t (:background "#282828" :foreground "#5B6268" :box nil))))
 
  ;; ivy-mode.
- '(ivy-current-match           ((t (:foreground "#FFFFFF" :background "#2BA3FF"))))
+ '(ivy-current-match           ((t (:foreground "#FFFFFF" :background "#007dde"))))
  '(ivy-minibuffer-match-face-2 ((t (:foreground "#6B9FFF"))))
  '(ivy-minibuffer-match-face-3 ((t (:foreground "#FF5370"))))
  '(ivy-minibuffer-match-face-4 ((t (:foreground "#8EEF00"))))
