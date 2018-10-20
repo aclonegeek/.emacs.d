@@ -63,6 +63,7 @@
 (require 'vega-company)
 (require 'vega-flx)
 (require 'vega-flycheck)
+(require 'vega-flyspell)
 (require 'vega-ivy)
 (require 'vega-magit)
 (require 'vega-multiple-cursors)
