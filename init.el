@@ -24,7 +24,8 @@
 
 ;; Manually set load path.
 (eval-and-compile
-  (setq load-path (append load-path (directory-files package-user-dir t "^[^.]" t))))
+  (setq load-path (append load-path (directory-files package-user-dir t "^[^.]" t)))
+  (add-to-list 'load-path "~/.emacs.d/lisp"))
 
 (eval-when-compile
   (require 'package)
@@ -41,8 +42,6 @@
     (package-refresh-contents)
     (package-install 'use-package))
   (require 'use-package))
-
-(add-to-list 'load-path "~/.emacs.d/lisp")
 
 ;; Core.
 (require 'core-keybinds)
