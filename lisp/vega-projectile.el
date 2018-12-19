@@ -3,9 +3,8 @@
 (use-package projectile
   :ensure t
   :defer t
+  :bind-keymap ("C-c p" . projectile-command-map)
   :hook (prog-mode . projectile-mode)
-  :init
-  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   :config
   (setq projectile-enable-caching t
         projectile-indexing-method 'alien
