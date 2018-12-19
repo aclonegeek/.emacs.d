@@ -2,14 +2,18 @@
 
 (use-package lsp-mode
   :ensure t
-  :defer t)
+  :defer t
+  :commands lsp
+  :config
+  (require 'lsp-clients))
 
 (use-package lsp-imenu
   :hook (lsp-after-open . lsp-enable-imenu))
 
 (use-package lsp-ui
   :ensure t
-  :hook (lsp-mode . lsp-ui-mode))
+  :after lsp-mode
+  :hook (lsp . lsp-ui-mode))
 
 (use-package company-lsp
   :ensure t

@@ -6,8 +6,4 @@
               ;; TODO: Make this crossplatform.
               flycheck-flake8rc "C:/Users/Randy/.flake8")
 
-(use-package lsp-python
-  :ensure t
-  :hook (python-mode . lsp-python-enable))
-
 (provide 'lang-python)
