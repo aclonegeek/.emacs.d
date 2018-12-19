@@ -47,6 +47,7 @@
 (require 'core-keybinds)
 (require 'core-settings)
 (require 'core-ui)
+(require 'core-util)
 
 ;; Lang.
 (require 'lang-lsp)

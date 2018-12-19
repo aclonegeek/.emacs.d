@@ -1,19 +1,13 @@
 ;; -*- lexical-binding: t; -*-
 
-(require 'core-util)
-
 (global-set-key [f1] 'shell)
 (global-set-key [f2] 'shell-command)
-
-;; Auto align
-(global-set-key (kbd "C-c C-a") 'align)
-(global-set-key (kbd "C-c a") 'align-regexp)
-
 ;; Mirror most popular text editor's C-backspace functionality (for the most part)
 (global-set-key [C-backspace] 'backward-kill-word)
-
-;; goto-line
 (global-set-key [C-tab] 'goto-line)
+
+(global-set-key (kbd "C-c C-a") 'align)
+(global-set-key (kbd "C-c a") 'align-regexp)
 
 (global-set-key (kbd "<C-backspace>") 'backward-delete-word)
 (global-set-key (kbd "M-d") 'delete-word)
