@@ -3,14 +3,11 @@
 (use-package projectile
   :ensure t
   :defer t
-  :hook ((emacs-lisp-mode . projectile-mode)
-         (python-mode     . projectile-mode)
-         (rust-mode       . projectile-mode))
+  :hook (prog-mode . projectile-mode)
   :init
-  (setq projectile-keymap-prefix (kbd "C-c p"))
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   :config
   (setq projectile-enable-caching t
-        ;; External indexing for Windows.
         projectile-indexing-method 'alien
         projectile-completion-system 'ivy))
 
