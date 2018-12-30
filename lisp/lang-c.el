@@ -5,7 +5,7 @@
 (use-package ccls
   :ensure t
   :defer t
-  :hook ((c-mode   . (lambda () (require 'ccls)(lsp)))
-         (c++-mode . (lambda () (require 'ccls)(lsp)))))
+  :bind ("C-c c" . compile)
+  :hook ((c-mode c++-mode) . (lambda () (require 'ccls)(lsp))))
 
 (provide 'lang-c)
