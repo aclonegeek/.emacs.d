@@ -55,6 +55,7 @@
 (require 'lang-java)
 (require 'lang-latex)
 (require 'lang-markdown)
+(require 'lang-meson)
 (require 'lang-org)
 (require 'lang-python)
 (require 'lang-rust)
