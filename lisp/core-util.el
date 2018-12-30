@@ -1,12 +1,5 @@
 ;; -*- lexical-binding: t; -*-
 
-(defun iwb ()
-  "Indent whole buffer."
-  (interactive)
-  (delete-trailing-whitespace)
-  (indent-region (point-min) (point-max) nil)
-  (untabify (point-min) (point-max)))
-
 (defun revert-buffer-no-comfirm ()
   "Revert buffer without confirmation."
   (interactive)
@@ -53,15 +46,6 @@
          (t
           (rename-file filename new-name t)
           (set-visited-file-name new-name t t)))))))
-
-(defun find-other-file-other-window ()
-  "Find the corresponding file in another window."
-  (interactive)
-  (if (not (one-window-p))
-      (delete-other-windows))
-  (split-window-right)
-  (other-window 1)
-  (ff-find-other-file))
 
 (defun reload-config()
   "Reload emacs config."
