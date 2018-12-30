@@ -5,7 +5,8 @@
   :defer t
   :commands lsp
   :config
-  (require 'lsp-clients))
+  (require 'lsp-clients)
+  (setq lsp-prefer-flymake nil))
 
 (use-package lsp-imenu
   :hook (lsp-after-open . lsp-enable-imenu))

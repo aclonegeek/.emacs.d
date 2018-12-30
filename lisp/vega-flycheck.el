@@ -5,7 +5,8 @@
   :bind (("C-\\" . flycheck-list-errors)
          ("M-["  . flycheck-previous-error)
          ("M-]"  . flycheck-next-error))
-  :hook ((emacs-lisp-mode . flycheck-mode)
+  :hook (((c-mode c++-mode) . flycheck-mode)
+         (emacs-lisp-mode . flycheck-mode)
          (python-mode     . flycheck-mode)
          (rust-mode       . flycheck-mode))
   :config
