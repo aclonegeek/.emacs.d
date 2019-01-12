@@ -24,10 +24,10 @@
  tab-width 4
  tab-stop-list (quote (4 8))
  tab-always-indent 'complete
- ;; Split windows vertically by default.
- ;; split-width-threshold 0
- ;; split-height-threshold nil
- )
+ ;; Optimizations
+ auto-window-vscroll nil
+ line-move-visual nil
+ inhibit-compacting-font-caches t)
 
 (electric-pair-mode 1)
 
