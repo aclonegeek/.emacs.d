@@ -29,6 +29,7 @@
  line-move-visual nil
  inhibit-compacting-font-caches t)
 
+(delete-selection-mode 1)
 (electric-pair-mode 1)
 
 ;; http://bling.github.io/blog/2016/01/18/why-are-you-changing-gc-cons-threshold/
