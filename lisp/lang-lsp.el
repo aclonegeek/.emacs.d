@@ -2,7 +2,6 @@
 
 (use-package lsp-mode
   :ensure t
-  :defer t
   :commands lsp
   :config
   (require 'lsp-clients)

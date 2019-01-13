@@ -2,7 +2,6 @@
 
 (use-package tex
   :ensure auctex
-  :defer t
   :mode ("\\.tex\\'" . TeX-latex-mode))
 
 (use-package company-auctex

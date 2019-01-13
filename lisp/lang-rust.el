@@ -2,7 +2,6 @@
 
 (use-package rustic
   :ensure t
-  :defer t
   :commands rustic-mode
   :mode "\\.rs\\'"
   :config
@@ -10,7 +9,6 @@
 
 (use-package flycheck-rust
   :ensure t
-  :defer t
   :after (flycheck rustic-mode)
   :hook (flycheck-mode . flycheck-rust-setup))
 
