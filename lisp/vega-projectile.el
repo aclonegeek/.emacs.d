@@ -7,7 +7,8 @@
   :config
   (setq projectile-enable-caching t
         projectile-indexing-method 'alien
-        projectile-completion-system 'ivy))
+        projectile-completion-system 'ivy)
+  (add-to-list 'projectile-globally-ignored-directories ".ccls-cache"))
 
 (use-package counsel-projectile
   :ensure t
