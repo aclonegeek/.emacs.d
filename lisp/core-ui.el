@@ -23,7 +23,7 @@
 ;; Font
 (set-face-attribute 'default nil
                     :family "Iosevka"
-                    :height 120)
+                    :height 110)
 
 ;; Theme
 (use-package doom-themes
