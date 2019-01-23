@@ -13,7 +13,9 @@
 (use-package lsp-ui
   :ensure t
   :after lsp-mode
-  :hook (lsp . lsp-ui-mode))
+  :hook (lsp . lsp-ui-mode)
+  :config
+  (lsp-ui-flycheck-live-reporting nil))
 
 (use-package company-lsp
   :ensure t
