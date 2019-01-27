@@ -52,7 +52,6 @@
 ;; Lang.
 (require 'lang-lsp)
 (require 'lang-c)
-(require 'lang-java)
 (require 'lang-latex)
 (require 'lang-markdown)
 (require 'lang-org)
