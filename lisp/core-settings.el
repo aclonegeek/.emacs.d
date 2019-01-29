@@ -16,18 +16,32 @@
 (setq-default
  ring-bell-function 'ignore
  visible-bell nil
+
  ;; Disable backups and autosaves
  make-backup-files nil
  auto-save-default nil
+
  ;; 4 spaces instead of tabs
  indent-tabs-mode nil
  tab-width 4
  tab-stop-list (quote (4 8))
  tab-always-indent 'complete
+
+ auto-composition-mode nil
+ mouse-wheel-progressive-speed nil
+
  ;; Optimizations
  auto-window-vscroll nil
  line-move-visual nil
- inhibit-compacting-font-caches t)
+ inhibit-compacting-font-caches t
+
+ bidi-display-reordering nil
+ jit-lock-defer-time 0
+ jit-lock-stealth-nice 0.1
+ jit-lock-stealth-time 0.2
+ jit-lock-stealth-verbose nil
+
+ fast-but-imprecise-scrolling t)
 
 (delete-selection-mode 1)
 (electric-pair-mode 1)
