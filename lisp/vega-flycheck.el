@@ -6,9 +6,9 @@
          ("M-["  . flycheck-previous-error)
          ("M-]"  . flycheck-next-error))
   :hook (((c-mode c++-mode) . flycheck-mode)
-         (emacs-lisp-mode . flycheck-mode)
-         (python-mode     . flycheck-mode)
-         (rust-mode       . flycheck-mode))
+         (emacs-lisp-mode   . flycheck-mode)
+         (python-mode       . flycheck-mode)
+         (rust-mode         . flycheck-mode))
   :config
   (setq-default flycheck-checker-error-threshold 400
                 flycheck-disabled-checkers '(emacs-lisp-checkdoc)
