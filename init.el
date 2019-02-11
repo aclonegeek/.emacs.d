@@ -25,7 +25,8 @@
 ;; Manually set load path.
 (eval-and-compile
   (setq load-path (append load-path (directory-files package-user-dir t "^[^.]" t)))
-  (add-to-list 'load-path "~/.emacs.d/lisp"))
+  (add-to-list 'load-path "~/.emacs.d/lisp")
+  (add-to-list 'custom-theme-load-path "~/.emacs.d/themes"))
 
 (eval-when-compile
   (require 'package)
@@ -68,5 +69,9 @@
 (require 'vega-multiple-cursors)
 (require 'vega-projectile)
 (require 'vega-yasnippet)
+
+;; OS.
+(if (eq system-type 'gnu/linux)
+  (require 'os-linux))
 
 (setq custom-file "~/.emacs.d/custom.el")
