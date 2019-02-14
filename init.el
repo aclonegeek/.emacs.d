@@ -61,6 +61,7 @@
 
 ;; Packages.
 (require 'vega-company)
+(require 'vega-deadgrep)
 (require 'vega-flx)
 (require 'vega-flycheck)
 (require 'vega-flyspell)
