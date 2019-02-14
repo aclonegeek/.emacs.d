@@ -15,9 +15,13 @@
   :after lsp-mode
   :bind ([f10] . lsp-ui-sideline-toggle-symbols-info)
   :config
+  (defvar lsp-ui-flycheck-enable)
   (defvar lsp-ui-flycheck-live-reporting)
   (setq lsp-ui-flycheck-live-reporting nil
-        lsp-ui-sideline-show-hover     nil))
+        lsp-ui-sideline-show-hover     nil
+        lsp-ui-flycheck-enable         nil
+
+        lsp-ui-doc-position            'at-point))
 
 (use-package company-lsp
   :ensure t
