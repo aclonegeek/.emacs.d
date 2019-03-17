@@ -53,7 +53,6 @@
 ;; Lang.
 (require 'lang-lsp)
 (require 'lang-c)
-(require 'lang-latex)
 (require 'lang-markdown)
 (require 'lang-org)
 (require 'lang-python)
