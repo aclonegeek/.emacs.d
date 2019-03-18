@@ -20,10 +20,16 @@
                     :height 110)
 
 ;; Theme
-(use-package solarized-theme
+(use-package base16-theme
   :ensure t
   :config
-  (load-theme 'solarized-light t))
+  (load-theme 'base16-atelier-dune t)
+  (set-face-attribute 'mode-line           nil :background "#2D2B28")
+  (set-face-attribute 'region              nil :background "#3F3E36")
+  (set-face-attribute 'secondary-selection nil :background "#3F3E36")
+  (eval-after-load 'company
+    '(progn
+       (set-face-attribute 'company-tooltip-selection nil :background "#292824"))))
 
 ;; Modeline
 (use-package core-modeline
