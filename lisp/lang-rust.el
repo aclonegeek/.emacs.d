@@ -4,7 +4,9 @@
   :ensure t
   :commands rustic-mode
   :config
-  (setq rustic-format-on-save t))
+  (require 'lsp-mode)
+  (setq rustic-format-on-save t
+        rustic-lsp-server     'rust-analyzer))
 
 (use-package flycheck-rust
   :ensure t
