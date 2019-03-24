@@ -47,11 +47,6 @@
           (rename-file filename new-name t)
           (set-visited-file-name new-name t t)))))))
 
-(defun reload-config()
-  "Reload emacs config."
-  (interactive)
-  (load-file "~/.emacs.d/init.el"))
-
 (defun edit-config()
   "Edit emacs config."
   (interactive)
