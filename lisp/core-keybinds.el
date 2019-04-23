@@ -18,6 +18,7 @@
 
 (global-set-key (kbd "C-c r") 'revert-buffer-no-comfirm)
 (global-set-key (kbd "C-c n") 'rename-file-and-buffer)
+(global-set-key (kbd "C-c i") 'imenu)
 
 ;; Open respective .h/.c(c/pp) file
 (global-set-key (kbd "C-;") 'ff-find-other-file)
