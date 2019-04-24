@@ -58,6 +58,7 @@
 (require 'lang-rust)
 
 ;; Packages.
+(require 'vega-ace-window)
 (require 'vega-company)
 (require 'vega-deadgrep)
 (require 'vega-flx)
