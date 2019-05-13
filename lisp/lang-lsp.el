@@ -5,7 +5,8 @@
   :commands lsp
   :config
   (require 'lsp-clients)
-  (setq lsp-prefer-flymake nil))
+  ;; TODO(randy): Only configure this to :none when in python-mode.
+  (setq lsp-prefer-flymake :none))
 
 (use-package lsp-imenu
   :hook (lsp-after-open . lsp-enable-imenu))
@@ -17,9 +18,9 @@
   :config
   (defvar lsp-ui-flycheck-enable)
   (defvar lsp-ui-flycheck-live-reporting)
-  (setq lsp-ui-flycheck-live-reporting nil
-        lsp-ui-sideline-show-hover     nil
-        lsp-ui-flycheck-enable         nil))
+  (setq lsp-ui-doc-mode                nil
+        lsp-ui-flycheck-live-reporting nil
+        lsp-ui-sideline-show-hover     nil))
 
 (use-package company-lsp
   :ensure t

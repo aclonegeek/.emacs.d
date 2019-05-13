@@ -3,7 +3,12 @@
 (setq-default python-shell-interpreter "python3"
               python-indent-offset 4
               python-indent-guess-indent-offset nil
-              ;; TODO: Make this crossplatform.
-              flycheck-flake8rc "C:/Users/Randy/.flake8")
+              ;; TODO(randy): Make this crossplatform.
+              flycheck-pylintrc "~/.flake8"
+              flycheck-pylintrc "~/.pylintrc")
+
+(use-package lsp-python-ms
+  :ensure t
+  :hook (python-mode . lsp))
 
 (provide 'lang-python)
