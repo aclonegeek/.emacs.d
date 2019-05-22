@@ -4,7 +4,8 @@
 (defvar file-name-handler-alist-old file-name-handler-alist)
 (setq file-name-handler-alist nil
       gc-cons-threshold       402653184
-      gc-cons-percentage      0.6)
+      gc-cons-percentage      0.6
+      site-run-file           nil)
 
 (add-hook 'after-init-hook (lambda ()
                              (setq file-name-handler-alist file-name-handler-alist-old
