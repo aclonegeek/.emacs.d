@@ -47,9 +47,9 @@
           (rename-file filename new-name t)
           (set-visited-file-name new-name t t)))))))
 
-(defun edit-config()
-  "Edit emacs config."
+(defun open-config()
+  "Open Emacs config."
   (interactive)
-  (find-file "~/.emacs.d/init.el"))
+  (find-file (concat user-emacs-directory "init.el")))
 
 (provide 'core-util)
