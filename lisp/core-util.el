@@ -13,12 +13,19 @@
   (yank)
   (forward-line -1))
 
-(defun select-word ()
-  "Select the current word."
+(defun select-word-backward ()
+  "Select the word before the cursor."
   (interactive)
   (backward-word)
   (set-mark (point))
   (forward-word))
+
+(defun select-word-forward ()
+  "Select the word after the cursor."
+  (interactive)
+  (forward-word)
+  (set-mark (point))
+  (backward-word))
 
 (defun delete-word (arg)
   "Delete characters forward until encountering the end of a word."
