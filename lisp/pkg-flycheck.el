@@ -12,4 +12,4 @@
                 flycheck-disabled-checkers '(emacs-lisp-checkdoc)
                 flycheck-check-syntax-automatically '(save mode-enabled)))
 
-(provide 'vega-flycheck)
+(provide 'pkg-flycheck)

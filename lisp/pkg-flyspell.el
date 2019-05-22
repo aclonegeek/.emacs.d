@@ -7,4 +7,4 @@
   (setq ispell-program-name "aspell"
         ispell-dictionary   "english"))
 
-(provide 'vega-flyspell)
+(provide 'pkg-flyspell)

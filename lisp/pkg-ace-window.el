@@ -5,4 +5,4 @@
   :commands ace-window
   :bind ("M-o" . ace-window))
 
-(provide 'vega-ace-window)
+(provide 'pkg-ace-window)

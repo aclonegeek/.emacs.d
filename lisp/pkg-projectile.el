@@ -17,4 +17,4 @@
   :config
   (counsel-projectile-mode))
 
-(provide 'vega-projectile)
+(provide 'pkg-projectile)

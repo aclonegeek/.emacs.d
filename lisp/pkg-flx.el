@@ -4,4 +4,4 @@
   :ensure t
   :defer t)
 
-(provide 'vega-flx)
+(provide 'pkg-flx)

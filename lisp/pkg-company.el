@@ -12,4 +12,4 @@
         company-tooltip-limit 10
         company-show-numbers t))
 
-(provide 'vega-company)
+(provide 'pkg-company)

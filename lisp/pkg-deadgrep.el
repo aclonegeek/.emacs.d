@@ -4,4 +4,4 @@
   :ensure t
   :bind ([f5] . deadgrep))
 
-(provide 'vega-deadgrep)
+(provide 'pkg-deadgrep)

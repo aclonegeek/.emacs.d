@@ -4,4 +4,4 @@
   :ensure t
   :bind ("C-x g" . magit))
 
-(provide 'vega-magit)
+(provide 'pkg-magit)

@@ -9,4 +9,4 @@
          ("C-<"     . mc/unmark-previous-like-this)
          ("C->"     . mc/unmark-next-like-this)))
 
-(provide 'vega-multiple-cursors)
+(provide 'pkg-multiple-cursors)

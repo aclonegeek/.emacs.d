@@ -5,4 +5,4 @@
   :commands (yas-minor-mode yas-reload-all)
   :hook (prog-mode . yas-minor-mode))
 
-(provide 'vega-yasnippet)
+(provide 'pkg-yasnippet)

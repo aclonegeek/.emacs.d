@@ -7,4 +7,4 @@
   :config
   (setq avy-background t))
 
-(provide 'vega-avy)
+(provide 'pkg-avy)

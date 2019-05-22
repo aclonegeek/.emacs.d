@@ -28,4 +28,4 @@
   :bind (("C-s" . swiper)
          ("C-r" . swiper)))
 
-(provide 'vega-ivy)
+(provide 'pkg-ivy)
