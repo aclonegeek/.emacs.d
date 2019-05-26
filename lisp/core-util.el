@@ -1,6 +1,6 @@
 ;; -*- lexical-binding: t; -*-
 
-(defun revert-buffer-no-comfirm ()
+(defun revert-buffer-no-confirm ()
   "Revert buffer without confirmation."
   (interactive)
   (revert-buffer :ignore-auto :noconfirm))

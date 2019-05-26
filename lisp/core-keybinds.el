@@ -16,7 +16,7 @@
 (global-set-key (kbd "C-q") 'select-word-backward)
 (global-set-key (kbd "M-q") 'select-word-forward)
 
-(global-set-key (kbd "C-c r") 'revert-buffer-no-comfirm)
+(global-set-key (kbd "C-c r") 'revert-buffer-no-confirm)
 (global-set-key (kbd "C-c n") 'rename-file-and-buffer)
 (global-set-key (kbd "C-c i") 'imenu)
 
