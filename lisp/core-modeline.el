@@ -5,9 +5,7 @@
                'mode-line-directory
                'mode-line-buffer-identification
                " "
-               '(line-number-mode ("%l" (column-number-mode ":%c")))
-               " "
-               "%p"))
+               '(line-number-mode ("%l" (column-number-mode ":%c")))))
 
 (defvar mode-line-directory
   '(:propertize
