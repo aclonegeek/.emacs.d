@@ -30,7 +30,7 @@ Emacs 27 built from source.
 --without-compress-install
 --with-modules
 --with-x
-'CFLAGS= -O2 -g3'"
+'CFLAGS= -O2 -g3'
 
 make -j4
 sudo make install
