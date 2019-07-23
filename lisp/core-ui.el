@@ -9,7 +9,12 @@
 (blink-cursor-mode 0)            ;; Disable blinking
 (set-default 'cursor-type 'box)  ;; Fat cursor
 (global-hl-line-mode t)          ;; Highlight current line
-(show-paren-mode)                ;; Show matching parentheses
+
+(defvar show-paren-delay)
+(defvar show-paren-when-point-in-periphery)
+(setq show-paren-delay 0
+      show-paren-when-point-in-periphery t)
+(show-paren-mode)
 
 (setq-default
  mode-line-default-help-echo nil) ;; Disable mode-line hover tips
