@@ -25,7 +25,7 @@
 (use-package swiper
   :ensure t
   :after ivy
-  :bind (("C-s" . swiper)
-         ("C-r" . swiper)))
+  :bind (("C-s" . swiper-isearch)
+         ("C-r" . swiper-isearch-backward)))
 
 (provide 'pkg-ivy)
