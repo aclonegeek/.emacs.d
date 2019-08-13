@@ -28,24 +28,22 @@
 (use-package doom-themes
   :ensure t
   :config
-  (load-theme 'doom-one t))
-
-;; https://gist.github.com/huytd/6b785bdaeb595401d69adc7797e5c22c
-(custom-set-faces
- '(default ((t (:inherit nil :stipple nil :background "#212121" :foreground "#eeffff" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :width normal :foundry "nil"))))
- '(font-lock-constant-face ((t (:foreground "#C792EA"))))
- '(font-lock-keyword-face ((t (:foreground "#2BA3FF" :slant italic))))
- '(font-lock-preprocessor-face ((t (:inherit bold :foreground "#2BA3FF" :slant italic :weight normal))))
- '(font-lock-string-face ((t (:foreground "#C3E88D"))))
- '(font-lock-type-face ((t (:foreground "#FFCB6B"))))
- '(font-lock-variable-name-face ((t (:foreground "#FF5370"))))
- '(mode-line ((t (:background "#191919" :box nil))))
- '(mode-line-inactive ((t (:background "#282828" :foreground "#5B6268" :box nil)))))
+  (load-theme 'doom-one t)
+  :custom-face
+  (default                      ((t :background "#212121" :foreground "#EEFFFF")))
+  (font-lock-constant-face      ((t (:foreground "#C792EA"))))
+  (font-lock-keyword-face       ((t (:foreground "#2BA3FF" :slant italic))))
+  (font-lock-preprocessor-face  ((t (:inherit bold :foreground "#2BA3FF" :slant italic :weight normal))))
+  (font-lock-string-face        ((t (:foreground "#B6E570"))))
+  (font-lock-type-face          ((t (:foreground "#FFCB6B"))))
+  (font-lock-variable-name-face ((t (:foreground "#FF5370"))))
+  (mode-line                    ((t (:background "#191919" :box nil))))
+  (mode-line-inactive           ((t (:background "#282828" :foreground "#5B6268" :box nil)))))
 
 ;; Modeline
 (use-package core-modeline
   :config
-  (setq line-number-mode 1
+  (setq line-number-mode   1
         column-number-mode 1))
 
 (provide 'core-ui)
