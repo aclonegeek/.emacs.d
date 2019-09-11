@@ -28,17 +28,7 @@
 (use-package doom-themes
   :ensure t
   :config
-  (load-theme 'doom-one t)
-  :custom-face
-  (default                      ((t :background "#212121" :foreground "#EEFFFF")))
-  (font-lock-constant-face      ((t (:foreground "#C792EA"))))
-  (font-lock-keyword-face       ((t (:foreground "#2BA3FF" :slant italic))))
-  (font-lock-preprocessor-face  ((t (:inherit bold :foreground "#2BA3FF" :slant italic :weight normal))))
-  (font-lock-string-face        ((t (:foreground "#B6E570"))))
-  (font-lock-type-face          ((t (:foreground "#FFCB6B"))))
-  (font-lock-variable-name-face ((t (:foreground "#FF5370"))))
-  (mode-line                    ((t (:background "#191919" :box nil))))
-  (mode-line-inactive           ((t (:background "#282828" :foreground "#5B6268" :box nil)))))
+  (load-theme 'doom-molokai t))
 
 ;; Modeline
 (use-package core-modeline
