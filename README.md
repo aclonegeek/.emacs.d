@@ -34,6 +34,6 @@ Emacs 27 built from source.
 --without-zlib
 'CFLAGS= -O2 -g3'
 
-make -j4
+make -j
 sudo make install
 ```

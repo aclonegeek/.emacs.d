@@ -2,19 +2,16 @@
 
 (use-package lsp-mode
   :ensure t
-  :commands lsp
-  :config
-  (require 'lsp-clients)
-  ;; TODO(randy): Only configure this to :none when in python-mode.
-  (setq lsp-prefer-flymake :none))
+  :commands lsp)
 
 (use-package lsp-imenu
   :hook (lsp-after-open . lsp-enable-imenu))
 
 (use-package lsp-ui
   :ensure t
-  :after lsp-mode
+  :after lsp
   :bind ([f10] . lsp-ui-sideline-toggle-symbols-info)
+  :commands lsp-ui-mode
   :config
   (defvar lsp-ui-flycheck-enable)
   (defvar lsp-ui-flycheck-live-reporting)
@@ -24,7 +21,8 @@
 
 (use-package company-lsp
   :ensure t
-  :after (company lsp-mode)
+  :after (company lsp)
+  :commands company-lsp
   :config
   (push 'company-lsp company-backends)
 
