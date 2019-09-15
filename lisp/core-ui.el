@@ -25,10 +25,10 @@
                     :height 110)
 
 ;; Theme
-(use-package doom-themes
+(use-package srcery-theme
   :ensure t
   :config
-  (load-theme 'doom-molokai t))
+  (load-theme 'srcery t))
 
 ;; Modeline
 (use-package core-modeline
