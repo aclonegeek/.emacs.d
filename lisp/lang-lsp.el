@@ -10,12 +10,14 @@
 (use-package lsp-ui
   :ensure t
   :after lsp
-  :bind ([f10] . lsp-ui-sideline-toggle-symbols-info)
+  :bind (([f8] . lsp-ui-sideline-toggle-symbols-info)
+         ([f9] . lsp-ui-doc-show)
+         ([f10] . lsp-ui-doc-hide))
   :commands lsp-ui-mode
   :config
   (defvar lsp-ui-flycheck-enable)
   (defvar lsp-ui-flycheck-live-reporting)
-  (setq lsp-ui-doc-mode                nil
+  (setq lsp-ui-doc-enable              nil
         lsp-ui-flycheck-live-reporting nil
         lsp-ui-sideline-show-hover     nil))
 
