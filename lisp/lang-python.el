@@ -8,7 +8,6 @@
               flycheck-pylintrc "~/.pylintrc")
 
 (use-package lsp-python-ms
-  :ensure t
   :hook (python-mode . lsp))
 
 (provide 'lang-python)
