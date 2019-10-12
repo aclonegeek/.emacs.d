@@ -3,14 +3,15 @@
 ;; Speedier startup.
 (defvar file-name-handler-alist-old file-name-handler-alist)
 (setq file-name-handler-alist nil
-      gc-cons-threshold       402653184
-      gc-cons-percentage      0.6
-      site-run-file           nil)
+      site-run-file           nil
+      gc-cons-threshold       most-positive-fixnum
+      gc-cons-percentage      0.6)
 
-(add-hook 'after-init-hook (lambda ()
-                             (setq file-name-handler-alist file-name-handler-alist-old
-                                   gc-cons-threshold 800000
-                                   gc-cons-percentage 0.1)))
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (setq file-name-handler-alist file-name-handler-alist-old
+                  gc-cons-threshold       16777216
+                  gc-cons-percentage      0.1)))
 
 ;; Avoid calling package.el.
 (eval-and-compile
