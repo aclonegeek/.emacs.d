@@ -17,6 +17,7 @@
 # Folders
 backups/
 eclipse.jdt.ls/
+transient/
 workspace/
 
 # Files
