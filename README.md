@@ -15,11 +15,14 @@ Emacs 27 built from source.
 --without-compress-install
 --without-dbus
 --without-gif
+--without-gpm
 --without-imagemagick
 --without-jpeg
 --without-lcms2
 --without-libgmp
+--without-libotf
 --without-libsystemd
+--without-m17n-flt
 --without-makeinfo
 --without-png
 --without-rsvg
