@@ -7,6 +7,8 @@
 (global-set-key [C-backspace] 'backward-delete-word)
 (global-set-key [C-tab] 'goto-line)
 
+(global-set-key (kbd "C-`") 'calc-eval-region)
+
 (global-set-key (kbd "C-c a") 'align-regexp)
 
 (global-set-key (kbd "M-d") 'delete-word)
