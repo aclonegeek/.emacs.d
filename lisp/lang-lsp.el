@@ -9,9 +9,8 @@
 
 (use-package lsp-ui
   :ensure t
-  :after lsp
-  :bind (([f8] . lsp-ui-sideline-toggle-symbols-info)
-         ([f9] . lsp-ui-doc-show)
+  :bind (([f8]  . lsp-ui-sideline-toggle-symbols-info)
+         ([f9]  . lsp-ui-doc-show)
          ([f10] . lsp-ui-doc-hide))
   :commands lsp-ui-mode
   :config
@@ -23,11 +22,8 @@
 
 (use-package company-lsp
   :ensure t
-  :after (company lsp)
   :commands company-lsp
   :config
-  (push 'company-lsp company-backends)
-
   (setq company-lsp-cache-candidates t
         company-lsp-enable-snippet   t))
 
