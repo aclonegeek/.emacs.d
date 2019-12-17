@@ -28,4 +28,12 @@
   :bind (("C-s" . swiper-isearch)
          ("C-r" . swiper-isearch-backward)))
 
+(use-package ivy-xref
+  :ensure t
+  :defer t
+  :after ivy
+  :config
+  (setq xref-show-xrefs-function       #'ivy-xref-show-xrefs
+        xref-show-definitions-function #'ivy-xref-show-defs))
+
 (provide 'pkg-ivy)
