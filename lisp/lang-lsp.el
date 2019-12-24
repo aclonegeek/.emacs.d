@@ -18,7 +18,8 @@
   (defvar lsp-ui-flycheck-live-reporting)
   (setq lsp-ui-doc-enable              nil
         lsp-ui-flycheck-live-reporting nil
-        lsp-ui-sideline-show-hover     nil))
+        lsp-ui-sideline-show-hover     nil
+        lsp-prefer-flymake             nil))
 
 (use-package company-lsp
   :ensure t
