@@ -19,9 +19,6 @@
         package--init-file-ensured t
         package-enable-at-startup nil)
 
-  (unless (file-directory-p package-user-dir)
-    (make-directory package-user-dir t)))
-
 ;; Manually set load path.
 (eval-and-compile
   (setq load-path (append load-path (directory-files package-user-dir t "^[^.]" t)))
