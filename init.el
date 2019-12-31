@@ -4,7 +4,6 @@
 (defvar file-name-handler-alist-old file-name-handler-alist)
 (setq file-name-handler-alist nil
       site-run-file           nil
-      gc-cons-threshold       most-positive-fixnum
       gc-cons-percentage      0.6)
 
 (add-hook 'emacs-startup-hook

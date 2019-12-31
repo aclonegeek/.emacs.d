@@ -17,11 +17,10 @@
  ring-bell-function 'ignore
  visible-bell nil
 
- ;; Disable backups and autosaves
+ ;; Disable backups.
  make-backup-files nil
- auto-save-default nil
 
- ;; 4 spaces instead of tabs
+ ;; 4 spaces instead of tabs.
  indent-tabs-mode nil
  tab-width 4
  tab-stop-list (quote (4 8))
@@ -30,7 +29,7 @@
  auto-composition-mode nil
  mouse-wheel-progressive-speed nil
 
- ;; Optimizations
+ ;; Optimizations.
  auto-window-vscroll nil
  line-move-visual nil
  inhibit-compacting-font-caches t

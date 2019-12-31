@@ -1,10 +1,6 @@
 ;; -*- lexical-binding: t; -*-
 
-;; Disable GUI elements
-(menu-bar-mode   -1)
-(scroll-bar-mode -1)
-(tool-bar-mode   -1)
-(tooltip-mode    -1)
+(tooltip-mode -1)
 
 (blink-cursor-mode 0)            ;; Disable blinking
 (set-default 'cursor-type 'box)  ;; Fat cursor
@@ -16,8 +12,7 @@
       show-paren-when-point-in-periphery t)
 (show-paren-mode)
 
-(setq-default
- mode-line-default-help-echo nil) ;; Disable mode-line hover tips
+(setq-default mode-line-default-help-echo nil) ;; Disable mode-line hover tips
 
 ;; Font
 (set-face-attribute 'default nil
