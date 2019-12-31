@@ -34,13 +34,7 @@
  auto-window-vscroll nil
  line-move-visual nil
  inhibit-compacting-font-caches t
-
  bidi-display-reordering nil
- jit-lock-defer-time 0
- jit-lock-stealth-nice 0.1
- jit-lock-stealth-time 0.2
- jit-lock-stealth-verbose nil
-
  fast-but-imprecise-scrolling t)
 
 (delete-selection-mode 1)
