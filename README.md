@@ -1,6 +1,6 @@
 # .emacs.d
 
-Emacs 27 built from source.
+Emacs master built from source.
 
 ## Installation
 ``` shell
