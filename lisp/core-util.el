@@ -63,7 +63,7 @@
 (defun calc-eval-region (arg)
   "Evaluate an expression in calc and communicate the result.
 
-If the region is active evaluate that, otherwise search backwards
+If the region is active then evaluate it, otherwise search backwards
 to the first whitespace character to find the beginning of the
 expression. By default, replace the expression with its value. If
 called with the universal prefix argument, keep the expression
