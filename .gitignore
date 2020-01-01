@@ -2,7 +2,6 @@
 *.elc
 
 # Package related
-/auto-save-list
 /elpa
 /eshell
 /server
@@ -15,7 +14,6 @@
 *.*~
 
 # Folders
-backups/
 eclipse.jdt.ls/
 transient/
 workspace/
@@ -23,4 +21,5 @@ workspace/
 # Files
 bookmarks
 custom.el
+package-quickstart.el
 recentf
