@@ -4,7 +4,7 @@
  ;; Disable autosaves.
  auto-save-default nil
  ;; Defer GC.
- gc-cons-threshold  moxst-positive-fixnum
+ gc-cons-threshold  most-positive-fixnum
  gc-cons-percentage 0.6
  ;; Don't resize the Emacs frame when GUI elements (e.g. bars, font) change.
  frame-inhibit-implied-resize t)
