@@ -5,7 +5,7 @@
 (use-package ccls
   :ensure t
   :bind ("C-c c" . compile)
-  :hook ((c-mode c++-mode) . (lambda () (require 'ccls)(lsp)))
+  :hook ((c-mode c++-mode) . (lambda () (require 'ccls)(lsp-deferred)))
   :config
   (setq ccls-sem-highlight-method 'font-lock))
 
