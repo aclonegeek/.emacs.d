@@ -2,7 +2,7 @@
 
 (use-package lsp-mode
   :ensure t
-  :commands lsp)
+  :commands (lsp lsp-deferred))
 
 (use-package lsp-imenu
   :hook (lsp-after-open . lsp-enable-imenu))
