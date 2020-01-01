@@ -35,7 +35,7 @@
 
   (package-initialize)
   ;; Ensure use-package is installed.
-  (unless (package-installed-p 'use-package)
+  (unless (fboundp 'use-package)
     (package-refresh-contents)
     (package-install 'use-package))
   (require 'use-package))
