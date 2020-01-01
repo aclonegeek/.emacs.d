@@ -10,7 +10,6 @@
   (setq ccls-sem-highlight-method 'font-lock))
 
 (use-package cmake-mode
-  :ensure t
   :defer t)
 
 (provide 'lang-c)

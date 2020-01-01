@@ -13,6 +13,7 @@
 
 (use-package counsel-projectile
   :ensure t
+  :defer t
   :after (counsel projectile)
   :config
   (counsel-projectile-mode))
