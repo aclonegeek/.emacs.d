@@ -3,8 +3,7 @@
 ;; Speedier startup.
 (defvar file-name-handler-alist-old file-name-handler-alist)
 (setq file-name-handler-alist nil
-      site-run-file           nil
-      gc-cons-percentage      0.6)
+      site-run-file           nil)
 
 (add-hook 'emacs-startup-hook
           (lambda ()
@@ -12,30 +11,15 @@
                   gc-cons-threshold       16777216
                   gc-cons-percentage      0.1)))
 
-;; Avoid calling package.el.
-(eval-and-compile
-  (setq load-prefer-newer t
-        package-user-dir "~/.emacs.d/elpa"
-        package--init-file-ensured t
-        package-enable-at-startup nil)
+;; We don't want to use old .elc files.
+(setq load-prefer-newer t)
 
-;; Manually set load path.
 (eval-and-compile
-  (setq load-path (append load-path (directory-files package-user-dir t "^[^.]" t)))
-  (add-to-list 'load-path "~/.emacs.d/lisp"))
+ (add-to-list 'load-path "~/.emacs.d/lisp"))
 
 (eval-when-compile
-  (require 'package)
-
-  (unless (assoc-default "melpa" package-archives)
-    (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
-                        (not (gnutls-available-p))))
-           (proto (if no-ssl "http" "https")))
-      (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)))
-
-  (package-initialize)
   ;; Ensure use-package is installed.
-  (unless (fboundp 'use-package)
+  (unless (locate-library "use-package")
     (package-refresh-contents)
     (package-install 'use-package))
   (require 'use-package))
