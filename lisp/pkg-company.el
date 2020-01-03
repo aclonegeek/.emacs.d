@@ -10,6 +10,6 @@
         company-idle-delay 0.1
         company-minimum-prefix-length 1
         company-tooltip-limit 10
-        company-show-numbers t))
+        company-show-numbers 'left))
 
 (provide 'pkg-company)
