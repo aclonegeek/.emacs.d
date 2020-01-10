@@ -2,7 +2,9 @@
 
 (use-package lsp-mode
   :ensure t
-  :commands (lsp lsp-deferred))
+  :commands (lsp lsp-deferred)
+  :config
+  (setq lsp-enable-on-type-formatting nil))
 
 (use-package lsp-imenu
   :hook (lsp-after-open . lsp-enable-imenu))
