@@ -53,6 +53,6 @@
 (add-hook 'after-save-hook #'garbage-collect)
 (add-hook 'focus-out-hook  #'garbage-collect)
 
-(add-hook 'before-save-hook 'whitespace-cleanup)
+(add-hook 'before-save-hook #'whitespace-cleanup)
 
 (provide 'core-settings)
