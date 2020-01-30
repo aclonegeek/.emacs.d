@@ -12,4 +12,8 @@
 (use-package cmake-mode
   :defer t)
 
+(use-package clang-format+
+  :defer t
+  :hook ((c-mode c++-mode) . clang-format+-mode))
+
 (provide 'lang-c)
