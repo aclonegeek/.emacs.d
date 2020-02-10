@@ -3,6 +3,7 @@
 (use-package lsp-mode
   :ensure t
   :commands (lsp lsp-deferred)
+  :hook ((c-mode c++-mode) . (lambda () (lsp-deferred)))
   :config
   (setq lsp-enable-on-type-formatting nil))
 
