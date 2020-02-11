@@ -5,7 +5,9 @@
   :commands (lsp lsp-deferred)
   :hook ((c-mode c++-mode) . (lambda () (lsp-deferred)))
   :config
-  (setq lsp-enable-on-type-formatting nil))
+  (defvar lsp-ui-flycheck-live-reporting)
+  (setq lsp-enable-on-type-formatting  nil
+        lsp-ui-flycheck-live-reporting nil))
 
 (use-package lsp-imenu
   :hook (lsp-after-open . lsp-enable-imenu))
@@ -17,12 +19,8 @@
          ([f10] . lsp-ui-doc-hide))
   :commands lsp-ui-mode
   :config
-  (defvar lsp-ui-flycheck-enable)
-  (defvar lsp-ui-flycheck-live-reporting)
-  (setq lsp-ui-doc-enable              nil
-        lsp-ui-flycheck-live-reporting nil
-        lsp-ui-sideline-show-hover     nil
-        lsp-prefer-flymake             nil))
+  (setq lsp-ui-doc-enable          nil
+        lsp-ui-sideline-show-hover nil))
 
 (use-package company-lsp
   :ensure t
