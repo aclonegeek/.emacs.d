@@ -15,7 +15,14 @@
  ;; Don't resize the Emacs frame when GUI elements (e.g. bars, font) change.
  frame-inhibit-implied-resize t
  ;; Don't use outdated bytecode.
- load-prefer-newer t)
+ load-prefer-newer t
+ ;; Barebones startup.
+ initial-major-mode 'fundamental-mode
+ inhibit-startup-screen t
+ inhibit-startup-message t
+ inhibit-default-init t
+ initial-scratch-message nil)
+(fset #'display-startup-echo-area-message #'ignore)
 
 (add-hook 'emacs-startup-hook
           (lambda ()

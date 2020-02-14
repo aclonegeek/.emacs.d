@@ -4,9 +4,6 @@
 (if (eq system-type 'windows-nt)
     (setq default-directory (expand-file-name (getenv "UserProfile"))))
 
-(setq inhibit-startup-screen t
-      initial-scratch-message "")
-
 (fset #'yes-or-no-p #'y-or-n-p)
 
 ;; Coding systems.
