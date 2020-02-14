@@ -30,7 +30,8 @@
  auto-window-vscroll nil
  line-move-visual nil
  inhibit-compacting-font-caches t
- bidi-display-reordering nil
+ bidi-display-reordering 'left-to-right
+ bidi-paragraph-direction 'left-to-right
  fast-but-imprecise-scrolling t)
 
 (delete-selection-mode 1)
