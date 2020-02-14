@@ -7,7 +7,7 @@
 (setq inhibit-startup-screen t
       initial-scratch-message "")
 
-(fset 'yes-or-no-p 'y-or-n-p)
+(fset #'yes-or-no-p #'y-or-n-p)
 
 ;; Coding systems.
 (prefer-coding-system 'utf-8)
