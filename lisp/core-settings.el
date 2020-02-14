@@ -11,7 +11,7 @@
 (set-default-coding-systems 'utf-8)
 
 (setq-default
- ring-bell-function 'ignore
+ ring-bell-function #'ignore
  visible-bell nil
 
  ;; Disable backups.
