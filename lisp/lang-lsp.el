@@ -5,9 +5,8 @@
   :commands (lsp lsp-deferred)
   :hook ((c-mode c++-mode) . (lambda () (lsp-deferred)))
   :config
-  (defvar lsp-ui-flycheck-live-reporting)
-  (setq lsp-enable-on-type-formatting  nil
-        lsp-ui-flycheck-live-reporting nil))
+  (setq lsp-enable-on-type-formatting nil
+        lsp-flycheck-live-reporting   nil))
 
 (use-package lsp-imenu
   :hook (lsp-after-open . lsp-enable-imenu))
