@@ -39,7 +39,7 @@
 
  ;; Don't render cursors or regions in non-focused windows.
  cursor-in-non-selected-windows nil
- highlight-nonselected-windows nil))
+ highlight-nonselected-windows nil)
 
 (delete-selection-mode 1)
 (electric-pair-mode 1)
