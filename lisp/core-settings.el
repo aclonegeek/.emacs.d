@@ -32,7 +32,14 @@
  inhibit-compacting-font-caches t
  bidi-display-reordering 'left-to-right
  bidi-paragraph-direction 'left-to-right
- fast-but-imprecise-scrolling t)
+ fast-but-imprecise-scrolling t
+
+ ;; Let Emacs read more from the process.
+ read-process-output-max (* 1024 1024)
+
+ ;; Don't render cursors or regions in non-focused windows.
+ cursor-in-non-selected-windows nil
+ highlight-nonselected-windows nil))
 
 (delete-selection-mode 1)
 (electric-pair-mode 1)
