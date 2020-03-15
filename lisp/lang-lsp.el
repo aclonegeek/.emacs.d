@@ -4,6 +4,8 @@
   :ensure t
   :commands (lsp lsp-deferred)
   :hook ((c-mode c++-mode) . (lambda () (lsp-deferred)))
+  :init
+  (setq lsp-keymap-prefix "C-c l")
   :config
   (setq lsp-enable-on-type-formatting nil
         lsp-flycheck-live-reporting   nil))
