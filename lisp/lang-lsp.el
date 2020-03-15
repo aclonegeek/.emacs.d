@@ -23,6 +23,10 @@
   (setq lsp-ui-doc-enable          nil
         lsp-ui-sideline-show-hover nil))
 
+(use-package lsp-ivy
+  :ensure t
+  :commands lsp-ivy-workspace-symbol)
+
 (use-package company-lsp
   :ensure t
   :commands company-lsp
