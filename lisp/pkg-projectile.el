@@ -9,7 +9,7 @@
         projectile-indexing-method   'alien
         projectile-completion-system 'ivy
         projectile-generic-command   "fd . -0")
-  (add-to-list 'projectile-globally-ignored-directories ".ccls-cache"))
+  (add-to-list 'projectile-globally-ignored-directories ".clangd"))
 
 (use-package counsel-projectile
   :ensure t
