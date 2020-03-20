@@ -41,6 +41,9 @@
  cursor-in-non-selected-windows nil
  highlight-nonselected-windows nil)
 
+(setq completion-ignore-case t
+      completion-styles '(basic partial-completion flex))
+
 (delete-selection-mode 1)
 (electric-pair-mode 1)
 
