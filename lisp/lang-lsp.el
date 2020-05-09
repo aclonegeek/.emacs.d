@@ -25,11 +25,4 @@
   :ensure t
   :commands lsp-ivy-workspace-symbol)
 
-(use-package company-lsp
-  :ensure t
-  :commands company-lsp
-  :config
-  (setq company-lsp-cache-candidates t
-        company-lsp-enable-snippet   t))
-
 (provide 'lang-lsp)
