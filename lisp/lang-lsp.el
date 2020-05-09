@@ -3,13 +3,14 @@
 (use-package lsp-mode
   :ensure t
   :commands (lsp lsp-deferred)
-  :hook ((lsp-after-open    . lsp-enable-imenu)
-         ((c-mode c++-mode) . (lambda () (lsp-deferred))))
+  :hook (((c-mode c++-mode) . (lambda () (lsp-deferred))))
   :init
   (setq lsp-keymap-prefix "C-c l")
   :config
   (setq lsp-enable-on-type-formatting nil
-        lsp-flycheck-live-reporting   nil))
+        lsp-flycheck-live-reporting   nil
+        lsp-signature-auto-activate   t
+        lsp-signature-doc-lines       3))
 
 (use-package lsp-ui
   :ensure t
