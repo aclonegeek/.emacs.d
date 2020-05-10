@@ -22,8 +22,7 @@
 ;; Theme
 (use-package srcery-theme
   :ensure t
-  :config
-  (load-theme 'srcery t))
+  :hook (after-init . (lambda () (load-theme 'srcery t))))
 
 ;; Modeline
 (use-package core-modeline
