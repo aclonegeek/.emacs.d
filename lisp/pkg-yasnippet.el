@@ -2,8 +2,8 @@
 
 (use-package yasnippet
   :ensure t
-  :commands (yas-minor-mode yas-reload-all)
-  :hook (prog-mode . yas-minor-mode)
-  :config (yas-reload-all))
+  :commands (yas-reload-all yas-minor-mode)
+  :hook ((after-init . (lambda () (yas-reload-all)))
+         (prog-mode  . (lambda () (yas-minor-mode)))))
 
 (provide 'pkg-yasnippet)
