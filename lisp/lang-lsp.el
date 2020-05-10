@@ -7,7 +7,8 @@
   :init
   (setq lsp-keymap-prefix "C-c l")
   :config
-  (setq lsp-enable-on-type-formatting nil
+  (setq lsp-enable-links              nil
+        lsp-enable-on-type-formatting nil
         lsp-flycheck-live-reporting   nil
         lsp-signature-auto-activate   t
         lsp-signature-doc-lines       3))
