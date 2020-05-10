@@ -35,8 +35,4 @@
 (require 'pkg-projectile)
 (require 'pkg-yasnippet)
 
-;; OS.
-(if (eq system-type 'gnu/linux)
-  (require 'os-linux))
-
 (setq custom-file "~/.emacs.d/custom.el")
