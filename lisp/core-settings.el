@@ -59,7 +59,7 @@
 (add-hook 'minibuffer-exit-hook  #'minibuffer-exit-hook)
 
 (add-hook 'after-save-hook #'garbage-collect)
-(add-hook 'focus-out-hook  #'garbage-collect)
+(add-function :after after-focus-change-function #'garbage-collect)
 
 (add-hook 'before-save-hook #'whitespace-cleanup)
 
