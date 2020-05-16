@@ -31,8 +31,7 @@
                   gc-cons-percentage      0.1)))
 
 ;; Package.
-(setq-default package-user-dir "~/.emacs.d/elpa"
-              ;; TODO: Figure out how to uncomment below without package shenanigans on startup.
+(setq-default ;; TODO: Figure out how to uncomment below without package shenanigans on startup.
               ;; package-enable-at-startup nil
               package-archives
               (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
