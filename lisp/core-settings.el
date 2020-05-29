@@ -32,6 +32,7 @@
  inhibit-compacting-font-caches t
  bidi-display-reordering 'left-to-right
  bidi-paragraph-direction 'left-to-right
+ bidi-inhibit-bpa t
  fast-but-imprecise-scrolling t
 
  ;; Let Emacs read more from the process.
