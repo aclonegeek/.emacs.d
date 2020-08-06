@@ -9,7 +9,6 @@
   :config
   (setq lsp-enable-links              nil
         lsp-enable-on-type-formatting nil
-        lsp-flycheck-live-reporting   nil
         lsp-signature-auto-activate   t
         lsp-signature-doc-lines       3))
 
