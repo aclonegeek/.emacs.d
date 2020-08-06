@@ -7,10 +7,11 @@
   :init
   (setq lsp-keymap-prefix "C-c l")
   :config
-  (setq lsp-enable-links              nil
-        lsp-enable-on-type-formatting nil
-        lsp-signature-auto-activate   t
-        lsp-signature-doc-lines       3))
+  (setq lsp-enable-links                 nil
+        lsp-enable-on-type-formatting    nil
+        lsp-signature-auto-activate      t
+        lsp-signature-doc-lines          3
+        lsp-enable-semantic-highlighting t))
 
 (use-package lsp-ui
   :ensure t
