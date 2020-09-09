@@ -86,4 +86,9 @@ minibuffer."
         ((or 1 4) (insert value))
         (-1 (message value))))))
 
+(defun byte-compile-stuff()
+  "Byte-compile stuff."
+  (interactive)
+  (byte-recompile-directory package-user-dir nil 'force))
+
 (provide 'core-util)
