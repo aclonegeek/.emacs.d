@@ -20,9 +20,9 @@
                     :height 110)
 
 ;; Theme
-(use-package srcery-theme
+(use-package vscode-dark-plus-theme
   :ensure t
-  :hook (after-init . (lambda () (load-theme 'srcery t))))
+  :hook (after-init . (lambda () (load-theme 'vscode-dark-plus t))))
 
 ;; Modeline
 (use-package core-modeline
