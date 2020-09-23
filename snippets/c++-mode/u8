@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: std::uint8_t
+# key: u8
+# --
+std::uint8_t $0

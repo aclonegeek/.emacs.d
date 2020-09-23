@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: std::uint16_t
+# key: u16
+# --
+std::uint16_t $0

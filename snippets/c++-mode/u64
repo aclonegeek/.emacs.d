@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: std::uint64_t
+# key: u64
+# --
+std::uint64_t $0
