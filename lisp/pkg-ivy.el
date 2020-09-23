@@ -18,7 +18,8 @@
   :after ivy
   :bind (("M-x"     . counsel-M-x)
          ("C-x C-f" . counsel-find-file)
-         ("C-x C-r" . counsel-recentf))
+         ("C-x C-r" . counsel-recentf)
+         ("C-c i"   . counsel-imenu))
   :config
   (setq counsel-find-file-ignore-regexp "^\\.\\|~$\\|^#\\|\\.elc\\|\\.pyc\\|__pycache__"))
 
