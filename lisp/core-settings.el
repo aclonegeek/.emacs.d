@@ -14,8 +14,9 @@
  ring-bell-function #'ignore
  visible-bell nil
 
- ;; Disable backups.
+ ;; Disable backups and lockfiles.
  make-backup-files nil
+ create-lockfiles  nil
 
  ;; 4 spaces instead of tabs.
  indent-tabs-mode nil
