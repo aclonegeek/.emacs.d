@@ -26,8 +26,9 @@
 (use-package swiper
   :ensure t
   :after ivy
-  :bind (("C-s" . swiper-isearch)
-         ("C-r" . swiper-isearch-backward)))
+  :bind (("C-s"   . swiper-isearch)
+         ("C-r"   . swiper-isearch-backward)
+         ("C-c s" . swiper-isearch-thing-at-point)))
 
 (use-package ivy-xref
   :ensure t
