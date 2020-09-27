@@ -1,7 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
 (use-package org
-  :defer t
+  :commands org-mode
   :hook (org-mode . (lambda () (require 'ox-md nil t)))
   :config
   (unbind-key "C-k" org-mode-map)
