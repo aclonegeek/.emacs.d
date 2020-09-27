@@ -4,7 +4,6 @@
 
 (blink-cursor-mode 0)            ;; Disable blinking.
 (set-default 'cursor-type 'box)  ;; Fat cursor.
-;; (global-hl-line-mode t)          ;; Highlight current line.
 
 (defvar show-paren-delay)
 (defvar show-paren-when-point-in-periphery)
