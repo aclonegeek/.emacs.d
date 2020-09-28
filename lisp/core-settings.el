@@ -47,6 +47,11 @@
  cursor-in-non-selected-windows nil
  highlight-nonselected-windows nil)
 
+;; Windows-specific optimizations.
+(when IS-WINDOWS
+  (setq w32-get-true-file-attributes nil
+        w32-pipe-buffer-size         (* 64 1024)))
+
 (setq completion-ignore-case t
       completion-styles '(basic partial-completion flex))
 
