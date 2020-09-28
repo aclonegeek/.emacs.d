@@ -1,7 +1,10 @@
 ;; -*- lexical-binding: t; -*-
 
+(defconst IS-LINUX   (eq system-type 'gnu/linux))
+(defconst IS-WINDOWS (eq system-type 'windows-nt))
+
 ;; Set default-directory on Windows.
-(if (eq system-type 'windows-nt)
+(when IS-WINDOWS
     (setq default-directory (expand-file-name (getenv "UserProfile"))))
 
 (fset #'yes-or-no-p #'y-or-n-p)
