@@ -28,6 +28,7 @@
  mouse-wheel-progressive-speed nil
 
  ;; Optimizations.
+ auto-mode-case-fold nil ;; Don't pass twice over auto-mode-alist.
  auto-window-vscroll nil
  line-move-visual nil
  inhibit-compacting-font-caches t
