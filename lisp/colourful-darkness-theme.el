@@ -64,9 +64,8 @@
    'colourful-darkness
    `(default                                  ((t (:background ,black :foreground ,white))))
 
-   ;; TODO(region): Make all text black, but the background of its colour pre-highlight.
    `(cursor                                   ((t (:background ,white))))
-   `(region                                   ((t (:background ,gray :extend nil))))
+   `(region                                   ((t (:inverse-video t))))
    `(highlight                                ((t (:foreground ,black :background ,cyan))))
    `(hl-line                                  ((t (:background ,black))))
    `(fringe                                   ((t (:foreground ,white :background ,black))))
