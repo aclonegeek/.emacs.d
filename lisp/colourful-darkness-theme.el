@@ -157,7 +157,6 @@
    `(ivy-minibuffer-match-highlight           ((t (:inherit ivy-current-match))))
    `(ivy-modified-buffer                      ((t (:inherit default :foreground ,white))))
    `(ivy-virtual                              ((t (:inherit default :foreground ,white))))
-   `(ivy-posframe                             ((t (:background "#252526"))))
 
    `(counsel-key-binding                      ((t (:foreground ,white))))
 
