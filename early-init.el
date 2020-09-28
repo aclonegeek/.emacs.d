@@ -1,8 +1,5 @@
 ;; -*- lexical-binding: t; -*-
 
-(eval-and-compile
-  (add-to-list 'load-path "~/.emacs.d/lisp"))
-
 (defvar file-name-handler-alist-old file-name-handler-alist)
 (setq
  site-run-file           nil
