@@ -34,6 +34,7 @@ Emacs master built from source.
 --without-xaw3d
 --without-xim
 --without-xpm
+--with-nativecomp
 CFLAGS="-O2 -g3 -mtune=native -march=native"
 
 make -j
