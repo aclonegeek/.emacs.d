@@ -3,7 +3,8 @@
 (use-package lsp-mode
   :ensure t
   :commands (lsp lsp-deferred)
-  :hook (((c-mode c++-mode) . (lambda () (lsp-deferred))))
+  :hook ((lsp-mode          . lsp-enable-which-key-integration)
+         ((c-mode c++-mode) . lsp-deferred))
   :init
   (setq lsp-keymap-prefix "C-c l")
   :config
