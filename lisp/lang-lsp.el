@@ -9,6 +9,7 @@
   (setq lsp-keymap-prefix "C-c l")
   :config
   (setq lsp-enable-links                 nil
+        lsp-enable-snippet               nil
         lsp-enable-on-type-formatting    nil
         lsp-signature-auto-activate      t
         lsp-signature-doc-lines          3
