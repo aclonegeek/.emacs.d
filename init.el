@@ -36,7 +36,6 @@
 (require 'pkg-magit)
 (require 'pkg-multiple-cursors)
 (require 'pkg-projectile)
-(require 'pkg-which-key)
 (require 'pkg-yasnippet)
 
 (setq custom-file "~/.emacs.d/custom.el")
