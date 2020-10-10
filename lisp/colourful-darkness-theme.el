@@ -146,26 +146,6 @@
    `(org-sexp-date                            ((t (:foreground ,white))))
    `(org-table                                ((t (:foreground ,white :background ,black))))
 
-   `(ivy-confirm-face                         ((t (:inherit minibuffer-prompt :foreground ,yellow))))
-   `(ivy-current-match                        ((t (:foreground ,black :background ,gray :extend t))))
-   `(ivy-highlight-face                       ((t (:inherit font-lock-builtin-face))))
-   `(ivy-match-required-face                  ((t (:inherit minibuffer-prompt :foreground ,yellow))))
-   `(ivy-minibuffer-match-face-1              ((t (:inherit isearch))))
-   `(ivy-minibuffer-match-face-2              ((t (:inherit isearch))))
-   `(ivy-minibuffer-match-face-3              ((t (:inherit isearch))))
-   `(ivy-minibuffer-match-face-4              ((t (:inherit isearch))))
-   `(ivy-minibuffer-match-highlight           ((t (:inherit ivy-current-match))))
-   `(ivy-modified-buffer                      ((t (:inherit default :foreground ,white))))
-   `(ivy-virtual                              ((t (:inherit default :foreground ,white))))
-
-   `(counsel-key-binding                      ((t (:foreground ,white))))
-
-   `(swiper-match-face-1                      ((t (:inherit ivy-minibuffer-match-face-1))))
-   `(swiper-match-face-2                      ((t (:inherit ivy-minibuffer-match-face-2))))
-   `(swiper-match-face-3                      ((t (:inherit ivy-minibuffer-match-face-3))))
-   `(swiper-match-face-4                      ((t (:inherit ivy-minibuffer-match-face-4))))
-   `(swiper-line-face                         ((t (:foreground ,white :background ,black :extend t))))
-
    ;; bisect
    `(magit-bisect-bad                         ((t (:foreground ,red))))
    `(magit-bisect-good                        ((t (:foreground ,green))))
