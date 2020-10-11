@@ -33,6 +33,7 @@
 (require 'pkg-flyspell)
 (require 'pkg-icomplete)
 (require 'pkg-imenu)
+(require 'pkg-isearch)
 (require 'pkg-magit)
 (require 'pkg-multiple-cursors)
 (require 'pkg-projectile)
