@@ -53,7 +53,9 @@
         w32-pipe-buffer-size         (* 64 1024)))
 
 (setq completion-ignore-case t
-      completion-styles '(basic partial-completion flex))
+      completion-styles '(basic partial-completion flex)
+      completion-show-help nil
+      completions-format 'vertical)
 
 (delete-selection-mode 1)
 (electric-pair-mode 1)
