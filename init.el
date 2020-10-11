@@ -31,6 +31,7 @@
 (require 'pkg-deadgrep)
 (require 'pkg-flycheck)
 (require 'pkg-flyspell)
+(require 'pkg-icomplete)
 (require 'pkg-magit)
 (require 'pkg-multiple-cursors)
 (require 'pkg-projectile)
