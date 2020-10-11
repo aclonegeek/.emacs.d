@@ -4,11 +4,14 @@
   :ensure t
   :commands (lsp lsp-deferred)
   :hook (((c-mode c++-mode) . lsp-deferred))
+  :defines lsp-completion-provider
   :init
   (setq lsp-keymap-prefix "C-c l")
   :config
   (setq lsp-enable-links                 nil
         lsp-enable-snippet               nil
+        ;; We set company-backends ourself.
+        lsp-completion-provider          :none
         lsp-enable-on-type-formatting    nil
         lsp-signature-auto-activate      t
         lsp-signature-doc-lines          3
