@@ -52,7 +52,10 @@
   (setq w32-get-true-file-attributes nil
         w32-pipe-buffer-size         (* 64 1024)))
 
+;; Completion.
 (setq completion-ignore-case t
+      read-buffer-completion-ignore-case t
+      read-file-name-completion-ignore-case t
       completion-styles '(basic partial-completion flex)
       completion-show-help nil
       completions-format 'vertical)
@@ -60,7 +63,6 @@
 (delete-selection-mode 1)
 (electric-pair-mode 1)
 
-;; http://bling.github.io/blog/2016/01/18/why-are-you-changing-gc-cons-threshold/
 (defun minibuffer-setup-hook ()
   (setq gc-cons-threshold most-positive-fixnum))
 
