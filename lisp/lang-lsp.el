@@ -15,7 +15,10 @@
         lsp-enable-on-type-formatting    nil
         lsp-signature-auto-activate      t
         lsp-signature-doc-lines          3
-        lsp-enable-semantic-highlighting t))
+        lsp-enable-semantic-highlighting t
+        lsp-headerline-breadcrumb-enable nil
+        lsp-modeline-code-actions-enable nil
+        lsp-modeline-diagnostics-enable  nil))
 
 (use-package lsp-ui
   :ensure t
