@@ -39,6 +39,7 @@
  bidi-paragraph-direction 'left-to-right
  bidi-inhibit-bpa t
  fast-but-imprecise-scrolling t
+ redisplay-skip-fontification-on-input t
 
  ;; Let Emacs read more from the process.
  read-process-output-max (* 1024 1024)
