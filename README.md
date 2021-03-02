@@ -37,6 +37,6 @@ Emacs master built from source.
 --with-native-compilation
 CFLAGS="-O2 -g3 -mtune=native -march=native"
 
-make -j
+make -j NATIVE_FULL_AOT=1
 sudo make install
 ```
