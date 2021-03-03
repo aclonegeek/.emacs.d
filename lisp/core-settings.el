@@ -14,6 +14,8 @@
 (set-default-coding-systems 'utf-8)
 
 (setq-default
+ package-native-compile t
+
  ring-bell-function #'ignore
  visible-bell nil
 
