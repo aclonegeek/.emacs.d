@@ -29,7 +29,7 @@
 (require 'pkg-ace-window)
 (require 'pkg-company)
 (require 'pkg-deadgrep)
-(require 'pkg-flycheck)
+(require 'pkg-flymake)
 (require 'pkg-flyspell)
 (require 'pkg-icomplete)
 (require 'pkg-imenu)
