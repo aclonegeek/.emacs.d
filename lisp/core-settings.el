@@ -80,5 +80,6 @@
 (add-function :after after-focus-change-function #'garbage-collect)
 
 (add-hook 'before-save-hook #'whitespace-cleanup)
+(add-hook 'after-save-hook  #'executable-make-buffer-file-executable-if-script-p)
 
 (provide 'core-settings)
