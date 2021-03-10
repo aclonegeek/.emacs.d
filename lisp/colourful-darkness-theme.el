@@ -49,7 +49,7 @@
       (white   "#ffffff")
       (red     "#ff0000")
       (green   "#00ff00")
-      (yellow  "#ffff00")
+      (yellow  "#ebc930")
       ;; (blue    "#0000ff")
       (magenta "#ff00ff")
       (cyan    "#00ffff")
