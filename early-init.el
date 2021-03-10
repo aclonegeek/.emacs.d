@@ -43,3 +43,5 @@
 
 ;; Ignore X resources.
 (advice-add #'x-apply-session-resources :override #'ignore)
+
+(setq comp-deferred-compilation nil)
