@@ -23,7 +23,6 @@ Emacs master built from source.
 --without-libotf
 --without-libsystemd
 --without-m17n-flt
---without-makeinfo
 --without-png
 --without-rsvg
 --without-selinux
