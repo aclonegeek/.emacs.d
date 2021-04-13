@@ -6,12 +6,10 @@
               ("<return>" . icomplete-force-complete-and-exit)
               ("C-n"      . icomplete-forward-completions)
               ("C-p"      . icomplete-backward-completions))
+  :hook (after-init . icomplete-mode)
   :config
-  (setq icomplete-compute-delay               0
+  (setq icomplete-vertical-mode               t
+        icomplete-compute-delay               0
         icomplete-delay-completions-threshold 0))
-
-(use-package icomplete-vertical
-  :hook ((after-init . icomplete-mode)
-         (after-init . icomplete-vertical-mode)))
 
 (provide 'pkg-icomplete)
