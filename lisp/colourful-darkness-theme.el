@@ -1,6 +1,6 @@
 ;;; colourful-darkness-theme.el --- Colourful-Darkness theme -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2020 Randy Taylor
+;; Copyright (C) 2021 Randy Taylor
 
 ;; Author: Randy Taylor
 ;; URL: TODO.
