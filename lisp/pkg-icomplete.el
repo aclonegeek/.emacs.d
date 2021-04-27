@@ -10,6 +10,8 @@
   :config
   (setq icomplete-vertical-mode               t
         icomplete-compute-delay               0
-        icomplete-delay-completions-threshold 0))
+        icomplete-delay-completions-threshold 0
+        icomplete-hide-common-prefix          nil
+        icomplete-show-matches-on-no-input    t))
 
 (provide 'pkg-icomplete)
