@@ -4,6 +4,7 @@
   :bind (:map icomplete-minibuffer-map
               ("<tab>"    . icomplete-force-complete)
               ("<return>" . icomplete-force-complete-and-exit)
+              ("C-M-j"    . icomplete-ret)
               ("C-n"      . icomplete-forward-completions)
               ("C-p"      . icomplete-backward-completions))
   :hook (after-init . icomplete-mode)
