@@ -83,7 +83,7 @@
    `(success                                  ((t (:foreground ,green))))
    `(line-number                              ((t (:foreground ,yellow :background ,black))))
    `(line-number-current-line                 ((t (:foreground ,yellow :background ,black))))
-   `(trailing-whitespace                      ((t :foreground nil :background ,yellow)))
+   `(trailing-whitespace                      ((t (:foreground nil :background ,yellow))))
 
    `(ffap                                     ((t (:foreground ,white))))
 
@@ -119,6 +119,9 @@
    `(company-tooltip-common                   ((t (:bold t :foreground ,yellow))))
    `(company-tooltip-selection                ((t (:foreground ,white :background ,black))))
    `(company-tooltip-annotation               ((t (:foreground ,white))))
+
+   `(completions-annotations                  ((t (:bold t :foreground ,yellow))))
+   `(completions-common-part                  ((t (:foreground ,yellow))))
 
    `(icomplete-selected-match                 ((t (:background ,black))))
 
