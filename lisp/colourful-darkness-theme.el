@@ -117,8 +117,10 @@
    `(company-scrollbar-fg                     ((t (:background ,black))))
    `(company-tooltip                          ((t (:inherit default :background ,black))))
    `(company-tooltip-common                   ((t (:bold t :foreground ,yellow))))
-   `(company-tooltip-selection                ((t (:foreground ,black :background ,gray))))
+   `(company-tooltip-selection                ((t (:foreground ,white :background ,black))))
    `(company-tooltip-annotation               ((t (:foreground ,white))))
+
+   `(icomplete-selected-match                 ((t (:background ,black))))
 
    `(org-document-title                       ((t (:bold t :foreground ,green :height 1.2))))
    `(org-level-1                              ((t (:bold t :foreground ,cyan :height 1.1))))
