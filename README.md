@@ -7,6 +7,7 @@ Emacs master built from source.
 ./autogen.sh
 
 ./configure
+--enable-link-time-optimization
 --with-x-toolkit=lucid
 --with-modules
 --with-x
