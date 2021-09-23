@@ -104,7 +104,7 @@
    `(font-lock-function-name-face             ((t (:foreground ,cyan :bold nil))))
    `(font-lock-keyword-face                   ((t (:bold nil :foreground ,yellow))))
    `(font-lock-string-face                    ((t (:foreground ,magenta))))
-   `(font-lock-type-face                      ((t (:foreground ,green ))))
+   `(font-lock-type-face                      ((t (:foreground ,green))))
    `(font-lock-variable-name-face             ((t (:foreground ,white))))
    `(font-lock-yellow-face                    ((t (:foreground ,yellow :background ,black))))
    `(font-lock-regexp-grouping-backslash      ((t (:foreground ,yellow))))
