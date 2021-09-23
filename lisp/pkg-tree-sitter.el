@@ -5,6 +5,7 @@
   :hook (prog-mode . tree-sitter-hl-mode))
 
 (use-package tree-sitter-langs
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (provide 'pkg-tree-sitter)
