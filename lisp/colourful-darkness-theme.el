@@ -227,6 +227,9 @@
    `(magit-signature-untrusted                ((t (:foreground ,yellow))))
    ;; tag
    `(magit-tag                                ((t (:foreground ,orange))))
+
+   ;; tree-sitter
+   `(tree-sitter-hl-face:property             ((t (:inherit font-lock-variable-name-face))))
    ))
 
 ;;;###autoload
