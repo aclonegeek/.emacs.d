@@ -19,6 +19,7 @@
 ;; Lang.
 (require 'lang-lsp)
 (require 'lang-c)
+(require 'lang-go)
 (require 'lang-markdown)
 (require 'lang-org)
 (require 'lang-python)
