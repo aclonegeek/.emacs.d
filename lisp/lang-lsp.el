@@ -3,7 +3,7 @@
 (use-package lsp-mode
   :ensure t
   :commands (lsp lsp-deferred)
-  :hook (((c-mode c++-mode) . lsp-deferred))
+  :hook (((c-mode c++-mode go-mode) . lsp-deferred))
   :defines lsp-completion-provider
   :init
   (setq lsp-keymap-prefix "C-c l")
