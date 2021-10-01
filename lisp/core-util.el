@@ -54,7 +54,7 @@
           (rename-file filename new-name t)
           (set-visited-file-name new-name t t)))))))
 
-(defun open-config()
+(defun open-config ()
   "Open Emacs config."
   (interactive)
   (find-file (concat user-emacs-directory "init.el")))
@@ -86,9 +86,14 @@ minibuffer."
         ((or 1 4) (insert value))
         (-1 (message value))))))
 
-(defun byte-compile-stuff()
+(defun byte-compile-stuff ()
   "Byte-compile stuff."
   (interactive)
   (byte-recompile-directory package-user-dir nil 'force))
+
+(defun native-compile-stuff ()
+  "Native-compile stuff."
+  (interactive)
+  (native-compile-async package-user-dir 'recursively))
 
 (provide 'core-util)
