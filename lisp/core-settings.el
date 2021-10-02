@@ -20,6 +20,7 @@
  visible-bell nil
 
  ;; Disable backups and lockfiles.
+ auto-save-list-file-prefix nil
  make-backup-files nil
  create-lockfiles  nil
 
