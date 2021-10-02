@@ -7,8 +7,7 @@
               ("C-M-j"    . icomplete-ret)
               ("C-n"      . icomplete-forward-completions)
               ("C-p"      . icomplete-backward-completions))
-  :hook ((after-init . icomplete-mode)
-         (after-init . icomplete-vertical-mode))
+  :hook (after-init . icomplete-vertical-mode)
   :config
   (setq icomplete-compute-delay               0
         icomplete-delay-completions-threshold 0
