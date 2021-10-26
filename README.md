@@ -35,7 +35,7 @@ Emacs master built from source.
 --without-xim
 --without-xpm
 --with-native-compilation
-CFLAGS="-O2 -g3 -mtune=native -march=native"
+CFLAGS="-O2 -pipe -mtune=native -march=native -fomit-frame-pointer"
 
 make -j NATIVE_FULL_AOT=1
 sudo make install
