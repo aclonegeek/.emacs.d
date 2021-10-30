@@ -9,7 +9,8 @@
                               (remove-hook 'flymake-diagnostic-functions
                                            'elisp-flymake-checkdoc t))))
   :config
-  (setq flymake-no-changes-timeout nil)
+  (setq flymake-no-changes-timeout nil
+        flymake-wrap-around        nil)
   (remove-hook 'flymake-diagnostic-functions 'flymake-proc-legacy-flymake))
 
 (provide 'pkg-flymake)
