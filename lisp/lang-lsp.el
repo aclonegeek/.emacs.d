@@ -8,7 +8,8 @@
   :init
   (setq lsp-keymap-prefix "C-c l")
   :config
-  (setq lsp-enable-links                     nil
+  (setq lsp-enable-folding                   nil
+        lsp-enable-links                     nil
         lsp-enable-snippet                   nil
         ;; We set company-backends ourself.
         lsp-completion-provider              :none
