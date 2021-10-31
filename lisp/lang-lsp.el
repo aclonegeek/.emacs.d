@@ -8,17 +8,18 @@
   :init
   (setq lsp-keymap-prefix "C-c l")
   :config
-  (setq lsp-enable-links                 nil
-        lsp-enable-snippet               nil
+  (setq lsp-enable-links                     nil
+        lsp-enable-snippet                   nil
         ;; We set company-backends ourself.
-        lsp-completion-provider          :none
-        lsp-enable-on-type-formatting    nil
-        lsp-signature-auto-activate      t
-        lsp-signature-doc-lines          3
-        lsp-enable-semantic-highlighting t
-        lsp-headerline-breadcrumb-enable nil
-        lsp-modeline-code-actions-enable nil
-        lsp-modeline-diagnostics-enable  nil))
+        lsp-completion-provider              :none
+        lsp-enable-on-type-formatting        nil
+        lsp-signature-auto-activate          t
+        lsp-signature-doc-lines              3
+        lsp-enable-semantic-highlighting     t
+        lsp-headerline-breadcrumb-enable     nil
+        lsp-modeline-code-actions-enable     nil
+        lsp-modeline-diagnostics-enable      nil
+        lsp-modeline-workspace-status-enable nil))
 
 (use-package lsp-ui
   :ensure t
