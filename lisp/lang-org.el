@@ -7,6 +7,7 @@
   (unbind-key "C-k" org-mode-map)
   (unbind-key "C-x n e" org-mode-map)
   ;; Wrap lines in org-mode
-  (setq org-startup-truncated nil))
+  (setq org-startup-truncated nil
+        org-startup-folded    t))
 
 (provide 'lang-org)
