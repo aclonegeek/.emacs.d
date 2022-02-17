@@ -1,5 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
+(setenv "LSP_USE_PLISTS" "true")
+
 (use-package lsp-mode
   :ensure t
   :commands (lsp lsp-deferred)
