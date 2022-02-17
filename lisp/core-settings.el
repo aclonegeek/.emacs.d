@@ -9,10 +9,6 @@
 
 (fset #'yes-or-no-p #'y-or-n-p)
 
-;; Coding systems.
-(prefer-coding-system 'utf-8)
-(set-default-coding-systems 'utf-8)
-
 (setq-default
  package-native-compile t
 
