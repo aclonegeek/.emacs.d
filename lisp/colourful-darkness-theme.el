@@ -1,9 +1,9 @@
 ;;; colourful-darkness-theme.el --- Colourful-Darkness theme -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2021 Randy Taylor
+;; Copyright (C) 2021-2022 Randy Taylor
 
 ;; Author: Randy Taylor
-;; URL: TODO.
+;; URL: https://git.sr.ht/~randy/.emacs.d/tree/master/item/lisp/colourful-darkness-theme.el
 ;; Version: 0.0.1
 
 ;; This program is free software: you can redistribute it and/or modify
