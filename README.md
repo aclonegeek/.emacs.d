@@ -8,9 +8,8 @@ Emacs master built from source.
 
 ./configure
 --enable-link-time-optimization
---with-x-toolkit=lucid
 --with-modules
---with-x
+--with-pgtk
 --with-file-notification=no
 --with-sound=no
 --without-compress-install
