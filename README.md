@@ -26,10 +26,12 @@ Emacs master built from source.
 --without-png
 --without-rsvg
 --without-selinux
+--without-sqlite3
 --without-tiff
 --without-toolkit-scroll-bars
 --without-gsettings
 --without-gconf
+--without-webp
 --without-xaw3d
 --without-xim
 --without-xpm
