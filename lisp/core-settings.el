@@ -60,6 +60,8 @@
       completion-show-help nil
       completions-format 'vertical)
 
+(setq grep-program "rg")
+
 (delete-selection-mode 1)
 (electric-pair-mode 1)
 
