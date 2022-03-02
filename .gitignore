@@ -23,5 +23,6 @@ workspace/
 bookmarks
 custom.el
 package-quickstart.el
+projects
 recentf
 network-security.data
