@@ -62,6 +62,8 @@
 
 (setq grep-program "rg")
 
+(setq vc-follow-symlinks t)
+
 (delete-selection-mode 1)
 (electric-pair-mode 1)
 
