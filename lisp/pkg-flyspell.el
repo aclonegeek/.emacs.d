@@ -2,6 +2,9 @@
 
 (use-package flyspell
   :hook (org-mode . flyspell-mode)
+  :bind (:map flyspell-mode-map
+              ("C-." . nil)
+              ("C-," . nil))
   :config
   (setq ispell-program-name "aspell"
         ispell-dictionary   "english"

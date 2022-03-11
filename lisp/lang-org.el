@@ -3,9 +3,10 @@
 (use-package org
   :commands org-mode
   :hook (org-mode . (lambda () (require 'ox-md nil t)))
+  :bind (:map org-mode-map
+              ("C-," . nil)
+              ("C-x n e" . nil))
   :config
-  (unbind-key "C-k" org-mode-map)
-  (unbind-key "C-x n e" org-mode-map)
   ;; Wrap lines in org-mode
   (setq org-startup-truncated nil
         org-startup-folded    t))
