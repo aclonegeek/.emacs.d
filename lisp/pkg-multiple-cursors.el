@@ -7,6 +7,8 @@
          ("C-."     . mc/mark-next-like-this)
          ("C-c C-." . mc/mark-all-like-this)
          ("C-<"     . mc/unmark-previous-like-this)
-         ("C->"     . mc/unmark-next-like-this)))
+         ("C->"     . mc/unmark-next-like-this))
+  :init
+  (setq mc/always-run-for-all t))
 
 (provide 'pkg-multiple-cursors)
