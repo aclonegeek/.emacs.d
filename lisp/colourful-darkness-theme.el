@@ -45,7 +45,7 @@
      `((,(cadr o) 0 'font-lock-operator-face)))))
 
 (deftheme colourful-darkness)
-(let ((black   "#000000")
+(let* ((black   "#000000")
       (white   "#ffffff")
       (red     "#ff0000")
       (green   "#00ff00")
