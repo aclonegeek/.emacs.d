@@ -96,4 +96,16 @@ minibuffer."
   (interactive)
   (native-compile-async package-user-dir 'recursively))
 
+(defun sudo-edit ()
+  "Edit the current file with sudo."
+  (interactive)
+  (let ((tramp-file-name (concat "/sudo::" (buffer-file-name))))
+    (find-file tramp-file-name)))
+
+(defun sudo-find-file ()
+  "Edit the selected file with sudo."
+  (interactive)
+  (let ((default-directory "/sudo::"))
+    (call-interactively #'find-file)))
+
 (provide 'core-util)
