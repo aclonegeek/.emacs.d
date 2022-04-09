@@ -26,3 +26,4 @@ package-quickstart.el
 projects
 recentf
 network-security.data
+tramp
