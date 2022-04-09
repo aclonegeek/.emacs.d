@@ -60,6 +60,16 @@
       completion-show-help nil
       completions-format 'vertical)
 
+;; Compilation
+(defvar compilation-auto-jump-to-first-error)
+(defvar compilation-scroll-output)
+(setq compilation-auto-jump-to-first-error t
+      compilation-scroll-output t)
+
+;; Dired.
+(defvar dired-kill-when-opening-new-dired-buffer)
+(setq dired-kill-when-opening-new-dired-buffer t)
+
 (setq grep-program "rg")
 
 (setq vc-follow-symlinks t)
