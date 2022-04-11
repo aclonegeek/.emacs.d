@@ -8,10 +8,9 @@
 (defvar bookmark-set-fringe-mark)
 (setq bookmark-set-fringe-mark nil)
 
-(defvar show-paren-delay)
-(defvar show-paren-when-point-in-periphery)
 (setq show-paren-delay 0
-      show-paren-when-point-in-periphery t)
+      show-paren-when-point-in-periphery t
+      show-paren-context-when-offscreen 'overlay)
 (show-paren-mode)
 
 (setq-default mode-line-default-help-echo nil) ;; Disable mode-line hover tips.
