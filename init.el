@@ -37,6 +37,7 @@
 (require 'pkg-isearch)
 (require 'pkg-magit)
 (require 'pkg-multiple-cursors)
+(require 'pkg-project)
 (require 'pkg-tree-sitter)
 (require 'pkg-xref)
 (require 'pkg-yasnippet)
