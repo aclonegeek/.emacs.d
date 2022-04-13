@@ -1,7 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
 (use-package flymake
-  :bind (("C-\\" . flymake-show-diagnostics-buffer)
+  :bind (("C-\\" . flymake-show-buffer-diagnostics)
          ("M-["  . flymake-goto-prev-error)
          ("M-]"  . flymake-goto-next-error))
   :hook ((emacs-lisp-mode . flymake-mode)
