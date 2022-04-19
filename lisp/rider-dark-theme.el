@@ -59,7 +59,7 @@
 
    `(cursor                                   ((t (:background ,white))))
    `(region                                   ((t (:inverse-video t))))
-   `(highlight                                ((t (:foreground ,black :background ,selection))))
+   `(highlight                                ((t (:background ,selection))))
    `(hl-line                                  ((t (:background ,current-bg))))
    `(fringe                                   ((t (:foreground ,separator :background ,bg))))
    `(show-paren-match-face                    ((t (:background ,yellow))))
