@@ -41,6 +41,7 @@
 
        (bg "#262626")
        (fg "#bdbdbd")
+       (darker-fg "#787878")
        (current-bg "#1f2424")
        (dialog-bg "#292929")
 
@@ -84,7 +85,7 @@
    `(mode-line-buffer-id                      ((t (:foreground ,white :background nil))))
    `(mode-line-emphasis                       ((t (:foreground ,white))))
 
-   `(font-lock-preprocessor-face              ((t (:foreground ,todo))))
+   `(font-lock-preprocessor-face              ((t (:foreground ,cyan))))
    `(font-lock-builtin-face                   ((t (:foreground ,blue))))
    `(font-lock-comment-face                   ((t (:foreground ,comment))))
    `(font-lock-negation-char-face             ((t (:foreground ,magenta))))
@@ -113,7 +114,7 @@
    `(company-tooltip-annotation-selection     ((t (:bold t :foreground ,green))))
 
    `(completions-annotations                  ((t (:bold t :foreground ,green))))
-   `(completions-common-part                  ((t (:foreground ,blue))))
+   `(completions-common-part                  ((t (:foreground ,cyan))))
 
    `(icomplete-selected-match                 ((t (:background ,selection))))
 
@@ -222,10 +223,20 @@
 
    ;; tree-sitter
    `(tree-sitter-hl-face:function.call        ((t (:inherit font-lock-function-name-face))))
-   `(tree-sitter-hl-face:property             ((t (:inherit font-lock-variable-name-face))))
+   `(tree-sitter-hl-face:property             ((t (:foreground ,cyan))))
    `(tree-sitter-hl-face:punctuation          ((t (:foreground ,fg))))
    `(tree-sitter-hl-face:number               ((t (:foreground ,violet))))
    `(tree-sitter-hl-face:operator             ((t (:foreground ,white :bold t))))
+
+   ;; shr
+   `(shr-text                                 ((t (:inherit nil))))
+
+   ;; gnus
+   `(gnus-header-name                         ((t (:foreground ,blue))))
+   `(gnus-header-from                         ((t (:foreground ,green))))
+   `(gnus-header-name                         ((t (:foreground ,blue))))
+   `(gnus-header-subject                      ((t (:foreground ,orange))))
+   `(gnus-header-content                      ((t (:foreground ,magenta))))
    ))
 
 ;;;###autoload
