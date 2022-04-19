@@ -13,6 +13,8 @@
       show-paren-context-when-offscreen 'overlay)
 (show-paren-mode)
 
+(global-hl-line-mode)
+
 (setq-default mode-line-default-help-echo nil) ;; Disable mode-line hover tips.
 
 ;; Font
