@@ -237,6 +237,9 @@
    `(gnus-header-name                         ((t (:foreground ,blue))))
    `(gnus-header-subject                      ((t (:foreground ,orange))))
    `(gnus-header-content                      ((t (:foreground ,magenta))))
+
+   ;; egot
+   `(eglot-highlight-symbol-face              ((t (:background ,selection :bold t))))
    ))
 
 ;;;###autoload
