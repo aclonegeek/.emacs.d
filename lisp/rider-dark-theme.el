@@ -103,6 +103,13 @@
 
    `(dired-directory                          ((t (:inherit font-lock-keyword-face))))
 
+   ;; corfu.
+   `(corfu-annotations                        ((t (:foreground ,orange))))
+   `(corfu-border                             ((t (:background ,separator))))
+   `(corfu-current                            ((t (:bold t :foreground ,white :background ,selection))))
+   `(corfu-default                            ((t (:foreground ,fg :background ,dialog-bg))))
+
+   ;; company.
    `(company-preview-common                   ((t (:foreground ,fg :background ,dialog-bg))))
    `(company-scrollbar-thumb                  ((t (:background ,bg))))
    `(company-scrollbar-track                  ((t (:background ,bg))))
