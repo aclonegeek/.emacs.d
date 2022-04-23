@@ -1,11 +1,11 @@
-# Elisp byte code
+# Elisp byte code.
 *.elc
 
-# Package related
-/elpa
+# Package related.
 /eshell
-/server
-/straight
+/straight/build
+/straight/repos
+/straight/*.el
 .mc-lists.el
 *.cache
 *.dat
@@ -13,11 +13,11 @@
 *.last
 *.*~
 
-# Folders
+# Folders.
 eln-cache/
 transient/
 
-# Files
+# Files.
 bookmarks
 custom.el
 package-quickstart.el
