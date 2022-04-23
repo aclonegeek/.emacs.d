@@ -1,8 +1,6 @@
 ;; -*- lexical-binding: t; -*-
 
-(use-package rustic
-  :commands rustic-mode
-  :config
-  (setq rustic-format-trigger 'on-save))
+(use-package rust-mode
+  :defer t)
 
 (provide 'lang-rust)
