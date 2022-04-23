@@ -28,6 +28,7 @@
 
 ;; Modeline
 (use-package core-modeline
+  :straight nil
   :config
   (setq line-number-mode   1
         column-number-mode 1))

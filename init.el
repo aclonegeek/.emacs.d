@@ -3,12 +3,9 @@
 (eval-and-compile
   (add-to-list 'load-path "~/.emacs.d/lisp"))
 
-(eval-when-compile
-  ;; Ensure use-package is installed.
-  (unless (locate-library "use-package")
-    (package-refresh-contents)
-    (package-install 'use-package))
-  (require 'use-package))
+(require 'pkg-straight)
+
+(straight-use-package 'use-package)
 
 ;; Core.
 (require 'core-keybinds)

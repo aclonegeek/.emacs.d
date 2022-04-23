@@ -2,6 +2,8 @@
 
 (defvar file-name-handler-alist-old file-name-handler-alist)
 (setq
+ ;; Use straight instead.
+ package-enable-at-startup nil
  site-run-file           nil
  file-name-handler-alist nil
  ;; Disable autosaves.
@@ -26,15 +28,6 @@
             (setq file-name-handler-alist file-name-handler-alist-old
                   gc-cons-threshold       16777216
                   gc-cons-percentage      0.1)))
-
-;; Package.
-(setq package-archives
-      (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
-                          (not (gnutls-available-p))))
-             (proto (if no-ssl "http" "https")))
-        `(("gnu"   . ,(concat proto "://elpa.gnu.org/packages/"))
-          ("melpa" . ,(concat proto "://melpa.org/packages/"))))
-      package-quickstart t)
 
 ;; Disable GUI elements.
 (push '(menu-bar-lines . 0)   default-frame-alist)

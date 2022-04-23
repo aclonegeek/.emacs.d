@@ -1,7 +1,6 @@
 ;; -*- lexical-binding: t; -*-
 
 (use-package company
-  :ensure t
   :commands company-mode
   :hook (prog-mode . company-mode)
   :config

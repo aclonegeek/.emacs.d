@@ -5,19 +5,17 @@
 /elpa
 /eshell
 /server
+/straight
 .mc-lists.el
 *.cache
 *.dat
 *.eld
 *.last
-*.lsp*
 *.*~
 
 # Folders
 eln-cache/
-eclipse.jdt.ls/
 transient/
-workspace/
 
 # Files
 bookmarks
