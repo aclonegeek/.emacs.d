@@ -25,7 +25,7 @@
 ;; Packages.
 (require 'pkg-avy)
 (require 'pkg-ace-window)
-(require 'pkg-company)
+(require 'pkg-corfu)
 (require 'pkg-deadgrep)
 (require 'pkg-flymake)
 (require 'pkg-flyspell)
