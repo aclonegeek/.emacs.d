@@ -108,6 +108,7 @@
    `(corfu-border                             ((t (:background ,separator))))
    `(corfu-current                            ((t (:bold t :foreground ,white :background ,selection))))
    `(corfu-default                            ((t (:foreground ,fg :background ,dialog-bg))))
+   `(corfu-indexed                            ((t (:foreground ,fg :background ,dialog-bg))))
 
    ;; company.
    `(company-preview-common                   ((t (:foreground ,fg :background ,dialog-bg))))
