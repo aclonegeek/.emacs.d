@@ -58,7 +58,7 @@
    `(default                                  ((t (:background ,bg :foreground ,fg))))
 
    `(cursor                                   ((t (:background ,white))))
-   `(region                                   ((t (:inverse-video t))))
+   `(region                                   ((t (:background ,selection))))
    `(highlight                                ((t (:background ,selection))))
    `(hl-line                                  ((t (:background ,current-bg))))
    `(fringe                                   ((t (:foreground ,separator :background ,bg))))
