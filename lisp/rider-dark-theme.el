@@ -74,8 +74,8 @@
    `(error                                    ((t (:foreground ,error))))
    `(yellow                                   ((t (:foreground ,yellow))))
    `(success                                  ((t (:foreground ,success))))
-   `(line-number                              ((t (:foreground ,yellow :background ,black))))
-   `(line-number-current-line                 ((t (:foreground ,yellow :background ,black))))
+   `(line-number                              ((t (:background ,dialog-bg :foreground ,darker-fg))))
+   `(line-number-current-line                 ((t (:background ,dialog-bg :foreground ,darker-fg))))
    `(trailing-whitespace                      ((t (:foreground nil :background ,yellow))))
 
    `(ffap                                     ((t (:foreground ,white))))
