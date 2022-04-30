@@ -5,6 +5,8 @@
 (use-package cmake-mode
   :defer t)
 
+;; To disable clang-format+ with .dir-locals.el:
+;; ((nil . ((eval . (clang-format+-mode 0)))))
 (use-package clang-format+
   :hook ((c-mode c++-mode) . clang-format+-mode))
 
