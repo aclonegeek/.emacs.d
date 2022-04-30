@@ -42,3 +42,8 @@ CFLAGS="-O2 -pipe -mtune=native -march=native -fomit-frame-pointer"
 make -j NATIVE_FULL_AOT=1
 sudo make install
 ```
+
+If debugging:
+```
+CFLAGS="-Og -ggdb3 -pipe -mtune=native -march=native"
+```
