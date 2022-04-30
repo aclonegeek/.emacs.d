@@ -9,7 +9,8 @@
   (corfu-indexed-mode)
   (setq corfu-auto-delay 0
         corfu-auto-prefix 1
-        corfu-quit-at-boundary nil))
+        corfu-quit-at-boundary nil
+        corfu-quit-no-match t))
 
 (use-package kind-icon
   :straight (:host nil :repo "https://git.sr.ht/~randy/kind-text" :branch "kind-text")
