@@ -5,7 +5,6 @@
 
 ;; Mirror most popular text editor's C-backspace functionality (for the most part).
 (global-set-key [C-backspace] 'backward-delete-word)
-(global-set-key [C-tab] 'goto-line)
 
 (global-set-key (kbd "C-`") 'calc-eval-region)
 
