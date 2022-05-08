@@ -18,9 +18,11 @@
 (setq-default mode-line-default-help-echo nil) ;; Disable mode-line hover tips.
 
 ;; Font
-(set-face-attribute 'default nil
-                    :family "Iosevka"
-                    :height 110)
+(add-hook 'after-init-hook
+          (lambda ()
+            (set-face-attribute 'default nil
+                                :family "Iosevka"
+                                :height 110)))
 
 ;; Theme
 (require 'rider-dark-theme)
