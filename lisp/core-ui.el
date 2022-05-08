@@ -25,8 +25,9 @@
                                 :height 110)))
 
 ;; Theme
-(require 'rider-dark-theme)
-(add-hook 'after-init-hook (lambda () (load-theme 'rider-dark t)))
+(add-hook 'after-init-hook (lambda ()
+                             (require 'rider-dark-theme)
+                             (load-theme 'rider-dark t)))
 
 ;; Modeline
 (use-package core-modeline
