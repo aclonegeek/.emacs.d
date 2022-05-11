@@ -70,7 +70,14 @@
 (defvar dired-kill-when-opening-new-dired-buffer)
 (setq dired-kill-when-opening-new-dired-buffer t)
 
-(setq grep-program "rg")
+(use-package grep
+  :straight nil
+  :bind ([f5] . grep-find)
+  :config
+  (setq grep-program "rg")
+  (grep-apply-setting
+     'grep-find-command
+     '("rg --no-heading -H '' -g=''" . 21)))
 
 (setq vc-follow-symlinks t)
 
