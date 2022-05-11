@@ -28,7 +28,6 @@
 (require 'pkg-consult)
 (require 'pkg-corfu)
 (require 'pkg-flymake)
-(require 'pkg-flyspell)
 (require 'pkg-icomplete)
 (require 'pkg-isearch)
 (require 'pkg-magit)
