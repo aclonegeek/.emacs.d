@@ -15,4 +15,4 @@
         icomplete-hide-common-prefix          nil
         icomplete-show-matches-on-no-input    t))
 
-(provide 'pkg-icomplete)
+(provide 'core-icomplete)

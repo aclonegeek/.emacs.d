@@ -12,6 +12,8 @@
 (require 'core-settings)
 (require 'core-ui)
 (require 'core-util)
+(require 'core-icomplete)
+(require 'core-isearch)
 
 ;; Lang.
 (require 'lang-lsp)
@@ -28,8 +30,6 @@
 (require 'pkg-consult)
 (require 'pkg-corfu)
 (require 'pkg-flymake)
-(require 'pkg-icomplete)
-(require 'pkg-isearch)
 (require 'pkg-magit)
 (require 'pkg-multiple-cursors)
 (require 'pkg-project)
