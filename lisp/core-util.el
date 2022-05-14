@@ -86,16 +86,6 @@ minibuffer."
         ((or 1 4) (insert value))
         (-1 (message value))))))
 
-(defun byte-compile-stuff ()
-  "Byte-compile stuff."
-  (interactive)
-  (byte-recompile-directory package-user-dir nil 'force))
-
-(defun native-compile-stuff ()
-  "Native-compile stuff."
-  (interactive)
-  (native-compile-async package-user-dir 'recursively))
-
 (defun sudo-edit ()
   "Edit the current file with sudo."
   (interactive)
