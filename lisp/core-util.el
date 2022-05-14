@@ -108,4 +108,13 @@ minibuffer."
   (let ((default-directory "/sudo::"))
     (call-interactively #'find-file)))
 
+(defun ssh ()
+  "Connect to remote host with TRAMP via SSH."
+  (interactive)
+  (let* ((user (read-string "Username: "))
+         (ip (read-string "IP: "))
+         (dir (read-string "Directory: "))
+         (tramp-file-name (concat "/ssh:" user "@" ip ":" dir)))
+    (find-file tramp-file-name)))
+
 (provide 'core-util)
