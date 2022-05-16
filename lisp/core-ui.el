@@ -1,5 +1,8 @@
 ;; -*- lexical-binding: t; -*-
 
+;; Let Emacs resize one pixel at a time.
+(setq frame-resize-pixelwise t)
+
 (tooltip-mode -1)
 
 (blink-cursor-mode 0)            ;; Disable blinking.
