@@ -52,9 +52,11 @@
       completions-format 'vertical)
 
 ;; Compilation
+(defvar compilation-always-kill)
 (defvar compilation-auto-jump-to-first-error)
 (defvar compilation-scroll-output)
-(setq compilation-auto-jump-to-first-error t
+(setq compilation-always-kill t
+      compilation-auto-jump-to-first-error t
       compilation-scroll-output t)
 
 ;; Dired.
