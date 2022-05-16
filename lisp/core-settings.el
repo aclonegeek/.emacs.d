@@ -91,6 +91,11 @@
 (add-hook 'before-save-hook #'whitespace-cleanup)
 (add-hook 'after-save-hook  #'executable-make-buffer-file-executable-if-script-p)
 
+;;
+;; PGTK.
+;;
+;; Reduce frame operation latency.
+(setq pgtk-wait-for-event-timeout 0.001)
 
 ;;
 ;; Windows.
