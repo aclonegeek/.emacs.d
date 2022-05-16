@@ -3,10 +3,6 @@
 (defconst IS-LINUX   (eq system-type 'gnu/linux))
 (defconst IS-WINDOWS (eq system-type 'windows-nt))
 
-;; Set default-directory on Windows.
-(when IS-WINDOWS
-    (setq default-directory (expand-file-name (getenv "UserProfile"))))
-
 (fset #'yes-or-no-p #'y-or-n-p)
 
 (setq-default
@@ -46,11 +42,6 @@
  ;; Don't render cursors or regions in non-focused windows.
  cursor-in-non-selected-windows nil
  highlight-nonselected-windows nil)
-
-;; Windows-specific optimizations.
-(when IS-WINDOWS
-  (setq w32-get-true-file-attributes nil
-        w32-pipe-buffer-size         (* 64 1024)))
 
 ;; Completion.
 (setq completion-ignore-case t
@@ -99,5 +90,16 @@
 
 (add-hook 'before-save-hook #'whitespace-cleanup)
 (add-hook 'after-save-hook  #'executable-make-buffer-file-executable-if-script-p)
+
+
+;;
+;; Windows.
+;;
+;; Set default-directory on Windows.
+(when IS-WINDOWS
+  (setq default-directory (expand-file-name (getenv "UserProfile")))
+  ;; Windows-specific optimizations.
+  (setq w32-get-true-file-attributes nil
+        w32-pipe-buffer-size         (* 64 1024)))
 
 (provide 'core-settings)
