@@ -33,7 +33,7 @@
                              (load-theme 'rider-dark t)))
 
 ;; Modeline
-(use-package core-modeline
+(use-package core-mode-line
   :straight nil
   :config
   (setq line-number-mode   1

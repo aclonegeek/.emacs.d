@@ -46,4 +46,4 @@
          (setq output (concat ".../" output)))
        output))
 
-(provide 'core-modeline)
+(provide 'core-mode-line)
