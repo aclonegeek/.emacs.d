@@ -9,12 +9,13 @@
                'mode-line-directory
                'mode-line-buffer-identification
                " "
-               '(line-number-mode ("%l" (column-number-mode ":%c")))))
+               "%l:%c"
+               '(flymake-mode (:propertize ("/^v^\\" flymake-mode-line-counters)))))
 
 (defvar mode-line-directory
   '(:propertize
-    (:eval (if (buffer-file-name) (concat " " (shorten-directory default-directory 20)) " ")))
-  "Formats the current directory.")
+    (:eval
+     (when (buffer-file-name) (concat " " (shorten-directory default-directory 20))))))
 (put 'mode-line-directory 'risky-local-variable t)
 
 (defun shorten-directory (dir max-length)
