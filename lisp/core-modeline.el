@@ -4,16 +4,14 @@
 (set-face-attribute 'mode-line-active nil :inherit 'mode-line)
 (set-face-attribute 'mode-line-inactive nil :inherit 'mode-line)
 
-(defvar mode-line-left)
-(setq mode-line-left
+(defconst mode-line-left
       (list ""
             'mode-line-directory
             'mode-line-buffer-identification
             " "
             "%l:%c"))
 
-(defvar mode-line-right)
-(setq mode-line-right
+(defconst mode-line-right
       (list ""
             '(flymake-mode (:propertize ("/^v^\\" flymake-mode-line-counters)))))
 
