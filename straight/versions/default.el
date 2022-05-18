@@ -10,7 +10,6 @@
  ("el-get" . "9353309744e4f8a7c9b1adf22ec99536fb2146b0")
  ("elisp-tree-sitter" . "3cfab8a0e945db9b3df84437f27945746a43cc71")
  ("eldoc" . "88f5e70a8868bef0d685a57a623e51a233a33380")
- ("emacs-clang-format-plus" . "ddd4bfe1a13c2fd494ce339a320a51124c1d2f68")
  ("emacsmirror-mirror" . "378111b2b7846064679a063f4eec48ef6de39ce9")
  ("flymake" . "a0aa076defe358d453f6d14885680dc586969642")
  ("gnu-elpa-mirror" . "a388b8aa566f391705cc43faa7678d7fffc95330")
