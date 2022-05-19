@@ -42,7 +42,7 @@
       (parameter_declaration (identifier) @font-lock-variable-name-face)
       (const_declaration (const_spec name: (identifier) @font-lock-constant-face))
 
-      ;; Functions calls.
+      ;; Function calls.
       (call_expression
        function: (identifier) @font-lock-function-name-face)
       (call_expression
