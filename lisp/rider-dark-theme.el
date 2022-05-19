@@ -26,6 +26,26 @@
 
 ;;; Code:
 
+(defface font-lock-escape-face
+  '((t (:inherit default)))
+  "Basic face for escapes."
+  :group 'basic-faces)
+
+(defface font-lock-property-face
+  '((t (:inherit default)))
+  "Basic face for properties."
+  :group 'basic-faces)
+
+(defface font-lock-number-face
+  '((t (:inherit default)))
+  "Basic face for numbers."
+  :group 'basic-faces)
+
+(defface font-lock-operator-face
+  '((t (:inherit default)))
+  "Basic face for operators."
+  :group 'basic-faces)
+
 (deftheme rider-dark)
 (let* ((black "#000000")
        (blue "#6394f2")
@@ -100,6 +120,11 @@
    `(font-lock-yellow-face                    ((t (:foreground ,yellow :background ,black))))
    `(font-lock-regexp-grouping-backslash      ((t (:foreground ,yellow))))
    `(font-lock-regexp-grouping-construct      ((t (:foreground ,yellow))))
+   ;; Custom font-lock faces.
+   `(font-lock-escape-face                    ((t (:inherit ,font-lock-keyword-face))))
+   `(font-lock-property-face                  ((t (:foreground ,cyan))))
+   `(font-lock-number-face                    ((t (:foreground ,violet))))
+   `(font-lock-operator-face                  ((t (:foreground ,white :bold t))))
 
    `(dired-directory                          ((t (:inherit font-lock-keyword-face))))
 
@@ -231,10 +256,10 @@
 
    ;; tree-sitter
    `(tree-sitter-hl-face:function.call        ((t (:inherit font-lock-function-name-face))))
-   `(tree-sitter-hl-face:property             ((t (:foreground ,cyan))))
+   `(tree-sitter-hl-face:property             ((t (:inherit font-lock-property-face))))
    `(tree-sitter-hl-face:punctuation          ((t (:foreground ,fg))))
-   `(tree-sitter-hl-face:number               ((t (:foreground ,violet))))
-   `(tree-sitter-hl-face:operator             ((t (:foreground ,white :bold t))))
+   `(tree-sitter-hl-face:number               ((t (:inherit font-lock-number-face))))
+   `(tree-sitter-hl-face:operator             ((t (:inherit font-lock-operator-face))))
 
    ;; shr
    `(shr-text                                 ((t (:inherit nil))))
