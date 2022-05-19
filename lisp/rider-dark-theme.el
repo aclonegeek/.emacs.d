@@ -36,6 +36,11 @@
   "Basic face for properties."
   :group 'basic-faces)
 
+(defface font-lock-punctuation-face
+  '((t (:inherit default)))
+  "Basic face for punctuation."
+  :group 'basic-faces)
+
 (defface font-lock-number-face
   '((t (:inherit default)))
   "Basic face for numbers."
