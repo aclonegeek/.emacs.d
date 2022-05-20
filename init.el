@@ -17,6 +17,7 @@
 
 ;; Lang.
 (require 'lang-lsp)
+(require 'lang-bash)
 (require 'lang-c)
 (require 'lang-go)
 (require 'lang-markdown)
