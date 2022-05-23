@@ -16,6 +16,7 @@
 # Folders.
 eln-cache/
 transient/
+tree-sitter/
 
 # Files.
 bookmarks
