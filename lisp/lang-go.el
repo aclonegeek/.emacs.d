@@ -2,7 +2,7 @@
 
 (use-package go-mode
   :hook ((go-mode . ts-hl-go-mode)
-         (before-save . gofmt-beforre-save)))
+         (before-save . gofmt-before-save)))
 
 (defvar go-font-lock-settings
   '((go
