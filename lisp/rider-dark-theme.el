@@ -89,7 +89,7 @@
    `(fringe                                   ((t (:foreground ,separator :background ,bg))))
    `(show-paren-match-face                    ((t (:background ,yellow))))
    `(show-paren-match                         ((t (:foreground ,white :background ,cyan :bold t))))
-   `(show-paren-mismatch                      ((t (:background ,yellow))))
+   `(show-paren-mismatch                      ((t (:background ,bg))))
    `(isearch                                  ((t (:background ,selection))))
    `(lazy-highlight                           ((t (:background ,selection))))
    `(vertical-border                          ((t (:foreground ,separator))))
