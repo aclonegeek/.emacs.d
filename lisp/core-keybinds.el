@@ -10,6 +10,8 @@
 
 (global-set-key (kbd "C-c a") 'align-regexp)
 
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+
 (global-set-key (kbd "M-d") 'delete-word)
 (global-set-key (kbd "C-k") 'kill-whole-line)
 (global-set-key (kbd "M-k") 'kill-line)
