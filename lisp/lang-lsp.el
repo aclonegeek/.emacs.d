@@ -6,6 +6,7 @@
               ("C-c l r" . eglot-rename))
   :hook (((c-mode c++-mode go-mode) . eglot-ensure))
   :config
+  (setq eglot-events-buffer-size 0)
   (add-hook 'eglot-managed-mode-hook
             (lambda ()
               ;; Show flymake diagnostics first.
