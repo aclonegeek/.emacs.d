@@ -30,6 +30,7 @@
 (require 'pkg-ace-window)
 (require 'pkg-consult)
 (require 'pkg-corfu)
+(require 'pkg-embark)
 (require 'pkg-flymake)
 (require 'pkg-magit)
 (require 'pkg-multiple-cursors)
