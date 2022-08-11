@@ -32,7 +32,6 @@ Emacs master built from source.
 --without-selinux
 --without-sqlite3
 --without-tiff
---without-toolkit-scroll-bars
 --without-webp
 --without-xaw3d
 --without-xim
