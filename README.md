@@ -12,6 +12,7 @@ Emacs master built from source.
 --with-modules
 --with-native-compilation
 --with-pgtk
+--with-small-ja-dic
 --with-sound=no
 --without-compress-install
 --without-dbus
