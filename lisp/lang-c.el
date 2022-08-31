@@ -171,7 +171,7 @@
 
 ;; Combine with c-font-lock-settings in c++-mode.
 (defvar c++-font-lock-settings
-  '(cpp
+  `(cpp
     ,(treesit-query-compile
       'cpp
       '(
