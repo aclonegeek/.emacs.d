@@ -4,7 +4,7 @@
   :bind (:map eglot-mode-map
               ("C-c l a" . eglot-code-actions)
               ("C-c l r" . eglot-rename))
-  :hook (((c-mode c++-mode go-mode) . eglot-ensure))
+  :hook (((c-mode c++-mode go-mode rust-mode) . eglot-ensure))
   :config
   (setq eglot-events-buffer-size 0)
   (add-hook 'eglot-managed-mode-hook
