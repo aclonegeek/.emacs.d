@@ -1,13 +1,17 @@
 ;; -*- lexical-binding: t; -*-
 
+(defvar treesit-font-lock-rules-go)
+
 (use-package go-mode
-  :hook ((go-mode . ts-hl-go-mode)
+  :hook ((go-mode . (lambda ()
+                      (setq treesit-font-lock-settings
+                            treesit-font-lock-rules-go)
+                      (treesit-font-lock-enable)))
          (before-save . gofmt-before-save)))
 
-(defvar go-font-lock-settings
-  `((go
-     ,(treesit-query-compile
-       'go
+(setq treesit-font-lock-rules-go
+      (treesit-font-lock-rules
+       :language 'go
        '(
          ;; Comments.
          (comment) @font-lock-comment-face
@@ -124,15 +128,6 @@
           "|="
           "||"
           ] @font-lock-operator-face ;; Custom face.
-         )))))
-
-(define-minor-mode ts-hl-go-mode
-  "Minor mode for highlighting Go using tree-sitter."
-  :lighter nil
-  (require 'treesit)
-  (unless font-lock-defaults
-    (setq font-lock-defaults '(nil t)))
-  (setq-local treesit-font-lock-defaults '((go-font-lock-settings)))
-  (treesit-font-lock-enable))
+         )))
 
 (provide 'lang-go)

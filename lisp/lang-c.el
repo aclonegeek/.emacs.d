@@ -14,202 +14,196 @@
                                          nil
                                          t))))
 
-(defvar c-font-lock-settings
-  `((c
-     ,(treesit-query-compile
-       'c
-       '(
-         ;; Comments.
-         (comment) @font-lock-comment-face
+(defvar treesit-font-lock-rules-c
+  (treesit-font-lock-rules
+   :language 'c
+   '(
+     ;; Comments.
+     (comment) @font-lock-comment-face
 
-         ;; Escape.
-         (escape_sequence) @font-lock-escape-face
+     ;; Escape.
+     (escape_sequence) @font-lock-escape-face
 
-         ;; Constants.
-         ((identifier) @font-lock-constant-face
-          (:match "^[A-Z][A-Z\\d_]*$" @font-lock-constant-face))
+     ;; Constants.
+     ((identifier) @font-lock-constant-face
+      (:match "^[A-Z][A-Z\\d_]*$" @font-lock-constant-face))
 
-         [
-          (true)
-          (false)
-          (null)
-          ] @font-lock-builtin-face
+     [
+      (true)
+      (false)
+      (null)
+      ] @font-lock-builtin-face
 
-         ;; Literals.
-         [
-          (string_literal)
-          (system_lib_string)
-          ] @font-lock-string-face
-         [
-          (char_literal)
-          (number_literal)
-          ] @font-lock-number-face ;; Custom face.
+     ;; Literals.
+     [
+      (string_literal)
+      (system_lib_string)
+      ] @font-lock-string-face
+     [
+      (char_literal)
+      (number_literal)
+      ] @font-lock-number-face ;; Custom face.
 
-         ;; Identifiers.
-         (type_identifier) @font-lock-type-face
-         [(primitive_type)
-          (sized_type_specifier)] @font-lock-builtin-face
-         (declaration declarator: [(identifier) @font-lock-variable-name-face
+     ;; Identifiers.
+     (type_identifier) @font-lock-type-face
+     [(primitive_type)
+      (sized_type_specifier)] @font-lock-builtin-face
+     (declaration declarator: [(identifier) @font-lock-variable-name-face
+                               (_ (identifier) @font-lock-variable-name-face)])
+     (parameter_declaration declarator: [(identifier) @font-lock-variable-name-face
+                                         (_ (identifier) @font-lock-variable-name-face)])
+     (init_declarator declarator: [(identifier) @font-lock-variable-name-face
                                    (_ (identifier) @font-lock-variable-name-face)])
-         (parameter_declaration declarator: [(identifier) @font-lock-variable-name-face
-                                             (_ (identifier) @font-lock-variable-name-face)])
-         (init_declarator declarator: [(identifier) @font-lock-variable-name-face
-                                       (_ (identifier) @font-lock-variable-name-face)])
-         (assignment_expression
-          left: [(identifier) @font-lock-variable-name-face
-                 (field_expression field: (_) @font-lock-variable-name-face)
-                 (subscript_expression argument: (identifier) @font-lock-variable-name-face)
-                 (pointer_expression (identifier) @font-lock-variable-name-face)])
-         (update_expression
-          argument: (identifier) @font-lock-variable-name-face)
-         (preproc_def name: (identifier) @font-lock-variable-name-face)
-         (preproc_params
-          (identifier) @font-lock-variable-name-face)
-         ((["#ifdef" "#ifndef"] (identifier) @font-lock-constant-face))
+     (assignment_expression
+      left: [(identifier) @font-lock-variable-name-face
+             (field_expression field: (_) @font-lock-variable-name-face)
+             (subscript_expression argument: (identifier) @font-lock-variable-name-face)
+             (pointer_expression (identifier) @font-lock-variable-name-face)])
+     (update_expression
+      argument: (identifier) @font-lock-variable-name-face)
+     (preproc_def name: (identifier) @font-lock-variable-name-face)
+     (preproc_params
+      (identifier) @font-lock-variable-name-face)
+     ((["#ifdef" "#ifndef"] (identifier) @font-lock-constant-face))
 
-         ;; Properties.
-         (field_declaration
-          declarator: [(field_identifier) @font-lock-property-face
-                       (pointer_declarator (field_identifier) @font-lock-property-face)
-                       (pointer_declarator (pointer_declarator (field_identifier) @font-lock-property-face))])
+     ;; Properties.
+     (field_declaration
+      declarator: [(field_identifier) @font-lock-property-face
+                   (pointer_declarator (field_identifier) @font-lock-property-face)
+                   (pointer_declarator (pointer_declarator (field_identifier) @font-lock-property-face))])
 
-         (enumerator name: (identifier) @font-lock-property-face)
+     (enumerator name: (identifier) @font-lock-property-face)
 
-         (field_identifier) @font-lock-property-face
+     (field_identifier) @font-lock-property-face
 
-         ;; Functions.
-         (call_expression
-          function: [(identifier) @font-lock-function-name-face
-                     (field_expression field: (_) @font-lock-function-name-face)])
-         (function_declarator
-          declarator: [(identifier) @font-lock-function-name-face
-                       (parenthesized_declarator
-                        (pointer_declarator (field_identifier) @font-lock-function-name-face))])
-         (preproc_function_def
-          name: (identifier) @font-lock-function-name-face)
+     ;; Functions.
+     (call_expression
+      function: [(identifier) @font-lock-function-name-face
+                 (field_expression field: (_) @font-lock-function-name-face)])
+     (function_declarator
+      declarator: [(identifier) @font-lock-function-name-face
+                   (parenthesized_declarator
+                    (pointer_declarator (field_identifier) @font-lock-function-name-face))])
+     (preproc_function_def
+      name: (identifier) @font-lock-function-name-face)
 
-         ;; Keywords.
-         [
-          "break"
-          "case"
-          "const"
-          "continue"
-          "default"
-          "do"
-          "else"
-          "enum"
-          "extern"
-          "for"
-          "if"
-          "inline"
-          "return"
-          "sizeof"
-          "static"
-          "struct"
-          "switch"
-          "typedef"
-          "union"
-          "volatile"
-          "while"
-          "..."
-          ] @font-lock-keyword-face
+     ;; Keywords.
+     [
+      "break"
+      "case"
+      "const"
+      "continue"
+      "default"
+      "do"
+      "else"
+      "enum"
+      "extern"
+      "for"
+      "if"
+      "inline"
+      "return"
+      "sizeof"
+      "static"
+      "struct"
+      "switch"
+      "typedef"
+      "union"
+      "volatile"
+      "while"
+      "..."
+      ] @font-lock-keyword-face
 
-         ;; Operators.
-         [
-          "+"
-          "-"
-          "*"
-          "/"
-          "%"
-          "~"
-          "|"
-          "&"
-          "<<"
-          ">>"
-          "!"
-          "||"
-          "&&"
-          "->"
-          "=="
-          "!="
-          "<"
-          ">"
-          "<="
-          ">="
-          "="
-          "+="
-          "-="
-          "*="
-          "/="
-          "%="
-          "|="
-          "&="
-          "++"
-          "--"
-          ] @font-lock-operator-face ;; Custom face.
+     ;; Operators.
+     [
+      "+"
+      "-"
+      "*"
+      "/"
+      "%"
+      "~"
+      "|"
+      "&"
+      "<<"
+      ">>"
+      "!"
+      "||"
+      "&&"
+      "->"
+      "=="
+      "!="
+      "<"
+      ">"
+      "<="
+      ">="
+      "="
+      "+="
+      "-="
+      "*="
+      "/="
+      "%="
+      "|="
+      "&="
+      "++"
+      "--"
+      ] @font-lock-operator-face ;; Custom face.
 
-         ;; Conditional expression.
-         (conditional_expression ["?" ":"] @font-lock-operator-face) ;; Custom face.
+     ;; Conditional expression.
+     (conditional_expression ["?" ":"] @font-lock-operator-face) ;; Custom face.
 
-         ;; Punctuation.
-         ["(" ")" "[" "]" "{" "}"] @font-lock-punctuation-face
+     ;; Punctuation.
+     ["(" ")" "[" "]" "{" "}"] @font-lock-punctuation-face
 
-         ["." "," ";"] @font-lock-punctuation-face
+     ["." "," ";"] @font-lock-punctuation-face
 
-         ;; Preprocessor.
-         [
-          "#define"
-          "#else"
-          "#endif"
-          "#if"
-          "#ifdef"
-          "#ifndef"
-          "#include"
-          (preproc_directive)
-          ] @font-lock-preprocessor-face
-         )))))
+     ;; Preprocessor.
+     [
+      "#define"
+      "#else"
+      "#endif"
+      "#if"
+      "#ifdef"
+      "#ifndef"
+      "#include"
+      (preproc_directive)
+      ] @font-lock-preprocessor-face
+     )))
 
 ;; Combine with c-font-lock-settings in c++-mode.
-(defvar c++-font-lock-settings
-  `(cpp
-    ,(treesit-query-compile
-      'cpp
-      '(
-        ;; TODO.
-        [
-         "class"
-         "decltype"
-         "constexpr"
-         "explicit"
-         "final"
-         "friend"
-         "mutable"
-         "namespace"
-         "override"
-         "private"
-         "protected"
-         "public"
-         "template"
-         "typename"
-         "using"
-         "virtual"
-         "co_await"
-         "concept"
-         "requires"
-         "consteval"
-         "constinit"
-         (auto)
-         ] @font-lock-number-face ;; TODO(rtaylor): keyword.
-        ))))
+(defvar treesit-font-lock-rules-cpp
+  (treesit-font-lock-rules
+   :language 'cpp
+   '(
+     ;; TODO.
+     [
+      "class"
+      "decltype"
+      "constexpr"
+      "explicit"
+      "final"
+      "friend"
+      "mutable"
+      "namespace"
+      "override"
+      "private"
+      "protected"
+      "public"
+      "template"
+      "typename"
+      "using"
+      "virtual"
+      "co_await"
+      "concept"
+      "requires"
+      "consteval"
+      "constinit"
+      (auto)
+      ] @font-lock-number-face ;; TODO(rtaylor): keyword.
+        )))
 
-(define-minor-mode ts-hl-c-mode
-  "Minor mode for highlighting C/C++ using tree-sitter."
-  :lighter nil
-  (require 'treesit)
-  (when (eq major-mode 'c++-mode) (add-to-list 'c-font-lock-settings c++-font-lock-settings))
-  (setq-local treesit-font-lock-defaults '((c-font-lock-settings)))
-  (treesit-font-lock-enable))
-
-(add-hook 'c-mode-common-hook #'ts-hl-c-mode)
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (setq treesit-font-lock-settings
+                  (cons treesit-font-lock-rules-c treesit-font-lock-rules-cpp))
+            (treesit-font-lock-enable)))
 
 (provide 'lang-c)

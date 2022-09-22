@@ -1,15 +1,19 @@
 ;; -*- lexical-binding: t; -*-
 
+(defvar treesit-font-lock-rules-rust)
+
 (use-package rust-mode
-  :hook ((rust-mode . ts-hl-rust-mode))
+  :hook ((rust-mode . (lambda ()
+                        (setq treesit-font-lock-settings
+                              treesit-font-lock-rules-rust)
+                        (treesit-font-lock-enable))))
   :bind ("C-c c" . rust-run-clippy)
   :config
   (setq rust-format-on-save t))
 
-(defvar rust-font-lock-settings
-  `((rust
-     ,(treesit-query-compile
-       'rust
+(setq treesit-font-lock-rules-rust
+      (treesit-font-lock-rules
+       :language 'rust
        '(
          ;; Comments.
          [
@@ -146,15 +150,6 @@
          ;; Punctuation.
          ["(" ")" "[" "]" "{" "}"] @font-lock-punctuation-face
          ["." "," ";" ":" "::"] @font-lock-punctuation-face
-         )))))
-
-(define-minor-mode ts-hl-rust-mode
-  "Minor mode for highlighting Rust using tree-sitter."
-  :lighter nil
-  (require 'treesit)
-  (unless font-lock-defaults
-    (setq font-lock-defaults '(nil t)))
-  (setq-local treesit-font-lock-defaults '((rust-font-lock-settings)))
-  (treesit-font-lock-enable))
+         )))
 
 (provide 'lang-rust)
