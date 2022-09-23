@@ -198,12 +198,15 @@
       "constinit"
       (auto)
       ] @font-lock-number-face ;; TODO(rtaylor): keyword.
-        )))
+     )))
 
 (add-hook 'c-mode-common-hook
           (lambda ()
-            (setq treesit-font-lock-settings
-                  (cons treesit-font-lock-rules-c treesit-font-lock-rules-cpp))
-            (treesit-font-lock-enable)))
+            (when (treesit-can-enable-p)
+              (setq-local treesit-font-lock-settings
+                          (cons
+                           treesit-font-lock-rules-c
+                           treesit-font-lock-rules-cpp))
+              (treesit-font-lock-enable))))
 
 (provide 'lang-c)

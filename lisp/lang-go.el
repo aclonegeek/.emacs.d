@@ -4,9 +4,10 @@
 
 (use-package go-mode
   :hook ((go-mode . (lambda ()
-                      (setq treesit-font-lock-settings
-                            treesit-font-lock-rules-go)
-                      (treesit-font-lock-enable)))
+                      (when (treesit-can-enable-p)
+                        (setq treesit-font-lock-settings
+                              treesit-font-lock-rules-go)
+                        (treesit-font-lock-enable))))
          (before-save . gofmt-before-save)))
 
 (setq treesit-font-lock-rules-go

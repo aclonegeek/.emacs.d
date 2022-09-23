@@ -4,9 +4,10 @@
 
 (use-package rust-mode
   :hook ((rust-mode . (lambda ()
-                        (setq treesit-font-lock-settings
-                              treesit-font-lock-rules-rust)
-                        (treesit-font-lock-enable))))
+                        (when (treesit-can-enable-p)
+                          (setq treesit-font-lock-settings
+                                treesit-font-lock-rules-rust)
+                          (treesit-font-lock-enable)))))
   :bind ("C-c c" . rust-run-clippy)
   :config
   (setq rust-format-on-save t))

@@ -75,7 +75,8 @@
 
 (add-hook 'sh-mode-hook
           (lambda ()
-            (setq treesit-font-lock-settings treesit-font-lock-rules-bash)
-            (treesit-font-lock-enable)))
+            (when (treesit-can-enable-p)
+              (setq-local treesit-font-lock-settings treesit-font-lock-rules-bash)
+              (treesit-font-lock-enable))))
 
 (provide 'lang-bash)
