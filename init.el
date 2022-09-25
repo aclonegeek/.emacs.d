@@ -8,7 +8,7 @@
 (straight-use-package 'use-package)
 
 ;; Core.
-(require 'treesit)
+(require 'treesit nil 'noerror)
 (require 'core-keybinds)
 (require 'core-settings)
 (require 'core-ui)
