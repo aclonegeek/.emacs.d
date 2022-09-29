@@ -16,6 +16,7 @@
 eln-cache/
 transient/
 tree-sitter/
+url/
 
 # Files.
 bookmarks
