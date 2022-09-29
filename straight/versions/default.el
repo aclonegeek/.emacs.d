@@ -25,9 +25,9 @@
  ("project" . "3cdd9afe894d4a7bcf036c377d8bdaa3cab927a8")
  ("rust-mode" . "b4537b6f5fa65626c1bab944681b35769cab9b5c")
  ("straight.el" . "ad1c198d7f90017d61869413167bcb1d58e19492")
+ ("tempel" . "836de584d064bfd2c581ce9ade87a9d4cee88acb")
  ("transient" . "097f5be6e0c228790a6e78ffee5f0c599cb58b20")
  ("use-package" . "9a45a8004a9e520e0e822b960ca9d70c2528181e")
  ("with-editor" . "1d5860cfd05d6805018bd071b8f9b56493ba11c6")
- ("yasnippet" . "5cbdbf0d2015540c59ed8ee0fcf4788effdf75b6"))
  ("xref" . "ae7a2a2e4b02e06bb4d6053085a83a646824e2bf"))
 :gamma

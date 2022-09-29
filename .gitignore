@@ -9,7 +9,6 @@
 .mc-lists.el
 *.cache
 *.dat
-*.eld
 *.last
 *.*~
 

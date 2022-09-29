@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: u32
-# key: u32
-# --
-uint32_t $0

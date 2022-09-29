@@ -36,7 +36,7 @@
 (require 'pkg-magit)
 (require 'pkg-multiple-cursors)
 (require 'pkg-project)
+(require 'pkg-tempel)
 (require 'pkg-xref)
-(require 'pkg-yasnippet)
 
 (setq custom-file "~/.emacs.d/custom.el")

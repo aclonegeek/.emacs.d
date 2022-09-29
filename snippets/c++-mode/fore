@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: for each
-# key: fore
-# --
-for ($1 : $2) {
-$0
-}
