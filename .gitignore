@@ -4,6 +4,7 @@
 # Package related.
 /eshell
 /straight/build
+/straight/modified
 /straight/repos
 /straight/*.el
 .mc-lists.el
