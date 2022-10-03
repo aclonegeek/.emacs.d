@@ -74,7 +74,7 @@
                                   (project-root proj)
                                 default-directory
                                 )))
-      (call-interactively 'grep-find)))
+      (call-interactively #'grep-find)))
   (setq grep-program "rg")
   (grep-apply-setting
      'grep-find-command
