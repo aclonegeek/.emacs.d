@@ -65,8 +65,16 @@
 
 (use-package grep
   :straight nil
-  :bind ([f5] . grep-find)
+  :bind ([f5] . rjt-grep-find)
   :config
+  (defun rjt-grep-find ()
+    (interactive)
+    (let* ((proj (project-current))
+           (default-directory (if proj
+                                  (project-root proj)
+                                default-directory
+                                )))
+      (call-interactively 'grep-find)))
   (setq grep-program "rg")
   (grep-apply-setting
      'grep-find-command
