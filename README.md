@@ -8,35 +8,19 @@ Emacs master built from source.
 
 ./configure
 --enable-link-time-optimization
---with-file-notification=no
+--without-all
+--with-cairo
+--with-gnutls
+--with-harfbuzz
+--with-json
 --with-modules
 --with-native-compilation
 --with-pgtk
 --with-small-ja-dic
---with-sound=no
---without-compress-install
---without-dbus
---without-gconf
---without-gif
---without-gpm
---without-gsettings
---without-imagemagick
---without-jpeg
---without-lcms2
---without-libgmp
---without-libotf
---without-libsystemd
---without-m17n-flt
---without-native-image-api
---without-png
---without-rsvg
---without-selinux
---without-sqlite3
---without-tiff
---without-webp
---without-xaw3d
---without-xim
---without-xpm
+--with-threads
+--with-toolkit-scroll-bars
+--with-xml2
+--with-zlib
 CFLAGS="-O2 -pipe -mtune=native -march=native -fomit-frame-pointer"
 
 make -j NATIVE_FULL_AOT=1
