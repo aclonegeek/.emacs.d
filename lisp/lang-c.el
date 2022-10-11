@@ -17,6 +17,7 @@
 (defvar treesit-font-lock-rules-c
   (treesit-font-lock-rules
    :language 'c
+   :override t
    '(
      ;; Comments.
      (comment) @font-lock-comment-face
@@ -172,6 +173,7 @@
 (defvar treesit-font-lock-rules-cpp
   (treesit-font-lock-rules
    :language 'cpp
+   :override t
    '(
      ;; TODO.
      [

@@ -15,6 +15,7 @@
 (setq treesit-font-lock-rules-rust
       (treesit-font-lock-rules
        :language 'rust
+       :override t
        '(
          ;; Comments.
          [

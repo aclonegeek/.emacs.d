@@ -3,6 +3,7 @@
 (defvar treesit-font-lock-rules-bash
   (treesit-font-lock-rules
    :language 'bash
+   :override t
    '(
      ;; Comments.
      (comment) @font-lock-comment-face

@@ -13,6 +13,7 @@
 (setq treesit-font-lock-rules-go
       (treesit-font-lock-rules
        :language 'go
+       :override t
        '(
          ;; Comments.
          (comment) @font-lock-comment-face
