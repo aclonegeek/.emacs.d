@@ -14,7 +14,7 @@
                                          nil
                                          t))))
 
-(defvar treesit-font-lock-rules-c
+(defvar treesit-font-lock-rules-c/c++
   (treesit-font-lock-rules
    :language 'c
    :override t
@@ -167,11 +167,7 @@
       "#include"
       (preproc_directive)
       ] @font-lock-preprocessor-face
-     )))
-
-;; Combine with c-font-lock-settings in c++-mode.
-(defvar treesit-font-lock-rules-cpp
-  (treesit-font-lock-rules
+     )
    :language 'cpp
    :override t
    '(
@@ -206,9 +202,7 @@
           (lambda ()
             (when (treesit-can-enable-p)
               (setq-local treesit-font-lock-settings
-                          (cons
-                           treesit-font-lock-rules-c
-                           treesit-font-lock-rules-cpp))
+                          treesit-font-lock-rules-c/c++)
               (treesit-font-lock-enable))))
 
 (provide 'lang-c)
