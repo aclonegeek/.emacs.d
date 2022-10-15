@@ -14,7 +14,7 @@ Emacs master built from source.
 --with-harfbuzz
 --with-json
 --with-modules
---with-native-compilation
+--with-native-compilation=aot
 --with-pgtk
 --with-small-ja-dic
 --with-threads
@@ -23,7 +23,7 @@ Emacs master built from source.
 --with-zlib
 CFLAGS="-O2 -pipe -mtune=native -march=native -fomit-frame-pointer"
 
-make -j NATIVE_FULL_AOT=1
+make -j
 sudo make install
 ```
 
