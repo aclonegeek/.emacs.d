@@ -1,11 +1,11 @@
 ;; -*- lexical-binding: t; -*-
 
-(defun revert-buffer-no-confirm ()
+(defun rjt-revert-buffer-no-confirm ()
   "Revert buffer without confirmation."
   (interactive)
   (revert-buffer :ignore-auto :noconfirm))
 
-(defun duplicate-line ()
+(defun rjt-duplicate-line ()
   "Copy the current line and paste it on to a new line."
   (interactive)
   (kill-whole-line)
@@ -13,21 +13,21 @@
   (yank)
   (forward-line -1))
 
-(defun select-word-backward ()
-  "Select the word before the cursor."
+(defun rjt-mark-word-backward ()
+  "Mark the word before the cursor."
   (interactive)
   (backward-word)
   (set-mark (point))
   (forward-word))
 
-(defun select-word-forward ()
-  "Select the word after the cursor."
+(defun rjt-mark-word-forward ()
+  "Mark the word after the cursor."
   (interactive)
   (forward-word)
   (set-mark (point))
   (backward-word))
 
-(defun delete-word (arg)
+(defun rjt-delete-word (arg)
   "Delete characters forward until encountering the end of a word."
   (interactive "p")
   (delete-region
@@ -36,12 +36,12 @@
      (forward-word arg)
      (point))))
 
-(defun backward-delete-word (arg)
+(defun rjt-backward-delete-word (arg)
   "Delete characters backward until encountering the beginning of a word."
   (interactive "p")
-  (delete-word (- arg)))
+  (rjt-delete-word (- arg)))
 
-(defun rename-file-and-buffer ()
+(defun rjt-rename-file-and-buffer ()
   "Rename the current buffer and file it is visiting."
   (interactive)
   (let ((filename (buffer-file-name)))
@@ -54,13 +54,13 @@
           (rename-file filename new-name t)
           (set-visited-file-name new-name t t)))))))
 
-(defun open-config ()
+(defun rjt-open-config ()
   "Open Emacs config."
   (interactive)
   (find-file (concat user-emacs-directory "init.el")))
 
 ; https://www.reddit.com/r/emacs/comments/aja311/first_trial_of_a_weekly_emacs_tipstricksetc_thread/eev3iu4/
-(defun calc-eval-region (arg)
+(defun rjt-calc-eval-region (arg)
   "Evaluate an expression in calc and communicate the result.
 
 If the region is active then evaluate it, otherwise search backwards
@@ -86,19 +86,19 @@ minibuffer."
         ((or 1 4) (insert value))
         (-1 (message value))))))
 
-(defun sudo-edit ()
+(defun rjt-sudo-edit ()
   "Edit the current file with sudo."
   (interactive)
   (let ((tramp-file-name (concat "/sudo::" (buffer-file-name))))
     (find-file tramp-file-name)))
 
-(defun sudo-find-file ()
+(defun rjt-sudo-find-file ()
   "Edit the selected file with sudo."
   (interactive)
   (let ((default-directory "/sudo::"))
     (call-interactively #'find-file)))
 
-(defun ssh ()
+(defun rjt-ssh ()
   "Connect to remote host with TRAMP via SSH."
   (interactive)
   (let* ((user (read-string "Username: "))
