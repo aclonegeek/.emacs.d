@@ -43,6 +43,8 @@
  cursor-in-non-selected-windows nil
  highlight-nonselected-windows nil)
 
+(setq save-interprogram-paste-before-kill t)
+
 ;; Completion.
 (setq completion-ignore-case t
       read-buffer-completion-ignore-case t
