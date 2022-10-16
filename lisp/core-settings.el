@@ -3,8 +3,6 @@
 (defconst IS-LINUX   (eq system-type 'gnu/linux))
 (defconst IS-WINDOWS (eq system-type 'windows-nt))
 
-(fset #'yes-or-no-p #'y-or-n-p)
-
 (setq-default
  package-native-compile t
 
@@ -42,6 +40,8 @@
  ;; Don't render cursors or regions in non-focused windows.
  cursor-in-non-selected-windows nil
  highlight-nonselected-windows nil)
+
+(setq use-short-answers t)
 
 (setq save-interprogram-paste-before-kill t)
 
