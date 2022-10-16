@@ -5,14 +5,6 @@
   (interactive)
   (revert-buffer :ignore-auto :noconfirm))
 
-(defun rjt-duplicate-line ()
-  "Copy the current line and paste it on to a new line."
-  (interactive)
-  (kill-whole-line)
-  (yank)
-  (yank)
-  (forward-line -1))
-
 (defun rjt-mark-word-backward ()
   "Mark the word before the cursor."
   (interactive)
@@ -40,19 +32,6 @@
   "Delete characters backward until encountering the beginning of a word."
   (interactive "p")
   (rjt-delete-word (- arg)))
-
-(defun rjt-rename-file-and-buffer ()
-  "Rename the current buffer and file it is visiting."
-  (interactive)
-  (let ((filename (buffer-file-name)))
-    (if (not (and filename (file-exists-p filename)))
-        (message "Buffer is not visiting a file!")
-      (let ((new-name (read-file-name "New name: " filename)))
-        (cond
-         ((vc-backend filename) (vc-rename-file filename new-name))
-         (t
-          (rename-file filename new-name t)
-          (set-visited-file-name new-name t t)))))))
 
 (defun rjt-open-config ()
   "Open Emacs config."

@@ -112,7 +112,6 @@
 ;;
 ;; Windows.
 ;;
-;; Set default-directory on Windows.
 (when IS-WINDOWS
   (setq default-directory (expand-file-name (getenv "UserProfile")))
   ;; Windows-specific optimizations.

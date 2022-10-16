@@ -7,12 +7,11 @@
 (global-set-key (kbd "M-d") 'rjt-delete-word)
 (global-set-key (kbd "C-k") 'kill-whole-line)
 (global-set-key (kbd "M-k") 'kill-line)
-(global-set-key (kbd "C-z") 'rjt-duplicate-line)
+(global-set-key (kbd "C-z") 'duplicate-line)
 (global-set-key (kbd "C-q") 'rjt-mark-word-backward)
 (global-set-key (kbd "M-q") 'rjt-mark-word-forward)
 
 (global-set-key (kbd "C-c r") 'rjt-revert-buffer-no-confirm)
-(global-set-key (kbd "C-c n") 'rjt-rename-file-and-buffer)
 
 (global-set-key (kbd "C-`") 'rjt-calc-eval-region)
 
