@@ -72,7 +72,7 @@
     "--")
   "C operators for tree-sitter font-locking.")
 
-(defvar cpp--treesit-keywords
+(defvar c++--treesit-keywords
   '("class"
     "decltype"
     "constexpr"
@@ -203,7 +203,7 @@
    :override t
    `(
      ;; Keywords.
-     [,@cpp--treesit-keywords] @font-lock-keyword-face
+     [,@c++--treesit-keywords] @font-lock-keyword-face
      )))
 
 (add-hook 'c-mode-common-hook
