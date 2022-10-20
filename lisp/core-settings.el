@@ -65,6 +65,9 @@
 (defvar dired-kill-when-opening-new-dired-buffer)
 (setq dired-kill-when-opening-new-dired-buffer t)
 
+;; VC.
+(setq vc-handled-backends '(Git))
+
 (use-package grep
   :straight nil
   :bind ([f5] . rjt-grep-find)
