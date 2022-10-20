@@ -14,12 +14,95 @@
                                          nil
                                          t))))
 
+(defvar c--treesit-keywords
+  '("break"
+    "case"
+    "const"
+    "continue"
+    "default"
+    "do"
+    "else"
+    "enum"
+    "extern"
+    "for"
+    "if"
+    "inline"
+    "return"
+    "sizeof"
+    "static"
+    "struct"
+    "switch"
+    "typedef"
+    "union"
+    "volatile"
+    "while"
+    "...")
+  "C keywords for tree-sitter font-locking.")
+
+(defvar c--treesit-operators
+  '("+"
+    "-"
+    "*"
+    "/"
+    "%"
+    "~"
+    "|"
+    "&"
+    "<<"
+    ">>"
+    "!"
+    "||"
+    "&&"
+    "->"
+    "=="
+    "!="
+    "<"
+    ">"
+    "<="
+    ">="
+    "="
+    "+="
+    "-="
+    "*="
+    "/="
+    "%="
+    "|="
+    "&="
+    "++"
+    "--")
+  "C operators for tree-sitter font-locking.")
+
+(defvar cpp--treesit-keywords
+  '("class"
+    "decltype"
+    "constexpr"
+    "explicit"
+    "final"
+    "friend"
+    "mutable"
+    "namespace"
+    "override"
+    "private"
+    "protected"
+    "public"
+    "template"
+    "typename"
+    "using"
+    "virtual"
+    "co_await"
+    "concept"
+    "requires"
+    "consteval"
+    "constinit"
+    (auto))
+  "C++ keywords for tree-sitter font-locking.")
+
 (defvar treesit-font-lock-rules-c/c++
   (treesit-font-lock-rules
    :language 'c
    :feature 'full
    :override t
-   '(
+   `(
      ;; Comments.
      (comment) @font-lock-comment-face
 
@@ -90,64 +173,10 @@
       name: (identifier) @font-lock-function-name-face)
 
      ;; Keywords.
-     [
-      "break"
-      "case"
-      "const"
-      "continue"
-      "default"
-      "do"
-      "else"
-      "enum"
-      "extern"
-      "for"
-      "if"
-      "inline"
-      "return"
-      "sizeof"
-      "static"
-      "struct"
-      "switch"
-      "typedef"
-      "union"
-      "volatile"
-      "while"
-      "..."
-      ] @font-lock-keyword-face
+     [,@c--treesit-keywords] @font-lock-keyword-face
 
      ;; Operators.
-     [
-      "+"
-      "-"
-      "*"
-      "/"
-      "%"
-      "~"
-      "|"
-      "&"
-      "<<"
-      ">>"
-      "!"
-      "||"
-      "&&"
-      "->"
-      "=="
-      "!="
-      "<"
-      ">"
-      "<="
-      ">="
-      "="
-      "+="
-      "-="
-      "*="
-      "/="
-      "%="
-      "|="
-      "&="
-      "++"
-      "--"
-      ] @font-lock-operator-face ;; Custom face.
+     [,@c--treesit-operators] @font-lock-operator-face ;; Custom face.
 
      ;; Conditional expression.
      (conditional_expression ["?" ":"] @font-lock-operator-face) ;; Custom face.
@@ -172,32 +201,9 @@
    :language 'cpp
    :feature 'full
    :override t
-   '(
-     ;; TODO.
-     [
-      "class"
-      "decltype"
-      "constexpr"
-      "explicit"
-      "final"
-      "friend"
-      "mutable"
-      "namespace"
-      "override"
-      "private"
-      "protected"
-      "public"
-      "template"
-      "typename"
-      "using"
-      "virtual"
-      "co_await"
-      "concept"
-      "requires"
-      "consteval"
-      "constinit"
-      (auto)
-      ] @font-lock-number-face ;; TODO(rtaylor): keyword.
+   `(
+     ;; Keywords.
+     [,@cpp--treesit-keywords] @font-lock-keyword-face
      )))
 
 (add-hook 'c-mode-common-hook
