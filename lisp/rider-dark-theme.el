@@ -101,13 +101,13 @@
    `(success                                  ((t (:foreground ,success))))
    `(line-number                              ((t (:background ,dialog-bg :foreground ,darker-fg))))
    `(line-number-current-line                 ((t (:background ,dialog-bg :foreground ,darker-fg))))
-   `(trailing-whitespace                      ((t (:foreground nil :background ,yellow))))
+   `(trailing-whitespace                      ((t (:background ,yellow))))
 
    `(ffap                                     ((t (:foreground ,white))))
 
    `(mode-line                                ((t (:foreground ,white :background ,dialog-bg))))
    `(mode-line-inactive                       ((t (:foreground ,white :background ,bg))))
-   `(mode-line-buffer-id                      ((t (:foreground ,white :background nil))))
+   `(mode-line-buffer-id                      ((t (:foreground ,white))))
    `(mode-line-emphasis                       ((t (:foreground ,white))))
 
    `(font-lock-preprocessor-face              ((t (:foreground ,cyan))))
