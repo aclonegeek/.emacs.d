@@ -4,12 +4,13 @@
 
 (use-package go-mode
   :hook ((go-mode . (lambda ()
-                      (when (treesit-ready-p nil 'go)
-                        (setq-local treesit-font-lock-feature-list
-                                    '((full)))
-                        (setq-local treesit-font-lock-settings
-                                    treesit-font-lock-rules-go)
-                        (treesit-font-lock-enable))))
+                      (setq-local treesit-mode-supported t)
+                      (setq-local treesit-required-languages '(go))
+                      (setq-local treesit-font-lock-feature-list
+                                  '((full)))
+                      (setq-local treesit-font-lock-settings
+                                  treesit-font-lock-rules-go)
+                      (treesit-mode)))
          (before-save . gofmt-before-save)))
 
 (setq treesit-font-lock-rules-go

@@ -77,11 +77,12 @@
 
 (add-hook 'sh-mode-hook
           (lambda ()
-            (when (treesit-ready-p nil 'bash)
-              (setq-local treesit-font-lock-feature-list
-                          '((full)))
-              (setq-local treesit-font-lock-settings
-                          treesit-font-lock-rules-bash)
-              (treesit-font-lock-enable))))
+            (setq-local treesit-mode-supported t)
+            (setq-local treesit-required-languages '(bash))
+            (setq-local treesit-font-lock-feature-list
+                        '((full)))
+            (setq-local treesit-font-lock-settings
+                        treesit-font-lock-rules-bash)
+            (treesit-mode)))
 
 (provide 'lang-bash)

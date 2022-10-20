@@ -208,11 +208,12 @@
 
 (add-hook 'c-mode-common-hook
           (lambda ()
-            (when (treesit-ready-p nil 'c)
-              (setq-local treesit-font-lock-feature-list
-                          '((full)))
-              (setq-local treesit-font-lock-settings
-                          treesit-font-lock-rules-c/c++)
-              (treesit-font-lock-enable))))
+            (setq-local treesit-mode-supported t)
+            (setq-local treesit-required-languages '(c cpp))
+            (setq-local treesit-font-lock-feature-list
+                        '((full)))
+            (setq-local treesit-font-lock-settings
+                        treesit-font-lock-rules-c/c++)
+            (treesit-mode)))
 
 (provide 'lang-c)
