@@ -3,6 +3,7 @@
 (defvar treesit-font-lock-rules-bash
   (treesit-font-lock-rules
    :language 'bash
+   :feature 'full
    :override t
    '(
      ;; Comments.
@@ -76,8 +77,11 @@
 
 (add-hook 'sh-mode-hook
           (lambda ()
-            (when (treesit-can-enable-p)
-              (setq-local treesit-font-lock-settings treesit-font-lock-rules-bash)
+            (when (treesit-ready-p nil 'bash)
+              (setq-local treesit-font-lock-feature-list
+                          '((full)))
+              (setq-local treesit-font-lock-settings
+                          treesit-font-lock-rules-bash)
               (treesit-font-lock-enable))))
 
 (provide 'lang-bash)

@@ -4,9 +4,11 @@
 
 (use-package rust-mode
   :hook ((rust-mode . (lambda ()
-                        (when (treesit-can-enable-p)
-                          (setq treesit-font-lock-settings
-                                treesit-font-lock-rules-rust)
+                        (when (treesit-ready-p nil 'rust)
+                          (setq-local treesit-font-lock-feature-list
+                                      '((full)))
+                          (setq-local treesit-font-lock-settings
+                                      treesit-font-lock-rules-rust)
                           (treesit-font-lock-enable)))))
   :bind ("C-c c" . rust-run-clippy)
   :config
@@ -15,6 +17,7 @@
 (setq treesit-font-lock-rules-rust
       (treesit-font-lock-rules
        :language 'rust
+       :feature 'full
        :override t
        '(
          ;; Comments.
