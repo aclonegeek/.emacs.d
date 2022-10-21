@@ -66,6 +66,7 @@
 (setq dired-kill-when-opening-new-dired-buffer t)
 
 ;; VC.
+(remove-hook 'find-file-hook 'vc-refresh-state)
 (setq vc-handled-backends '(Git))
 
 (use-package grep
