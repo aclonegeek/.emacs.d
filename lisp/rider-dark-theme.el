@@ -114,7 +114,6 @@
    `(font-lock-builtin-face                   ((t (:foreground ,blue))))
    `(font-lock-comment-face                   ((t (:foreground ,comment))))
    `(font-lock-negation-char-face             ((t (:foreground ,magenta))))
-   `(font-lock-reference-face                 ((t (:foreground ,magenta))))
    `(font-lock-constant-face                  ((t (:foreground ,cyan))))
    `(font-lock-doc-face                       ((t (:foreground ,red))))
    `(font-lock-function-name-face             ((t (:foreground ,green :bold nil))))

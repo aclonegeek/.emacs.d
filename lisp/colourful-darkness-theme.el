@@ -102,7 +102,6 @@
    `(font-lock-comment-face                   ((t (:foreground ,gray))))
    `(font-lock-operator-face                  ((t (:foreground ,yellow))))
    `(font-lock-negation-char-face             ((t (:foreground ,magenta))))
-   `(font-lock-reference-face                 ((t (:foreground ,magenta))))
    `(font-lock-constant-face                  ((t (:foreground ,magenta))))
    `(font-lock-doc-face                       ((t (:foreground ,red))))
    `(font-lock-function-name-face             ((t (:foreground ,blue :bold nil))))
