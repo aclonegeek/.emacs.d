@@ -139,17 +139,6 @@
    `(corfu-default                            ((t (:foreground ,fg :background ,dialog-bg))))
    `(corfu-indexed                            ((t (:foreground ,fg :background ,dialog-bg))))
 
-   ;; company.
-   `(company-preview-common                   ((t (:foreground ,fg :background ,dialog-bg))))
-   `(company-scrollbar-thumb                  ((t (:background ,bg))))
-   `(company-scrollbar-track                  ((t (:background ,bg))))
-   `(company-tooltip                          ((t (:background ,bg))))
-   `(company-tooltip-common                   ((t (:bold t :foreground ,yellow))))
-   `(company-tooltip-deprecated               ((t (:strike-through t))))
-   `(company-tooltip-selection                ((t (:bold t :foreground ,white :background ,selection))))
-   `(company-tooltip-annotation               ((t (:foreground ,orange))))
-   `(company-tooltip-annotation-selection     ((t (:bold t :foreground ,green))))
-
    `(completions-annotations                  ((t (:bold t :foreground ,green))))
    `(completions-common-part                  ((t (:foreground ,cyan))))
 
@@ -257,13 +246,6 @@
    `(magit-signature-untrusted                ((t (:foreground ,yellow))))
    ;; tag
    `(magit-tag                                ((t (:foreground ,orange))))
-
-   ;; tree-sitter
-   `(tree-sitter-hl-face:function.call        ((t (:inherit font-lock-function-name-face))))
-   `(tree-sitter-hl-face:property             ((t (:inherit font-lock-property-face))))
-   `(tree-sitter-hl-face:punctuation          ((t (:foreground ,fg))))
-   `(tree-sitter-hl-face:number               ((t (:inherit font-lock-number-face))))
-   `(tree-sitter-hl-face:operator             ((t (:inherit font-lock-operator-face))))
 
    ;; shr
    `(shr-text                                 ((t (:inherit nil))))

@@ -26,24 +26,6 @@
 
 ;;; Code:
 
-;; Highlight operators.
-(defface font-lock-operator-face
-  '((t (:inherit default)))
-  "Basic face for operator."
-  :group 'basic-faces)
-
-(let ((operators
-       '((c-mode      "[+=*/&|~^<>!?-]")
-         (c++-mode    "[+=*/&|~^<>!?-]")
-         (rust-mode   "[+=*/&|~^<>!?-]")
-         (python-mode "[+=*/&|~^<>!?-]")
-         (js-mode     "[+=*/&|~^<>!?-]")
-         )))
-  (dolist (o operators)
-    (font-lock-add-keywords
-     (car o)
-     `((,(cadr o) 0 'font-lock-operator-face)))))
-
 (deftheme colourful-darkness)
 (let* ((black   "#000000")
       (white   "#ffffff")
@@ -100,7 +82,6 @@
    `(font-lock-preprocessor-face              ((t (:foreground ,purple))))
    `(font-lock-builtin-face                   ((t (:foreground ,blue))))
    `(font-lock-comment-face                   ((t (:foreground ,gray))))
-   `(font-lock-operator-face                  ((t (:foreground ,yellow))))
    `(font-lock-negation-char-face             ((t (:foreground ,magenta))))
    `(font-lock-constant-face                  ((t (:foreground ,magenta))))
    `(font-lock-doc-face                       ((t (:foreground ,red))))
@@ -114,16 +95,6 @@
    `(font-lock-regexp-grouping-construct      ((t (:foreground ,yellow))))
 
    `(dired-directory                          ((t (:inherit font-lock-keyword-face))))
-
-   `(company-preview-common                   ((t (:foreground ,yellow :background ,bg))))
-   `(company-scrollbar-thumb                  ((t (:background ,bg))))
-   `(company-scrollbar-track                  ((t (:background ,bg))))
-   `(company-tooltip                          ((t (:background ,bg))))
-   `(company-tooltip-common                   ((t (:bold t :foreground ,yellow))))
-   `(company-tooltip-deprecated               ((t (:strike-through t))))
-   `(company-tooltip-selection                ((t (:bold t :foreground ,white :background ,dark-gray))))
-   `(company-tooltip-annotation               ((t (:foreground ,orange))))
-   `(company-tooltip-annotation-selection     ((t (:bold t :foreground ,green))))
 
    `(completions-annotations                  ((t (:bold t :foreground ,yellow))))
    `(completions-common-part                  ((t (:foreground ,yellow))))
@@ -232,9 +203,6 @@
    `(magit-signature-untrusted                ((t (:foreground ,yellow))))
    ;; tag
    `(magit-tag                                ((t (:foreground ,orange))))
-
-   ;; tree-sitter
-   `(tree-sitter-hl-face:property             ((t (:inherit font-lock-variable-name-face))))
    ))
 
 ;;;###autoload
