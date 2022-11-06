@@ -83,6 +83,6 @@
                         '((full)))
             (setq-local treesit-font-lock-settings
                         treesit-font-lock-rules-bash)
-            (treesit-mode)))
+            (treesit-major-mode-setup)))
 
 (provide 'lang-bash)

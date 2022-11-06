@@ -214,6 +214,6 @@
                         '((full)))
             (setq-local treesit-font-lock-settings
                         treesit-font-lock-rules-c/c++)
-            (treesit-mode)))
+            (treesit-major-mode-setup)))
 
 (provide 'lang-c)
