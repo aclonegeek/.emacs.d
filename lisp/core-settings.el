@@ -54,16 +54,13 @@
       completions-format 'vertical)
 
 ;; Compilation
-(defvar compilation-always-kill)
-(defvar compilation-auto-jump-to-first-error)
-(defvar compilation-scroll-output)
-(setq compilation-always-kill t
-      compilation-auto-jump-to-first-error t
-      compilation-scroll-output t)
+(setq-default compilation-always-kill t
+              compilation-auto-jump-to-first-error t
+              compilation-skip-threshold 2
+              compilation-scroll-output t)
 
 ;; Dired.
-(defvar dired-kill-when-opening-new-dired-buffer)
-(setq dired-kill-when-opening-new-dired-buffer t)
+(setq-default dired-kill-when-opening-new-dired-buffer t)
 
 ;; VC.
 (remove-hook 'find-file-hook 'vc-refresh-state)
