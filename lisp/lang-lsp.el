@@ -14,7 +14,12 @@
                     (cons #'flymake-eldoc-function
                           (remove #'flymake-eldoc-function eldoc-documentation-functions)))
               ;; Show all eldoc feedback.
-              (setq eldoc-documentation-strategy #'eldoc-documentation-compose))))
-
+              (setq eldoc-documentation-strategy #'eldoc-documentation-compose)))
+  (add-to-list 'eglot-server-programs
+               '((c-mode c++-mode) . ("clangd"
+                                      "--pch-storage=memory"
+                                      "--completion-style=detailed"
+                                      "--header-insertion=never"
+                                      ))))
 
 (provide 'lang-lsp)
