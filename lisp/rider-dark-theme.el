@@ -26,31 +26,6 @@
 
 ;;; Code:
 
-(defface font-lock-escape-face
-  '((t (:inherit default)))
-  "Basic face for escapes."
-  :group 'basic-faces)
-
-(defface font-lock-property-face
-  '((t (:inherit default)))
-  "Basic face for properties."
-  :group 'basic-faces)
-
-(defface font-lock-punctuation-face
-  '((t (:inherit default)))
-  "Basic face for punctuation."
-  :group 'basic-faces)
-
-(defface font-lock-number-face
-  '((t (:inherit default)))
-  "Basic face for numbers."
-  :group 'basic-faces)
-
-(defface font-lock-operator-face
-  '((t (:inherit default)))
-  "Basic face for operators."
-  :group 'basic-faces)
-
 (deftheme rider-dark)
 (let* ((black "#000000")
        (blue "#6394f2")
