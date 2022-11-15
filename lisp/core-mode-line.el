@@ -9,7 +9,9 @@
         '(:eval (mode-line-project-name))
         'mode-line-buffer-identification
         " "
-        "%l:%c"))
+        "%l:%c"
+        " "
+        'mode-line-misc-info))
 
 (defconst mode-line-right
   (list ""
