@@ -19,7 +19,7 @@
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
+(global-set-key (kbd "C-c t e") 'treesit-explore-mode)
 (global-set-key (kbd "C-c t i") 'treesit-inspect-node-at-point)
-(global-set-key (kbd "C-c t m") 'treesit-inspect-mode)
 
 (provide 'core-keybinds)
