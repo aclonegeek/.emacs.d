@@ -9,7 +9,6 @@
 
 ;; Core.
 (require 'treesit nil 'noerror)
-(setq treesit-settings '((t demand t)))
 (require 'core-keybinds)
 (require 'core-settings)
 (require 'core-ui)
@@ -19,7 +18,6 @@
 
 ;; Lang.
 (require 'lang-lsp)
-(require 'lang-bash)
 (require 'lang-c)
 (require 'lang-go)
 (require 'lang-markdown)
