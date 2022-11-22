@@ -13,11 +13,11 @@
 (require 'core-settings)
 (require 'core-ui)
 (require 'core-util)
+(require 'core-eglot)
 (require 'core-icomplete)
 (require 'core-isearch)
 
 ;; Lang.
-(require 'lang-lsp)
 (require 'lang-c)
 (require 'lang-go)
 (require 'lang-markdown)
