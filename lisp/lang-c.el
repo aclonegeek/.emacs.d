@@ -14,7 +14,7 @@
                                          nil
                                          t))))
 
-(add-hook 'c-mode-hook 'c-ts-mode)
-(add-hook 'c++-mode-hook 'c++-ts-mode)
+(add-to-list 'major-mode-remap-alist '(c-mode . c-ts-mode))
+(add-to-list 'major-mode-remap-alist '(c++-mode . c++-ts-mode))
 
 (provide 'lang-c)
