@@ -5,7 +5,7 @@
   :bind (:map eglot-mode-map
               ("C-c l a" . eglot-code-actions)
               ("C-c l r" . eglot-rename))
-  :hook (((c-ts-mode c++-ts-mode go-mode rust-mode) . eglot-ensure))
+  :hook (((c-mode c-ts-mode c++-mode c++-ts-mode go-mode rust-mode) . eglot-ensure))
   :config
   (setq eglot-events-buffer-size 0)
   (add-hook 'eglot-managed-mode-hook
@@ -17,10 +17,10 @@
               ;; Show all eldoc feedback.
               (setq eldoc-documentation-strategy #'eldoc-documentation-compose)))
   (add-to-list 'eglot-server-programs
-               '((c-ts-mode c++-ts-mode) . ("clangd"
-                                            "--pch-storage=memory"
-                                            "--completion-style=detailed"
-                                            "--header-insertion=never"
-                                            ))))
+               '((c-mode c-ts-mode c++-mode c++-ts-mode) . ("clangd"
+                                                            "--pch-storage=memory"
+                                                            "--completion-style=detailed"
+                                                            "--header-insertion=never"
+                                                            ))))
 
 (provide 'core-eglot)
