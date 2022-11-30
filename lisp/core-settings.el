@@ -62,6 +62,9 @@
 ;; Dired.
 (setq-default dired-kill-when-opening-new-dired-buffer t)
 
+;; tree-sitter.
+(setq-default treesit-font-lock-level 4)
+
 ;; VC.
 (remove-hook 'find-file-hook 'vc-refresh-state)
 (setq vc-handled-backends '(Git))
