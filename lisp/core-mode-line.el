@@ -31,7 +31,7 @@
   "Return the project name for the project formatted for the mode-line."
   (if-let ((proj (project-current)))
       (list "["
-            (file-name-nondirectory (directory-file-name (project-root proj)))
+            (project-name proj)
             "] ")))
 
 (provide 'core-mode-line)
