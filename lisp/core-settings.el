@@ -65,7 +65,7 @@
 (push '(c-mode . c-ts-mode) major-mode-remap-alist)
 (push '(c++-mode . c++-ts-mode) major-mode-remap-alist)
 (push '(css-mode . css-ts-mode) major-mode-remap-alist)
-(push '(javascript-mode . javascript-ts-mode) major-mode-remap-alist)
+(push '(js-mode . javascript-ts-mode) major-mode-remap-alist)
 (push '(js-json-mode . json-ts-mode) major-mode-remap-alist)
 (push '(python-mode . python-ts-mode) major-mode-remap-alist)
 
