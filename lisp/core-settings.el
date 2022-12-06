@@ -55,8 +55,6 @@
 
 ;; Compilation
 (setq-default compilation-always-kill t
-              compilation-auto-jump-to-first-error t
-              compilation-skip-threshold 2
               compilation-scroll-output t)
 
 ;; Dired.
