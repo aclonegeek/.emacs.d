@@ -64,6 +64,12 @@
 
 ;; tree-sitter.
 (setq-default treesit-font-lock-level 4)
+(push '(c-mode . c-ts-mode) major-mode-remap-alist)
+(push '(c++-mode . c++-ts-mode) major-mode-remap-alist)
+(push '(css-mode . css-ts-mode) major-mode-remap-alist)
+(push '(javascript-mode . javascript-ts-mode) major-mode-remap-alist)
+(push '(js-json-mode . json-ts-mode) major-mode-remap-alist)
+(push '(python-mode . python-ts-mode) major-mode-remap-alist)
 
 ;; VC.
 (remove-hook 'find-file-hook 'vc-refresh-state)
