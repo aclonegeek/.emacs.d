@@ -1,6 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
 (use-package project
+  :ensure nil
   :bind (:map project-prefix-map
               ("m" . magit-status))
   :config
@@ -11,4 +12,4 @@
                                   (project-eshell "Eshell")
                                   (magit-status "Magit"))))
 
-(provide 'pkg-project)
+(provide 'core-project)

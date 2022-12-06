@@ -16,6 +16,7 @@
 (require 'core-eglot)
 (require 'core-icomplete)
 (require 'core-isearch)
+(require 'core-project)
 
 ;; Lang.
 (require 'lang-c)
@@ -34,7 +35,6 @@
 (require 'pkg-flymake)
 (require 'pkg-magit)
 (require 'pkg-multiple-cursors)
-(require 'pkg-project)
 (require 'pkg-tempel)
 (require 'pkg-xref)
 
