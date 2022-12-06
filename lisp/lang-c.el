@@ -8,10 +8,11 @@
 ;; To disable clang-format on save with .dir-locals.el:
 ;; ((nil . ((eval . (remove-hook 'before-save-hook #'clang-format-buffer t)))))
 (use-package clang-format
-  :hook ((c-mode c++-mode) . (lambda ()
-                               (add-hook 'before-save-hook
-                                         #'clang-format-buffer
-                                         nil
-                                         t))))
+  :hook
+  ((c-mode c-ts-mode c++-mode c++-ts-mode) . (lambda ()
+                                               (add-hook 'before-save-hook
+                                                         #'clang-format-buffer
+                                                         nil
+                                                         t))))
 
 (provide 'lang-c)
