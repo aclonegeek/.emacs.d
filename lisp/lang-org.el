@@ -1,6 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
 (use-package org
+  :straight (:type built-in)
   :commands org-mode
   :hook (org-mode . (lambda () (require 'ox-md nil t)))
   :bind (:map org-mode-map

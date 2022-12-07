@@ -1,6 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
 (use-package flymake
+  :straight (:type built-in)
   :bind (("C-\\" . flymake-show-buffer-diagnostics)
          ("M-["  . flymake-goto-prev-error)
          ("M-]"  . flymake-goto-next-error))
@@ -13,4 +14,4 @@
         flymake-wrap-around        nil)
   (remove-hook 'flymake-diagnostic-functions 'flymake-proc-legacy-flymake))
 
-(provide 'pkg-flymake)
+(provide 'core-flymake)

@@ -16,7 +16,9 @@
 (require 'core-eglot)
 (require 'core-icomplete)
 (require 'core-isearch)
+(require 'core-flymake)
 (require 'core-project)
+(require 'core-xref)
 
 ;; Lang.
 (require 'lang-c)
@@ -32,10 +34,8 @@
 (require 'pkg-consult)
 (require 'pkg-corfu)
 (require 'pkg-embark)
-(require 'pkg-flymake)
 (require 'pkg-magit)
 (require 'pkg-multiple-cursors)
 (require 'pkg-tempel)
-(require 'pkg-xref)
 
 (setq custom-file "~/.emacs.d/custom.el")

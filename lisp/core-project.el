@@ -1,7 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
 (use-package project
-  :ensure nil
+  :straight (:type built-in)
   :bind (:map project-prefix-map
               ("m" . magit-status))
   :config
