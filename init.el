@@ -5,8 +5,6 @@
 
 (require 'pkg-straight)
 
-(straight-use-package 'use-package)
-
 ;; Core.
 (require 'treesit nil 'noerror)
 (require 'core-keybinds)
