@@ -6,7 +6,6 @@
 (require 'pkg-straight)
 
 ;; Core.
-(require 'treesit nil 'noerror)
 (require 'core-keybinds)
 (require 'core-settings)
 (require 'core-ui)
