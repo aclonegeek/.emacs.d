@@ -11,19 +11,15 @@
 (require 'core-ui)
 (require 'core-util)
 (require 'core-eglot)
+(require 'core-flymake)
 (require 'core-icomplete)
 (require 'core-isearch)
-(require 'core-flymake)
+(require 'core-org)
 (require 'core-project)
 (require 'core-xref)
 
 ;; Lang.
-(require 'lang-c)
-(require 'lang-go)
-(require 'lang-markdown)
-(require 'lang-org)
-(require 'lang-python)
-(require 'lang-rust)
+(require 'lang)
 
 ;; Packages.
 (require 'pkg-avy)

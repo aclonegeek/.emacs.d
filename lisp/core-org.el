@@ -12,4 +12,4 @@
   (setq org-startup-truncated nil
         org-startup-folded    t))
 
-(provide 'lang-org)
+(provide 'core-org)
