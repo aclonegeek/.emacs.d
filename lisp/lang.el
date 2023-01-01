@@ -62,7 +62,7 @@
               python-indent-guess-indent-offset nil)
 
 ;; Rust.
-(add-hook 'go-ts-mode-hook
+(add-hook 'rust-ts-mode-hook
           (lambda ()
             (add-hook 'before-save-hook #'rjt-format-rust-buffer nil 'local)))
 
