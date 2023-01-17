@@ -60,6 +60,11 @@
 ;; Dired.
 (setq-default dired-kill-when-opening-new-dired-buffer t)
 
+;; Proced.
+(setq-default proced-auto-update-flag t)
+(setq-default proced-auto-update-interval 1)
+(setq-default proced-enable-color-flag t)
+
 ;; tree-sitter.
 (setq-default treesit-font-lock-level 4)
 (push '(c-mode . c-ts-mode) major-mode-remap-alist)
