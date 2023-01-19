@@ -43,4 +43,4 @@
 (set-language-environment "UTF-8")
 (setq default-input-method nil) ;; Set by set-language-environment.
 
-(setq native-comp-deferred-compilation nil)
+(setq inhibit-automatic-native-compilation t)
