@@ -1,0 +1,28 @@
+* Building Emacs on Windows
+- Install [[https://msys2.org/][MSYS2]] and run =MSYS2 MINGW64=.
+- Run =pacman -Syuu=.
+- Install required packages:
+#+BEGIN_SRC bash
+  pacman -S --needed \
+       autoconf \
+       base-devel \
+       git \
+       mingw-w64-x86_64-gmp \
+       mingw-w64-x86_64-gnutls \
+       mingw-w64-x86_64-harfbuzz \
+       mingw-w64-x86_64-jansson \
+       mingw-w64-x86_64-libgccjit \
+       mingw-w64-x86_64-libxml2 \
+       mingw-w64-x86_64-toolchain \
+       mingw-w64-x86_64-tree-sitter \
+       mingw-w64-x86_64-zlib
+#+END_SRC
+- Create the emacs build directory: =mkdir -p /c/pg/emacs/build=.
+- Enter it =cd /c/pg/emacs/build=.
+- Clone the Emacs git repository: =git clone git://git.sv.gnu.org/emacs.git emacs-master=.
+- Enter the cloned repository: =cd emacs-master=.
+- Disable Git's autocrlf feature: =git config core.autocrlf false=.
+- Run autogen: =./autogen.sh=.
+- Run configure, make and make install commands (see =README.org=) with the below modifications:
+  - Configure should specify a prefix: =--prefix=/c/pg/emacs/master= and remove any Linux-specific entries.
+- Add =C:\pg\msys2\mingw64\bin= to PATH.
