@@ -60,6 +60,9 @@
 ;; Dired.
 (setq-default dired-kill-when-opening-new-dired-buffer t)
 
+;; ElDoc.
+(setq eldoc-documentation-strategy #'eldoc-documentation-compose)
+
 ;; Proced.
 (setq-default proced-auto-update-flag t)
 (setq-default proced-auto-update-interval 1)
