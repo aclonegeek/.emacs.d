@@ -70,10 +70,26 @@
 (push '(c-mode . c-ts-mode) major-mode-remap-alist)
 (push '(c++-mode . c++-ts-mode) major-mode-remap-alist)
 (push '(c-or-c++-mode . c-or-c++-ts-mode) major-mode-remap-alist)
+(push '(conf-toml-mode . toml-ts-mode) major-mode-remap-alist)
+(push '(csharp-mode . csharp-ts-mode) major-mode-remap-alist)
 (push '(css-mode . css-ts-mode) major-mode-remap-alist)
+(push '(java-mode . java-ts-mode) major-mode-remap-alist)
 (push '(js-mode . javascript-ts-mode) major-mode-remap-alist)
 (push '(js-json-mode . json-ts-mode) major-mode-remap-alist)
 (push '(python-mode . python-ts-mode) major-mode-remap-alist)
+(push '(ruby-mode . ruby-ts-mode) major-mode-remap-alist)
+(push '(sh-mode . bash-ts-mode) major-mode-remap-alist)
+(add-to-list 'auto-mode-alist
+                 '("\\(?:CMakeLists\\.txt\\|\\.cmake\\)\\'" . cmake-ts-mode))
+(add-to-list 'auto-mode-alist
+                 '("\\(?:Dockerfile\\(?:\\..*\\)?\\|\\.[Dd]ockerfile\\)\\'"
+                   . dockerfile-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.go\\'" . go-ts-mode))
+(add-to-list 'auto-mode-alist '("/go\\.mod\\'" . go-mod-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . tsx-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.ya?ml\\'" . yaml-ts-mode))
 
 ;; VC.
 (remove-hook 'find-file-hook 'vc-refresh-state)
