@@ -9,9 +9,6 @@
                                   (project-find-regexp "Regexp")
                                   (project-query-replace-regexp "Query replace")
                                   (project-eshell "Eshell")
-                                  ((lambda ()
-                                     (interactive)
-                                     (magit-status project-current-directory-override))
-                                   "Magit" ?m))))
+                                  (magit-project-status "Magit" ?m))))
 
 (provide 'core-project)
