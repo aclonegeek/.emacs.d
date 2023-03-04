@@ -8,7 +8,8 @@
   :hook (((c-ts-mode
            c++-ts-mode
            go-ts-mode
-           rust-ts-mode) . eglot-ensure))
+           rust-ts-mode) . eglot-ensure)
+         (eglot-managed-mode . eglot-inlay-hints-mode))
   :config
   (setq eglot-events-buffer-size 0)
   (add-to-list 'eglot-server-programs
