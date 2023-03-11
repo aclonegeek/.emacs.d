@@ -18,6 +18,6 @@
   :config
   (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter)
   (setq kind-icon-use-icons nil
-        kind-icon-default-fault 'corfu-default))
+        kind-icon-default-face 'corfu-default))
 
 (provide 'pkg-corfu)
