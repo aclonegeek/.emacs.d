@@ -2,7 +2,6 @@
 
 (defvar file-name-handler-alist-old file-name-handler-alist)
 (setq
- ;; Use straight instead.
  package-enable-at-startup nil
  site-run-file           nil
  file-name-handler-alist nil

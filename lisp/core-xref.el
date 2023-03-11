@@ -1,7 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
 (use-package xref
-  :straight (:type built-in)
+  :elpaca nil
   :defer t
   :config
   (setq xref-search-program 'ripgrep

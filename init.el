@@ -3,7 +3,7 @@
 (eval-and-compile
   (add-to-list 'load-path "~/.emacs.d/lisp"))
 
-(require 'pkg-straight)
+(require 'pkg-elpaca)
 
 ;; Core.
 (require 'core-keybinds)

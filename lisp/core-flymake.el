@@ -1,7 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
 (use-package flymake
-  :straight (:type built-in)
+  :elpaca nil
   :bind (("C-\\" . flymake-show-buffer-diagnostics)
          ("M-["  . flymake-goto-prev-error)
          ("M-]"  . flymake-goto-next-error))

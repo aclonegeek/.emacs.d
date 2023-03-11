@@ -3,10 +3,7 @@
 
 # Package related.
 /eshell
-/straight/build
-/straight/modified
-/straight/repos
-/straight/*.el
+/elpaca
 .mc-lists.el
 *.cache
 *.dat
