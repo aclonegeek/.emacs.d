@@ -1,4 +1,4 @@
-c++-mode
+c++-mode c++-ts-mode
 
 (vec "std::vector<" p "> " q ";")
 

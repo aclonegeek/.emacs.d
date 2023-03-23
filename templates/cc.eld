@@ -1,4 +1,4 @@
-c-mode c++-mode
+c-mode c++-mode c-ts-mode c++-ts-mode
 
 (def "#define " q)
 (inc "#include <" q ">")
