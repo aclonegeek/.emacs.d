@@ -7,6 +7,7 @@
   :bind (:map org-mode-map
               ("C-," . nil)
               ("C-x n e" . nil))
+  :init (setq org-modules nil)
   :config
   ;; Wrap lines in org-mode
   (setq org-startup-truncated nil
