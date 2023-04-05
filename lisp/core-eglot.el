@@ -10,7 +10,8 @@
            go-ts-mode
            rust-ts-mode) . eglot-ensure))
   :config
-  (setq eglot-events-buffer-size 0)
+  (setq eglot-events-buffer-size 0
+        eglot-sync-connect 0)
   (add-to-list 'eglot-stay-out-of 'imenu)
   (add-to-list 'eglot-server-programs
                '((c-ts-mode c++-ts-mode) . ("clangd"
