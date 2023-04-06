@@ -86,4 +86,9 @@ minibuffer."
          (tramp-file-name (concat "/ssh:" user "@" ip ":" dir)))
     (find-file tramp-file-name)))
 
+(defun rjt-native-compile-packages ()
+  "Native-compile all packages."
+  (interactive)
+  (native-compile-async elpaca-builds-directory 'recursively))
+
 (provide 'core-util)
