@@ -29,8 +29,8 @@
 
 ;; Theme
 (add-hook 'after-init-hook (lambda ()
-                             (require 'rider-dark-theme)
-                             (load-theme 'rider-dark t)))
+                             (require 'megahedron-theme)
+                             (load-theme 'megahedron t)))
 
 ;; Modeline
 (use-package core-mode-line
