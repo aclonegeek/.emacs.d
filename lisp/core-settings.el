@@ -63,6 +63,10 @@
 ;; ElDoc.
 (setq eldoc-documentation-strategy #'eldoc-documentation-compose)
 
+;; JSONRPC.
+;; Prevent any JSONRPC logs to maximize performance.
+(fset #'jsonrpc--log-event #'ignore)
+
 ;; Proced.
 (setq-default proced-auto-update-flag t)
 (setq-default proced-auto-update-interval 1)
