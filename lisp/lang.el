@@ -28,6 +28,21 @@
   (interactive)
   (rjt-format-buffer "rustfmt"))
 
+;; tree-sitter.
+(setq treesit-language-source-alist
+   '((bash "https://github.com/tree-sitter/tree-sitter-bash")
+     (c "https://github.com/tree-sitter/tree-sitter-c")
+     (cpp "https://github.com/tree-sitter/tree-sitter-cpp")
+     (cmake "https://github.com/uyha/tree-sitter-cmake")
+     (dockerfile "https://github.com/camdencheek/tree-sitter-dockerfile")
+     (go "https://github.com/tree-sitter/tree-sitter-go")
+     (gomod "https://github.com/camdencheek/tree-sitter-go-mod")
+     (json "https://github.com/tree-sitter/tree-sitter-json")
+     (python "https://github.com/tree-sitter/tree-sitter-python")
+     (rust "https://github.com/tree-sitter/tree-sitter-rust")
+     (toml "https://github.com/tree-sitter/tree-sitter-toml")
+     (yaml "https://github.com/ikatyang/tree-sitter-yaml")))
+
 ;; C.
 (setq-default c-basic-offset 4)
 (add-hook 'c-mode-hook
