@@ -43,6 +43,13 @@
      (toml "https://github.com/tree-sitter/tree-sitter-toml")
      (yaml "https://github.com/ikatyang/tree-sitter-yaml")))
 
+(defun rjt-install-tree-sitter-grammars ()
+  "Installs all tree-sitter language grammars defined in
+`treesit-language-source-alist'."
+  (interactive)
+  (dolist (grammar treesit-language-source-alist)
+    (treesit-install-language-grammar (car grammar))))
+
 ;; C.
 (setq-default c-basic-offset 4)
 (add-hook 'c-mode-hook
