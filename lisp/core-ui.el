@@ -27,10 +27,11 @@
                                 :family "Iosevka"
                                 :height 110)))
 
+(use-package solarized-theme)
+
 ;; Theme
-(add-hook 'after-init-hook (lambda ()
-                             (require 'megahedron-theme)
-                             (load-theme 'megahedron t)))
+(add-hook 'elpaca-after-init-hook (lambda ()
+                                    (load-theme 'solarized-light t)))
 
 ;; Modeline
 (use-package core-mode-line
