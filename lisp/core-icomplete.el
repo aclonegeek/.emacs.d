@@ -13,6 +13,7 @@
   (setq icomplete-compute-delay               0
         icomplete-delay-completions-threshold 0
         icomplete-hide-common-prefix          nil
-        icomplete-show-matches-on-no-input    t))
+        icomplete-show-matches-on-no-input    t
+        icomplete-scroll t))
 
 (provide 'core-icomplete)
