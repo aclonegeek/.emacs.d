@@ -33,7 +33,7 @@
 
 ;; Theme
 (add-hook 'elpaca-after-init-hook (lambda ()
-                                    (load-theme 'solarized-light t)))
+                                    (load-theme 'solarized-dark t)))
 
 ;; Modeline
 (use-package core-mode-line
