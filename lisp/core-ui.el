@@ -27,7 +27,9 @@
                                 :family "Iosevka"
                                 :height 110)))
 
-(use-package solarized-theme)
+(use-package solarized-theme
+  :config
+  (setq solarized-use-variable-pitch nil))
 
 ;; Theme
 (add-hook 'elpaca-after-init-hook (lambda ()
