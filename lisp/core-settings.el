@@ -57,6 +57,9 @@
 (setq-default compilation-always-kill t
               compilation-scroll-output t)
 
+;; Diff.
+(setq-default diff-mode-read-only t)
+
 ;; Dired.
 (setq-default dired-kill-when-opening-new-dired-buffer t)
 
