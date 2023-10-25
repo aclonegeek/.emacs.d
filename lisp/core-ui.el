@@ -31,6 +31,9 @@
   :config
   (setq solarized-use-variable-pitch nil))
 
+(with-eval-after-load 'shr
+  (set-face-attribute 'shr-text nil :inherit nil))
+
 ;; Theme
 (add-hook 'elpaca-after-init-hook (lambda ()
                                     (load-theme 'solarized-dark t)))
