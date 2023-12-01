@@ -5,10 +5,6 @@
   :bind (:map eglot-mode-map
               ("C-c l a" . eglot-code-actions)
               ("C-c l r" . eglot-rename))
-  :hook (((c-ts-mode
-           c++-ts-mode
-           go-ts-mode
-           rust-ts-mode) . eglot-ensure))
   :config
   (setq eglot-events-buffer-size 0
         eglot-sync-connect 0)
