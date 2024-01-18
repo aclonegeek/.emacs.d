@@ -22,7 +22,4 @@
 (global-set-key (kbd "C-c t e") 'treesit-explore-mode)
 (global-set-key (kbd "C-c t i") 'treesit-inspect-node-at-point)
 
-(with-eval-after-load 'diff
-  (keymap-set diff-mode-map "M-o" nil))
-
 (provide 'core-keybinds)
