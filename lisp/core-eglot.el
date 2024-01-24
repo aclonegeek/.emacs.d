@@ -8,7 +8,8 @@
   :config
   (setq eglot-events-buffer-size 0
         eglot-sync-connect 0
-        eglot-ignored-server-capabilities '(:documentFormattingProvider))
+        eglot-ignored-server-capabilities '(:documentFormattingProvider
+                                            :documentOnTypeFormattingProvider))
   (add-to-list 'eglot-stay-out-of 'imenu)
   (add-to-list 'eglot-server-programs
                '((c-ts-mode c++-ts-mode) . ("clangd"
