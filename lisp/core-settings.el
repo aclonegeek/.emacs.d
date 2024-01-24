@@ -57,6 +57,10 @@
 (setq-default compilation-always-kill t
               compilation-scroll-output t)
 
+;; Diff.
+(setq diff-font-lock-prettify t
+      diff-font-lock-syntax 'hunk-also)
+
 ;; Dired.
 (setq-default dired-kill-when-opening-new-dired-buffer t)
 
