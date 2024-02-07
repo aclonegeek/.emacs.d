@@ -67,6 +67,11 @@
 ;; ElDoc.
 (setq eldoc-documentation-strategy #'eldoc-documentation-compose)
 
+;; Gnus.
+(setq gnus-asynchronous t
+      gnus-check-new-newsgroups nil
+      gnus-use-cross-reference nil)
+
 ;; JSONRPC.
 ;; Prevent any JSONRPC logs to maximize performance.
 (fset #'jsonrpc--log-event #'ignore)
