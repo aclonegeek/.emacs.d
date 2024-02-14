@@ -62,7 +62,8 @@
       diff-font-lock-syntax 'hunk-also)
 
 ;; Dired.
-(setq-default dired-kill-when-opening-new-dired-buffer t)
+(setq-default dired-kill-when-opening-new-dired-buffer t
+              dired-listing-switches "-al --group-directories-first")
 
 ;; ElDoc.
 (setq eldoc-documentation-strategy #'eldoc-documentation-compose)
@@ -75,6 +76,9 @@
 ;; JSONRPC.
 ;; Prevent any JSONRPC logs to maximize performance.
 (fset #'jsonrpc--log-event #'ignore)
+
+;; ls-lisp.
+(setq ls-lisp-dirs-first t)
 
 ;; Proced.
 (setq-default proced-auto-update-flag t)
