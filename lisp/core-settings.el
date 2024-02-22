@@ -118,7 +118,7 @@
 (setq vc-handled-backends '(Git))
 
 (use-package grep
-  :elpaca nil
+  :ensure nil
   :bind ([f5] . rjt-grep-find)
   :config
   (defun rjt-grep-find ()

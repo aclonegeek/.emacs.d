@@ -1,7 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
 (use-package icomplete
-  :elpaca nil
+  :ensure nil
   :bind (:map icomplete-minibuffer-map
               ("<tab>"    . icomplete-force-complete)
               ("<return>" . icomplete-force-complete-and-exit)

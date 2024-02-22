@@ -1,7 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
 (use-package project
-  :elpaca nil
+  :ensure nil
   :defer t
   :config
   (setq project-switch-commands '((project-find-file "File")

@@ -1,7 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
 (use-package org
-  :elpaca nil
+  :ensure nil
   :commands org-mode
   :hook (org-mode . (lambda () (require 'ox-md nil t)))
   :bind (:map org-mode-map

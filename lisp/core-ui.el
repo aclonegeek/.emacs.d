@@ -40,7 +40,7 @@
 
 ;; Modeline
 (use-package core-mode-line
-  :elpaca nil
+  :ensure nil
   :config
   (setq line-number-mode   1
         column-number-mode 1))
