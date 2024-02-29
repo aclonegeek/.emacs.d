@@ -6,7 +6,8 @@
               ("C-c l a" . eglot-code-actions)
               ("C-c l r" . eglot-rename))
   :config
-  (setq eglot-sync-connect 0
+  (setq eglot-autoshutdown t
+        eglot-sync-connect 0
         eglot-ignored-server-capabilities '(:documentFormattingProvider
                                             :documentOnTypeFormattingProvider))
   (plist-put eglot-events-buffer-config :size 0)
