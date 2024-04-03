@@ -12,7 +12,6 @@ Emacs master built from source.
 --with-cairo
 --with-gnutls
 --with-harfbuzz
---with-json
 --with-modules
 --with-native-compilation=aot
 --with-pgtk
