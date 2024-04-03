@@ -7,6 +7,7 @@
               ("C-c l r" . eglot-rename))
   :config
   (setq eglot-autoshutdown t
+        eglot-report-progress nil
         eglot-sync-connect 0
         eglot-ignored-server-capabilities '(:documentFormattingProvider
                                             :documentOnTypeFormattingProvider))
