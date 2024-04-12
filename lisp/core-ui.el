@@ -32,7 +32,8 @@
   (setq solarized-use-variable-pitch nil))
 
 (with-eval-after-load 'shr
-  (set-face-attribute 'shr-text nil :inherit nil))
+  (set-face-attribute 'shr-text nil :inherit nil)
+  (setq shr-use-colors nil))
 
 ;; Theme
 (add-hook 'elpaca-after-init-hook (lambda ()
