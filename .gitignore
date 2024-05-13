@@ -3,6 +3,7 @@
 
 # Package related.
 /eshell
+/elpa
 /elpaca
 .mc-lists.el
 *.cache
