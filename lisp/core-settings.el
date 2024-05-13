@@ -85,6 +85,9 @@
 (setq-default proced-auto-update-interval 1)
 (setq-default proced-enable-color-flag t)
 
+;; TRAMP.
+(setq remote-file-name-inhibit-locks t)
+
 ;; tree-sitter.
 (setq-default treesit-font-lock-level 4)
 (push '(c-mode . c-ts-mode) major-mode-remap-alist)
