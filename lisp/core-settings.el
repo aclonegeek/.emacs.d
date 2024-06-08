@@ -72,6 +72,8 @@
 (setq gnus-asynchronous t
       gnus-check-new-newsgroups nil
       gnus-use-cross-reference nil)
+(with-eval-after-load 'gnus-group
+  (unbind-key "m" gnus-group-mode-map))
 
 ;; JSONRPC.
 ;; Prevent any JSONRPC logs to maximize performance.
