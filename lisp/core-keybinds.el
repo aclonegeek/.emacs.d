@@ -22,6 +22,7 @@
 (global-set-key (kbd "C-c t e") 'treesit-explore-mode)
 (global-set-key (kbd "C-c t i") 'treesit-inspect-node-at-point)
 
+(unbind-key "C-x m")
 (unbind-key "C-x C-c")
 
 (provide 'core-keybinds)
