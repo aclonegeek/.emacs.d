@@ -16,6 +16,7 @@ Emacs master built from source.
 --with-native-compilation=aot
 --with-pgtk
 --with-small-ja-dic
+--with-tree-sitter
 --with-threads
 --with-toolkit-scroll-bars
 --with-xml2
