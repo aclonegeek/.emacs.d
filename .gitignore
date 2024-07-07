@@ -3,8 +3,6 @@
 
 # Package related.
 /eshell
-/elpa
-/elpaca
 .mc-lists.el
 *.cache
 *.dat
@@ -20,7 +18,7 @@ url/
 # Files.
 bookmarks
 custom.el
-package-quickstart.el
+lisp/package-autoloads.el
 projects
 recentf
 network-security.data

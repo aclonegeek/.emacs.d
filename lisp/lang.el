@@ -32,12 +32,7 @@
 (setq-default c-basic-offset 4)
 
 ;; Markdown.
-(use-package markdown-mode
-  :commands (markdown-mode gfm-mode)
-  :mode (("README\\.md\\'" . gfm-mode)
-         ("\\.md\\'"       . markdown-mode)
-         ("\\.markdown\\'" . markdown-mode))
-  :config (setq markdown-command "multimarkdown"))
+;; TODO: Use markdown-ts-mode when it gets merged.
 
 ;; Python.
 (setq-default python-shell-interpreter "python3"

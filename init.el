@@ -1,9 +1,19 @@
 ;; -*- lexical-binding: t; -*-
 
 (eval-and-compile
-  (add-to-list 'load-path "~/.emacs.d/lisp"))
-
-(require 'pkg-elpaca)
+  (defconst emacs-packages-dir (concat
+                                user-emacs-directory
+                                "packages"))
+  (defconst emacs-packages-autoloads (concat
+                                      user-emacs-directory
+                                      "lisp/package-autoloads.el"))
+  (dolist (directory (directory-files
+                      emacs-packages-dir
+                      t
+                      directory-files-no-dot-files-regexp))
+    (add-to-list 'load-path directory))
+  (add-to-list 'load-path "~/.emacs.d/lisp")
+  (load emacs-packages-autoloads nil t))
 
 ;; Core.
 (require 'core-keybinds)

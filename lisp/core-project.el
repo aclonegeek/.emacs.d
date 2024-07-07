@@ -1,7 +1,6 @@
 ;; -*- lexical-binding: t; -*-
 
 (use-package project
-  :ensure nil
   :defer t
   :config
   (setq project-switch-commands '((project-find-file "File")

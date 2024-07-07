@@ -1,7 +1,6 @@
 ;; -*- lexical-binding: t; -*-
 
 (use-package icomplete
-  :ensure nil
   :bind (:map icomplete-minibuffer-map
               ("<tab>"    . icomplete-force-complete)
               ("<return>" . icomplete-force-complete-and-exit)

@@ -66,9 +66,21 @@
          (tramp-file-name (concat "/ssh:" user "@" ip ":" dir)))
     (find-file tramp-file-name)))
 
-(defun rjt-native-compile-packages ()
-  "Native-compile all packages."
+(defun rjt-generate-autoloads-and-compile ()
+  "Generate autoloads and compile all packages."
   (interactive)
-  (native-compile-async elpaca-builds-directory 'recursively))
+  (loaddefs-generate (directory-files
+                      emacs-packages-dir
+                      t
+                      directory-files-no-dot-files-regexp)
+                     emacs-packages-autoloads
+                     nil
+                     nil
+                     nil
+                     t
+                     )
+  (byte-recompile-directory emacs-packages-dir 0)
+  (native-compile-async emacs-packages-dir 'recursively 'load))
 
 (provide 'core-util)
+

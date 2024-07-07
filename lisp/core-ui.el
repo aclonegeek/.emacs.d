@@ -36,12 +36,11 @@
   (setq shr-use-colors nil))
 
 ;; Theme
-(add-hook 'elpaca-after-init-hook (lambda ()
-                                    (load-theme 'solarized-dark t)))
+(add-hook 'after-init-hook (lambda ()
+                             (load-theme 'solarized-dark t)))
 
 ;; Modeline
 (use-package core-mode-line
-  :ensure nil
   :config
   (setq line-number-mode   1
         column-number-mode 1))
