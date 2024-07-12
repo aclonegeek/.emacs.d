@@ -4,8 +4,6 @@
 (defconst IS-WINDOWS (eq system-type 'windows-nt))
 
 (setq-default
- package-native-compile t
-
  ring-bell-function #'ignore
  visible-bell nil
 
