@@ -80,6 +80,7 @@
                      t
                      )
   (byte-recompile-directory emacs-packages-dir 0)
+  (setq native-comp-async-jobs-number (- (num-processors) 2))
   (native-compile-async emacs-packages-dir 'recursively 'load))
 
 (provide 'core-util)
