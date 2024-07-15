@@ -7,11 +7,11 @@
   (defconst emacs-packages-autoloads (concat
                                       user-emacs-directory
                                       "lisp/package-autoloads.el"))
-  (dolist (directory (directory-files
-                      emacs-packages-dir
-                      t
-                      directory-files-no-dot-files-regexp))
-    (add-to-list 'load-path directory))
+  (dolist (package (directory-files
+                    emacs-packages-dir
+                    t
+                    directory-files-no-dot-files-regexp))
+    (add-to-list 'load-path package))
   (add-to-list 'load-path "~/.emacs.d/lisp")
   (load emacs-packages-autoloads t t))
 
