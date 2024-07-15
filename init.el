@@ -13,7 +13,7 @@
                       directory-files-no-dot-files-regexp))
     (add-to-list 'load-path directory))
   (add-to-list 'load-path "~/.emacs.d/lisp")
-  (load emacs-packages-autoloads nil t))
+  (load emacs-packages-autoloads t t))
 
 ;; Core.
 (require 'core-keybinds)
