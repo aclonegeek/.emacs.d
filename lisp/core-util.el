@@ -41,7 +41,10 @@
 (defun rjt-calc-eval-region (start end)
   "Evaluate a region with calc."
   (interactive "r")
-  (let ((region (buffer-substring-no-properties start end)))
+  (let ((region
+         (replace-regexp-in-string ",\\|\\$"
+                                   ""
+                                   (buffer-substring-no-properties start end))))
     (delete-region start end)
     (insert (calc-eval region))))
 
