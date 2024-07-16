@@ -1,0 +1,2 @@
+;; Generated package description from wgrep.el  -*- no-byte-compile: t -*-
+(define-package "wgrep" "3.0.0.0.20231216.120954" "Writable grep buffer" '((emacs "25.1")) :commit "208b9d01cfffa71037527e3a324684b3ce45ddc4" :authors '(("Masahiro Hayashi" . "mhayashi1120@gmail.com")) :maintainer '("Masahiro Hayashi" . "mhayashi1120@gmail.com") :keywords '("grep" "edit" "extensions") :url "http://github.com/mhayashi1120/Emacs-wgrep/raw/master/wgrep.el")

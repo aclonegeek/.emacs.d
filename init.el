@@ -15,7 +15,6 @@
   (add-to-list 'load-path "~/.emacs.d/lisp")
   (load emacs-packages-autoloads t t))
 
-;; Core.
 (require 'core-keybinds)
 (require 'core-settings)
 (require 'core-ui)
@@ -28,10 +27,8 @@
 (require 'core-project)
 (require 'core-xref)
 
-;; Lang.
 (require 'lang)
 
-;; Packages.
 (require 'pkg-avy)
 (require 'pkg-ace-window)
 (require 'pkg-consult)
@@ -40,5 +37,6 @@
 (require 'pkg-magit)
 (require 'pkg-multiple-cursors)
 (require 'pkg-tempel)
+(require 'pkg-wgrep)
 
 (setq custom-file "~/.emacs.d/custom.el")
