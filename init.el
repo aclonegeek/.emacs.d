@@ -35,6 +35,7 @@
 (require 'pkg-corfu)
 (require 'pkg-embark)
 (require 'pkg-magit)
+(require 'pkg-marginalia)
 (require 'pkg-multiple-cursors)
 (require 'pkg-tempel)
 (require 'pkg-wgrep)
