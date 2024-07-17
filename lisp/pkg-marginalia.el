@@ -1,8 +1,6 @@
 ;; -*- lexical-binding: t; -*-
 
 (use-package marginalia
-  :defer 0.5
-  :config
-  (marginalia-mode))
+  :hook (after-init . marginalia-mode))
 
 (provide 'pkg-marginalia)
