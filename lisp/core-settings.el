@@ -47,6 +47,7 @@
 (setq completion-ignore-case t
       read-buffer-completion-ignore-case t
       read-file-name-completion-ignore-case t
+      read-extended-command-predicate #'command-completion-default-include-p
       completion-styles '(basic partial-completion flex)
       completion-show-help nil
       completions-format 'vertical)
