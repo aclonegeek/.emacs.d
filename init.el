@@ -21,7 +21,6 @@
 (require 'core-util)
 (require 'core-eglot)
 (require 'core-flymake)
-(require 'core-icomplete)
 (require 'core-isearch)
 (require 'core-org)
 (require 'core-project)
@@ -38,6 +37,7 @@
 (require 'pkg-marginalia)
 (require 'pkg-multiple-cursors)
 (require 'pkg-tempel)
+(require 'pkg-vertico)
 (require 'pkg-wgrep)
 
 (setq custom-file "~/.emacs.d/custom.el")
