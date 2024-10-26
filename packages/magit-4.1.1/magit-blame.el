@@ -644,7 +644,10 @@ modes is toggled, then this mode also gets toggled automatically.
   (overlay-put
    ov 'before-string
    (if-let ((format (magit-blame--style-get 'heading-format)))
-       (magit-blame--format-string ov format 'magit-blame-heading)
+       ;; Use `default' as the last face to avoid picking up any face
+       ;; attributes from the first character of the text on which we
+       ;; put the overlay.  See #5233.
+       (magit-blame--format-string ov format '(magit-blame-heading default))
      (and (magit-blame--style-get 'show-lines)
           (or (not (magit-blame--style-get 'margin-format))
               (save-excursion
@@ -652,7 +655,7 @@ modes is toggled, then this mode also gets toggled automatically.
                 ;; Special case of the special case described in
                 ;; `magit-blame--make-margin-overlay'.  For empty
                 ;; lines it is not possible to show both overlays
-                ;; without the line being to high.
+                ;; without the line being too high.
                 (not (= (point) (line-end-position)))))
           magit-blame-separator))))
 
@@ -683,11 +686,7 @@ modes is toggled, then this mode also gets toggled automatically.
             (propertize format 'font-lock-face face)
             (cl-flet* ((p0 (s f)
                          (propertize s 'font-lock-face
-                                     (if face
-                                         (if (listp face)
-                                             face
-                                           (list f face))
-                                       f)))
+                                     (if face (cons f (ensure-list face)) f)))
                        (p1 (k f)
                          (p0 (cdr (assoc k revinfo)) f))
                        (p2 (k1 k2 f)
