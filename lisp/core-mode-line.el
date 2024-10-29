@@ -18,7 +18,7 @@
 
 (defun mode-line-project-name ()
   "Return the project name for the project formatted for the mode-line."
-  (when-let ((proj (project-current)))
+  (when-let* ((proj (project-current)))
       (list "["
             (project-name proj)
             "] ")))
