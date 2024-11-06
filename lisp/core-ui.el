@@ -27,9 +27,7 @@
                                 :family "Iosevka"
                                 :height 110)))
 
-(use-package solarized-theme
-  :config
-  (setq solarized-use-variable-pitch nil))
+(use-package ef-themes)
 
 (with-eval-after-load 'shr
   (set-face-attribute 'shr-text nil :inherit nil)
@@ -37,7 +35,7 @@
 
 ;; Theme
 (add-hook 'after-init-hook (lambda ()
-                             (load-theme 'solarized-dark t)))
+                             (load-theme 'ef-tritanopia-dark t)))
 
 ;; Modeline
 (use-package core-mode-line
