@@ -35,7 +35,7 @@
 
 ;; Theme
 (add-hook 'after-init-hook (lambda ()
-                             (load-theme 'ef-tritanopia-dark t)))
+                             (load-theme 'ef-night t)))
 
 ;; Modeline
 (use-package core-mode-line
