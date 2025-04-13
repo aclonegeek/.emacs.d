@@ -27,7 +27,7 @@
                                 :family "Iosevka"
                                 :height 110)))
 
-(use-package ef-themes)
+(use-package miasma-theme)
 
 (with-eval-after-load 'shr
   (set-face-attribute 'shr-text nil :inherit nil)
@@ -35,7 +35,7 @@
 
 ;; Theme
 (add-hook 'after-init-hook (lambda ()
-                             (load-theme 'ef-night t)))
+                             (load-theme 'miasma t)))
 
 ;; Modeline
 (use-package core-mode-line
