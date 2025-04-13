@@ -33,9 +33,6 @@
 ;; C.
 (setq-default c-basic-offset 4)
 
-;; Markdown.
-;; TODO: Use markdown-ts-mode when it gets merged.
-
 ;; Python.
 (setq-default python-shell-interpreter "python3"
               python-indent-offset 4
