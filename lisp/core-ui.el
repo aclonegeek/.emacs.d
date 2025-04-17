@@ -27,7 +27,7 @@
                                 :family "Iosevka"
                                 :height 110)))
 
-(use-package miasma-theme)
+(use-package color-theme-sanityinc-tomorrow)
 
 (with-eval-after-load 'shr
   (set-face-attribute 'shr-text nil :inherit nil)
@@ -35,7 +35,7 @@
 
 ;; Theme
 (add-hook 'after-init-hook (lambda ()
-                             (load-theme 'miasma t)))
+                             (load-theme 'sanityinc-tomorrow-bright t)))
 
 ;; Modeline
 (use-package core-mode-line
