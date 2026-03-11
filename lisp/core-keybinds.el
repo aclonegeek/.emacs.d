@@ -22,6 +22,8 @@
 (global-set-key (kbd "C-c t e") 'treesit-explore-mode)
 (global-set-key (kbd "C-c t i") 'treesit-inspect-node-at-point)
 
+(define-key minibuffer-inactive-mode-map [mouse-1] #'ignore)
+
 (unbind-key "C-x m")
 (unbind-key "C-x C-c")
 
