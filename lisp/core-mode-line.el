@@ -11,9 +11,6 @@
                'mode-line-buffer-identification
                " "
                "%l:%c"
-               'mode-line-format-right-align
-               '(flymake-mode (:propertize ("/^v^\\" flymake-mode-line-counters)))
-               " "
                ))
 
 (defun mode-line-project-name ()
