@@ -38,6 +38,5 @@
 (require 'pkg-multiple-cursors)
 (require 'pkg-tempel)
 (require 'pkg-vertico)
-(require 'pkg-wgrep)
 
 (setq custom-file "~/.emacs.d/custom.el")
