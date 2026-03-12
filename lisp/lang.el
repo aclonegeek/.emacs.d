@@ -38,4 +38,8 @@
               python-indent-offset 4
               python-indent-guess-indent-offset nil)
 
+;; Shell.
+(use-package sh-script
+  :hook (bash-ts-mode . flymake-mode))
+
 (provide 'lang)
