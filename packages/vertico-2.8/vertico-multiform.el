@@ -1,12 +1,12 @@
 ;;; vertico-multiform.el --- Configure Vertico in different forms per command -*- lexical-binding: t -*-
 
-;; Copyright (C) 2021-2025 Free Software Foundation, Inc.
+;; Copyright (C) 2021-2026 Free Software Foundation, Inc.
 
 ;; Author: Daniel Mendler <mail@daniel-mendler.de>
 ;; Maintainer: Daniel Mendler <mail@daniel-mendler.de>
 ;; Created: 2021
-;; Version: 2.6
-;; Package-Requires: ((emacs "29.1") (compat "30") (vertico "2.6"))
+;; Version: 2.8
+;; Package-Requires: ((emacs "29.1") (compat "30") (vertico "2.8"))
 ;; URL: https://github.com/minad/vertico
 
 ;; This file is part of GNU Emacs.
@@ -84,8 +84,8 @@ category settings have lower precedence than
 
 (defun vertico-multiform--toggle (arg)
   "Toggle modes from stack depending on ARG."
-  (when-let ((win (active-minibuffer-window))
-             (modes (car vertico-multiform--stack)))
+  (when-let* ((win (active-minibuffer-window))
+              (modes (car vertico-multiform--stack)))
     (when (> arg 0) (setq modes (reverse modes)))
     (with-selected-window win
       (dolist (m modes)
@@ -132,11 +132,15 @@ The keys in LIST can be symbols or regexps."
          (push (if (keymapp key) key (apply #'define-keymap key)) kmaps))
         (`(:not . ,fs)
          (dolist (f fs)
-           (let ((sym (and (symbolp f) (intern-soft (format "vertico-%s-mode" f)))))
-             (push (cons :not (if (and sym (fboundp sym)) sym f)) modes))))
+           (let* ((sym (and (symbolp f) (intern-soft (format "vertico-%s-mode" f))))
+                  (mode (if (and sym (fboundp sym)) sym f)))
+             (when (or (not (symbolp mode)) (not (boundp mode)) (symbol-value mode))
+               (push (cons :not mode) modes)))))
         ((or (pred functionp) (pred symbolp))
-         (let ((sym (and (symbolp x) (intern-soft (format "vertico-%s-mode" x)))))
-           (push (if (and sym (fboundp sym)) sym x) modes)))
+         (let* ((sym (and (symbolp x) (intern-soft (format "vertico-%s-mode" x))))
+                (mode (if (and sym (fboundp sym)) sym x)))
+           (when (or (not (symbolp mode)) (not (boundp mode)) (not (symbol-value mode)))
+             (push mode modes))))
         (`(,k . ,v) (set (make-local-variable k) v))
         (_ (error "Invalid multiform setting %S" x))))
     (push modes vertico-multiform--stack)
