@@ -31,9 +31,11 @@
   (set-face-attribute 'shr-text nil :inherit nil)
   (setq shr-use-colors nil))
 
+(use-package srcery-theme)
+
 ;; Theme
 (add-hook 'after-init-hook (lambda ()
-                             (load-theme 'modus-operandi-tinted t)))
+                             (load-theme 'srcery t)))
 
 ;; Modeline
 (use-package core-mode-line
