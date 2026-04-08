@@ -24,6 +24,7 @@
 
 (define-key minibuffer-inactive-mode-map [mouse-1] #'ignore)
 
+(unbind-key "<insert>")
 (unbind-key "C-x m")
 (unbind-key "C-x C-c")
 
