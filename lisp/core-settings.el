@@ -76,6 +76,9 @@
 (with-eval-after-load 'gnus-sum
   (unbind-key "m" gnus-summary-mode-map))
 
+;; Help.
+(setq help-window-select t)
+
 ;; JSONRPC.
 ;; Prevent any JSONRPC logs to maximize performance.
 (fset #'jsonrpc--log-event #'ignore)
