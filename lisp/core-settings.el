@@ -81,6 +81,7 @@
 (fset #'jsonrpc--log-event #'ignore)
 
 ;; Kill.
+(setq save-interprogram-paste-before-kill t)
 (setq kill-do-not-save-duplicates t)
 
 ;; ls-lisp.
