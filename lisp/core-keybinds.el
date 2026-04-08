@@ -10,6 +10,7 @@
 (global-set-key (kbd "C-z") 'duplicate-line)
 (global-set-key (kbd "C-q") 'rjt-mark-word-backward)
 (global-set-key (kbd "M-q") 'rjt-mark-word-forward)
+(unbind-key "M-q" prog-mode-map)
 
 (global-set-key (kbd "C-c r") 'rjt-revert-buffer-no-confirm)
 
