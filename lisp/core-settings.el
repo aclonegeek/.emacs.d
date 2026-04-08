@@ -80,6 +80,9 @@
 ;; Prevent any JSONRPC logs to maximize performance.
 (fset #'jsonrpc--log-event #'ignore)
 
+;; Kill.
+(setq kill-do-not-save-duplicates t)
+
 ;; ls-lisp.
 (setq ls-lisp-dirs-first t)
 
