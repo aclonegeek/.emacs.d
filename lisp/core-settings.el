@@ -125,6 +125,9 @@
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . tsx-ts-mode))
 (add-to-list 'auto-mode-alist '("\\.ya?ml\\'" . yaml-ts-mode))
 
+;; Windows.
+(setq window-combination-resize t)
+
 ;; VC.
 (remove-hook 'find-file-hook 'vc-refresh-state)
 (setq vc-handled-backends '(Git))
