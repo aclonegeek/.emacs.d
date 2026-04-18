@@ -1,6 +1,6 @@
 # .emacs.d
 
-Emacs master built from source.
+Emacs feature/igc3 built from source.
 
 ## Installation
 ``` shell
@@ -13,6 +13,7 @@ Emacs master built from source.
 --with-gnutls
 --with-harfbuzz
 --with-modules
+--with-mps
 --with-native-compilation=aot
 --with-pgtk
 --with-small-ja-dic
