@@ -24,6 +24,7 @@
 (require 'core-isearch)
 (require 'core-org)
 (require 'core-project)
+(require 'core-tab-bar)
 (require 'core-xref)
 
 (require 'lang)
