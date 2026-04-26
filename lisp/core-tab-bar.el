@@ -5,7 +5,7 @@
   :hook (after-init . (lambda ()
                         (tab-bar-mode)
                         (tab-rename "misc")))
-  :config (setq tab-bar-show t
+  :config (setq tab-bar-show nil
                 tab-bar-close-button-show nil
                 tab-bar-tab-hints t
                 tab-bar-format '(tab-bar-format-tabs tab-bar-separator)))
