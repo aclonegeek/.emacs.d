@@ -1,13 +1,13 @@
 ;;; embark-consult.el --- Consult integration for Embark -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2021-2023  Free Software Foundation, Inc.
+;; Copyright (C) 2021-2026  Free Software Foundation, Inc.
 
 ;; Author: Omar Antolín Camarena <omar@matem.unam.mx>
 ;; Maintainer: Omar Antolín Camarena <omar@matem.unam.mx>
 ;; Keywords: convenience
-;; Version: 1.1
-;; Homepage: https://github.com/oantolin/embark
-;; Package-Requires: ((emacs "27.1") (compat "29.1.4.0") (embark "1.0") (consult "1.0"))
+;; Version: 1.2
+;; URL: https://github.com/oantolin/embark
+;; Package-Requires: ((emacs "29.1") (compat "30") (embark "1.1") (consult "3.2"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -27,9 +27,6 @@
 ;; This package provides integration between Embark and Consult.  The package
 ;; will be loaded automatically by Embark.
 
-;; Some of the functionality here was previously contained in Embark
-;; itself:
-
 ;; - Support for consult-buffer, so that you get the correct actions
 ;; for each type of entry in consult-buffer's list.
 
@@ -39,24 +36,7 @@
 ;; you can export from them to an occur buffer (where occur-edit-mode
 ;; works!).
 
-;; Just load this package to get the above functionality, no further
-;; configuration is necessary.
-
-;; Additionally this package contains some functionality that has
-;; never been in Embark: access to Consult preview from auto-updating
-;; Embark Collect buffer that is associated to an active minibuffer
-;; for a Consult command.  For information on Consult preview, see
-;; Consult's info manual or its readme on GitHub.
-
-;; If you always want the minor mode enabled whenever it possible use:
-
-;; (add-hook 'embark-collect-mode-hook #'consult-preview-at-point-mode)
-
-;; If you don't want the minor mode automatically on and prefer to
-;; trigger the consult previews manually use this instead:
-
-;; (keymap-set embark-collect-mode-map "C-j"
-;;   #'consult-preview-at-point)
+;; - Enabling Consult preview in `embark-live' buffers.
 
 ;;; Code:
 
@@ -110,7 +90,10 @@ category `consult-line'."
   (let ((buf (generate-new-buffer "*Embark Export Occur*"))
         (mouse-msg "mouse-2: go to this occurrence")
         (inhibit-read-only t)
+        (affixator (embark--get-affixator 'consult-location))
         last-buf)
+    ;; Run affixator for lazy highlighting
+    (setq lines (mapcar #'car (funcall affixator lines)))
     (with-current-buffer buf
       (dolist (line lines)
         (pcase-let*
@@ -146,6 +129,8 @@ category `consult-line'."
             (setq last-buf this-buf))
           (insert lineno contents nl)))
       (goto-char (point-min))
+      ;; Make this buffer current for next/previous-error
+      (setq next-error-last-buffer buf)
       (occur-mode))
     (pop-to-buffer buf)))
 
@@ -210,7 +195,7 @@ This function is meant to be added to `embark-collect-mode-hook'."
 
 (defvar grep-mode-line-matches)
 (defvar grep-num-matches-found)
-(declare-function wgrep-setup "ext:wgrep")
+(declare-function compilation--ensure-parse "compile")
 
 (defvar-keymap embark-consult-rerun-map
   :doc "A keymap with a binding for `embark-rerun-collect-or-export'."
@@ -225,13 +210,23 @@ count of the matches (there may be more than one match per line).
 The function FOOTER is called to insert a footer."
   (let ((buf (generate-new-buffer "*Embark Export Grep*")))
     (with-current-buffer buf
-      (insert (propertize header 'wgrep-header t 'front-sticky t))
-      (let ((count (funcall insert lines)))
-        (funcall footer)
-        (goto-char (point-min))
-        (grep-mode)
-        (setq-local grep-num-matches-found count
-                    mode-line-process grep-mode-line-matches))
+      (grep-mode)
+      (setq-local mode-line-process grep-mode-line-matches)
+      (let ((inhibit-read-only t))
+        (insert (propertize header 'wgrep-header t 'front-sticky t))
+        (dlet ((compilation-filter-start (point)))
+          (setq-local grep-num-matches-found (funcall insert lines))
+          (goto-char (point-max))
+          ;; Ensure that all `compilation-message' text properties are added.
+          (compilation--ensure-parse (point))
+          ;; Instead of (run-hooks 'compilation-filter-hook), we only run the
+          ;; Emacs 30 grep heading filter. The other `compilation-filter-hook'
+          ;; functions handle escape sequences, which we do not need here.
+          (when (and (bound-and-true-p grep-use-headings)
+                     (fboundp 'grep--heading-filter))
+            (grep--heading-filter))
+          (funcall footer)
+          (goto-char (point-min))))
       ;; Make this buffer current for next/previous-error
       (setq next-error-last-buffer buf)
       ;; Set up keymap before possible wgrep-setup, so that wgrep
@@ -239,13 +234,15 @@ The function FOOTER is called to insert a footer."
       (use-local-map (make-composed-keymap
                       embark-consult-rerun-map
                       (current-local-map)))
-      ;; TODO Wgrep 3.0 and development versions use different names for the
-      ;; parser variable.
-      (defvar wgrep-header/footer-parser)
-      (defvar wgrep-header&footer-parser)
-      (setq-local wgrep-header/footer-parser #'ignore
-                  wgrep-header&footer-parser #'ignore)
-      (when (fboundp 'wgrep-setup) (wgrep-setup)))
+      ;; NOTE Wgrep is not needed anymore on Emacs 31 with `grep-edit-mode'.
+      (when (fboundp 'wgrep-setup)
+        ;; TODO Wgrep 3.0 and development versions use different names for the
+        ;; parser variable.
+        (defvar wgrep-header/footer-parser)
+        (defvar wgrep-header&footer-parser)
+        (setq-local wgrep-header/footer-parser #'ignore
+                    wgrep-header&footer-parser #'ignore)
+        (wgrep-setup)))
     (pop-to-buffer buf)))
 
 (defun embark-consult-export-grep (lines)
@@ -282,8 +279,9 @@ category `consult-grep'."
 
 ;;; Support for consult-xref
 
-(declare-function xref--show-xref-buffer "ext:xref")
 (declare-function consult-xref "ext:consult-xref")
+(declare-function xref--show-xref-buffer "xref")
+(declare-function xref-pop-to-location "xref")
 (defvar xref-auto-jump-to-first-xref)
 (defvar consult-xref--fetcher)
 
@@ -324,15 +322,19 @@ category `consult-grep'."
 (setf (alist-get 'consult-xref embark-exporters-alist)
       #'embark-consult-export-xref)
 
-;;; Support for consult-find and consult-locate
+(defun embark-consult-xref (cand)
+  "Default action override for `consult-xref', open CAND xref location."
+  (xref-pop-to-location (get-text-property 0 'consult-xref cand)))
 
-(setf (alist-get '(file . consult-find) embark-default-action-overrides
-                 nil nil #'equal)
-      #'find-file)
+(setf (alist-get 'consult-xref embark-default-action-overrides)
+      #'embark-consult-xref)
 
-(setf (alist-get '(file . consult-locate) embark-default-action-overrides
-                 nil nil #'equal)
-      #'find-file)
+;;; Support for consult-find, consult-locate and consult-fd
+
+(dolist (cmd '(consult-find consult-locate consult-fd))
+  (setf (alist-get `(file . ,cmd) embark-default-action-overrides
+                   nil nil #'equal)
+        #'find-file))
 
 ;;; Support for consult-isearch-history
 
@@ -384,6 +386,7 @@ category `consult-grep'."
   "r" #'consult-ripgrep
   "G" #'consult-git-grep
   "f" #'consult-find
+  "d" #'consult-fd
   "F" #'consult-locate)
 
 (defvar embark-consult-search-map
@@ -432,7 +435,7 @@ file (files, buffers, libraries and some bookmarks do), then run
 the ACTION with `consult-project-function' set to nil, and search
 only the files associated to the TARGET or CANDIDATES.  For other
 types, run the ACTION with TARGET or CANDIDATES as initial input."
-  (if-let ((file-fn (cdr (assq type embark--associated-file-fn-alist))))
+  (if-let* ((file-fn (cdr (assq type embark--associated-file-fn-alist))))
       (let (consult-project-function)
         (funcall action
                  (delq nil (mapcar file-fn (or candidates (list target))))))
@@ -482,6 +485,10 @@ Meant as :after-until advice for `embark-collect--metadatum'."
 (add-to-list 'embark-candidate-collectors
              #'embark-consult-imenu-or-outline-candidates
              'append)
+
+;; Automatically preview in live collect buffer, see `embark-live'.
+(add-hook 'embark-collect-mode-hook
+          'consult--default-completion-list-preview-setup)
 
 (provide 'embark-consult)
 ;;; embark-consult.el ends here

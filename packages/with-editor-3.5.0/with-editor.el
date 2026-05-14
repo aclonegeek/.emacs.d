@@ -6,7 +6,7 @@
 ;; Homepage: https://github.com/magit/with-editor
 ;; Keywords: processes terminals
 
-;; Package-Version: 3.4.9
+;; Package-Version: 3.5.0
 ;; Package-Requires: ((emacs "26.1") (compat "30.1"))
 
 ;; SPDX-License-Identifier: GPL-3.0-or-later
@@ -382,7 +382,7 @@ And some tools that do not handle $EDITOR properly also break."
                  (dolist (client clients)
                    (message "client %S" client)
                    (ignore-errors
-                     (server-send-string client "-error Canceled by user"))
+                     (server-send-string client "-error Canceled by user\n"))
                    (delete-process client))
                  (when (buffer-live-p buf)
                    (kill-buffer buf)))
