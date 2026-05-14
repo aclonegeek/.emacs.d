@@ -19,7 +19,7 @@ url/
 bookmarks
 custom.el
 lisp/package-autoloads.el
-projects
+projects*
 recentf
 network-security.data
 tramp
