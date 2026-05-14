@@ -155,15 +155,15 @@
 (delete-selection-mode 1)
 (electric-pair-mode 1)
 
-(defun minibuffer-setup-hook ()
+(defun rjt-minibuffer-setup-hook ()
   (setq gc-cons-threshold most-positive-fixnum))
 
-(defun minibuffer-exit-hook ()
+(defun rjt-minibuffer-exit-hook ()
   (run-at-time
    1 nil (lambda () (setq gc-cons-threshold 16777216))))
 
-(add-hook 'minibuffer-setup-hook #'minibuffer-setup-hook)
-(add-hook 'minibuffer-exit-hook  #'minibuffer-exit-hook)
+(add-hook 'minibuffer-setup-hook #'rjt-minibuffer-setup-hook)
+(add-hook 'minibuffer-exit-hook  #'rjt-minibuffer-exit-hook)
 
 (add-hook 'after-save-hook #'garbage-collect)
 (add-function :after after-focus-change-function #'garbage-collect)
