@@ -1,9 +1,5 @@
 ;; -*- lexical-binding: t; -*-
 
-;; Force monospace font.
-(set-face-attribute 'mode-line-active nil :inherit 'mode-line)
-(set-face-attribute 'mode-line-inactive nil :inherit 'mode-line)
-
 (setq-default mode-line-format
               (list
                " "
