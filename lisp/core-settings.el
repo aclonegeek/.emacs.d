@@ -41,8 +41,6 @@
 
 (setq use-short-answers t)
 
-(setq save-interprogram-paste-before-kill t)
-
 ;; Completion.
 (setq completion-ignore-case t
       read-buffer-completion-ignore-case t
