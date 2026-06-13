@@ -9,7 +9,7 @@
 ;; Homepage: https://github.com/tarsius/cond-let
 ;; Keywords: extensions
 
-;; Package-Version: 1.1.1
+;; Package-Version: 1.1.2
 ;; Package-Requires: ((emacs "28.1"))
 
 ;; SPDX-License-Identifier: GPL-3.0-or-later
@@ -468,7 +468,7 @@ last form.  If VARFORM yields nil, do not evaluate BODY, and return nil.
 BODY must be one or more expressions.  If VARLIST is empty, do nothing
 and return nil.
 
-\(fn VARLIST BODY...)"
+\(fn VARFORM BODY...)"
   (declare (indent 1)
            (debug t))
   `(let (($ ,varform))

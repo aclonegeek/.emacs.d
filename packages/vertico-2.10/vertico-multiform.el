@@ -5,8 +5,8 @@
 ;; Author: Daniel Mendler <mail@daniel-mendler.de>
 ;; Maintainer: Daniel Mendler <mail@daniel-mendler.de>
 ;; Created: 2021
-;; Version: 2.8
-;; Package-Requires: ((emacs "29.1") (compat "30") (vertico "2.8"))
+;; Version: 2.10
+;; Package-Requires: ((emacs "29.1") (compat "31") (vertico "2.10"))
 ;; URL: https://github.com/minad/vertico
 
 ;; This file is part of GNU Emacs.
@@ -141,7 +141,7 @@ The keys in LIST can be symbols or regexps."
                 (mode (if (and sym (fboundp sym)) sym x)))
            (when (or (not (symbolp mode)) (not (boundp mode)) (not (symbol-value mode)))
              (push mode modes))))
-        (`(,k . ,v) (set (make-local-variable k) v))
+        (`(,k . ,v) (set-local k v))
         (_ (error "Invalid multiform setting %S" x))))
     (push modes vertico-multiform--stack)
     (vertico-multiform--toggle 1)
