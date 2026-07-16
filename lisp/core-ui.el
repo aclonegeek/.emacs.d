@@ -31,11 +31,11 @@
   (set-face-attribute 'shr-text nil :inherit nil)
   (setq shr-use-colors nil))
 
-(use-package srcery-theme)
+(use-package kusanagi-theme)
 
 ;; Theme
 (add-hook 'after-init-hook (lambda ()
-                             (load-theme 'srcery t)))
+                             (load-theme 'kusanagi t)))
 
 ;; Modeline
 (use-package core-mode-line
